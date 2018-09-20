@@ -1,0 +1,19 @@
+//
+//  BOBPublicHeader.pch
+//  BOB
+//
+//  Created by ying on 2017/10/31.
+//  Copyright © 2017年 qunyingji. All rights reserved.
+//
+
+#ifndef BOBPublicHeader_pch
+#define BOBPublicHeader_pch
+
+#import "SVProgressHUD.h"
+#import "TalkingData.h"
+#import "GlobalDefine.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* BOBPublicHeader_pch */

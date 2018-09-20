@@ -1,0 +1,744 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E63E74A1FA306FD00C37FDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E63E7491FA306FD00C37FDE /* AppDelegate.m */; };
+		2E63E7761FA3186000C37FDE /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E63E76D1FA3186000C37FDE /* SVIndefiniteAnimatedView.m */; };
+		2E63E7771FA3186000C37FDE /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E63E76F1FA3186000C37FDE /* SVProgressAnimatedView.m */; };
+		2E63E7781FA3186000C37FDE /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2E63E7711FA3186000C37FDE /* SVProgressHUD.bundle */; };
+		2E63E7791FA3186000C37FDE /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E63E7731FA3186000C37FDE /* SVProgressHUD.m */; };
+		2E63E77A1FA3186000C37FDE /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E63E7751FA3186000C37FDE /* SVRadialGradientLayer.m */; };
+		2E63E7AE1FA31FDD00C37FDE /* Alan Walker-Spectre.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E63E7AB1FA31FDD00C37FDE /* Alan Walker-Spectre.mp3 */; };
+		2E63E7AF1FA31FDD00C37FDE /* Rihanna-Diamonds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E63E7AC1FA31FDD00C37FDE /* Rihanna-Diamonds.mp3 */; };
+		2E63E7B01FA31FDD00C37FDE /* 江语晨 - 最后一页.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E63E7AD1FA31FDD00C37FDE /* 江语晨 - 最后一页.mp3 */; };
+		2E6450F91FA9C77D00FCCF70 /* MusicPlayVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6450F81FA9C77D00FCCF70 /* MusicPlayVCViewController.m */; };
+		2E6450FB1FA9CA9800FCCF70 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E6450FA1FA9CA9800FCCF70 /* Launch Screen.storyboard */; };
+		2E64514D1FAAB4B100FCCF70 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6451311FAAB4B100FCCF70 /* NSData+ImageContentType.m */; };
+		2E64514E1FAAB4B100FCCF70 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6451331FAAB4B100FCCF70 /* SDImageCache.m */; };
+		2E64514F1FAAB4B100FCCF70 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6451351FAAB4B100FCCF70 /* SDWebImageCompat.m */; };
+		2E6451501FAAB4B100FCCF70 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6451371FAAB4B100FCCF70 /* SDWebImageDecoder.m */; };
+		2E6451511FAAB4B100FCCF70 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6451391FAAB4B100FCCF70 /* SDWebImageDownloader.m */; };
+		2E6451521FAAB4B100FCCF70 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E64513B1FAAB4B100FCCF70 /* SDWebImageDownloaderOperation.m */; };
+		2E6451531FAAB4B100FCCF70 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E64513D1FAAB4B100FCCF70 /* SDWebImageManager.m */; };
+		2E6451541FAAB4B100FCCF70 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6451401FAAB4B100FCCF70 /* SDWebImagePrefetcher.m */; };
+		2E6451551FAAB4B100FCCF70 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6451421FAAB4B100FCCF70 /* UIButton+WebCache.m */; };
+		2E6451561FAAB4B100FCCF70 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6451441FAAB4B100FCCF70 /* UIImage+GIF.m */; };
+		2E6451571FAAB4B100FCCF70 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6451461FAAB4B100FCCF70 /* UIImage+MultiFormat.m */; };
+		2E6451581FAAB4B100FCCF70 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6451481FAAB4B100FCCF70 /* UIImageView+HighlightedWebCache.m */; };
+		2E6451591FAAB4B100FCCF70 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E64514A1FAAB4B100FCCF70 /* UIImageView+WebCache.m */; };
+		2E64515A1FAAB4B100FCCF70 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E64514C1FAAB4B100FCCF70 /* UIView+WebCacheOperation.m */; };
+		2E667CB11FA7811D00892AF0 /* libTalkingData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E667CAF1FA7811D00892AF0 /* libTalkingData.a */; };
+		2EBA62831FA84D3D00B82A23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA627E1FA84D3C00B82A23 /* Assets.xcassets */; };
+		2EBA62841FA84D3D00B82A23 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA627F1FA84D3D00B82A23 /* main.m */; };
+		2EBA62871FA84DB300B82A23 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62861FA84DB300B82A23 /* Info.plist */; };
+		2EBA62CB1FA86D4000B82A23 /* musicPiccry.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62BC1FA86D4000B82A23 /* musicPiccry.png */; };
+		2EBA62CC1FA86D4000B82A23 /* musicPicFinder.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62BD1FA86D4000B82A23 /* musicPicFinder.png */; };
+		2EBA62CD1FA86D4000B82A23 /* musicPicSmile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62BE1FA86D4000B82A23 /* musicPicSmile.png */; };
+		2EBA62CE1FA86D4000B82A23 /* musicPic灯泡.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62BF1FA86D4000B82A23 /* musicPic灯泡.png */; };
+		2EBA62CF1FA86D4000B82A23 /* musicPic笑脸.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62C01FA86D4000B82A23 /* musicPic笑脸.png */; };
+		2EBA62D01FA86D4000B82A23 /* musicPic跑酷.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62C11FA86D4000B82A23 /* musicPic跑酷.png */; };
+		2EBA62D11FA86D4000B82A23 /* musicPic酷.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62C21FA86D4000B82A23 /* musicPic酷.png */; };
+		2EBA62D21FA86D4000B82A23 /* musicPic06.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62C41FA86D4000B82A23 /* musicPic06.png */; };
+		2EBA62D31FA86D4000B82A23 /* musicPicadidasi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62C51FA86D4000B82A23 /* musicPicadidasi.jpg */; };
+		2EBA62D41FA86D4000B82A23 /* musicPic小丑妹.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62C61FA86D4000B82A23 /* musicPic小丑妹.png */; };
+		2EBA62D51FA86D4000B82A23 /* musicPic小马.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62C71FA86D4000B82A23 /* musicPic小马.jpeg */; };
+		2EBA62D61FA86D4000B82A23 /* musicPic拓海.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62C81FA86D4000B82A23 /* musicPic拓海.png */; };
+		2EBA62D71FA86D4000B82A23 /* musicPic润发.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62C91FA86D4000B82A23 /* musicPic润发.jpeg */; };
+		2EBA62D81FA86D4000B82A23 /* musicPic自杀突击队.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62CA1FA86D4000B82A23 /* musicPic自杀突击队.jpg */; };
+		2EBA63081FA8840600B82A23 /* Tupac - Ambitionz Az a Ridah.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62FC1FA8840500B82A23 /* Tupac - Ambitionz Az a Ridah.mp3 */; };
+		2EBA63091FA8840600B82A23 /* Cammay Ng - Cry Away.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62FD1FA8840500B82A23 /* Cammay Ng - Cry Away.mp3 */; };
+		2EBA630A1FA8840600B82A23 /* 陈冠希,MC Hotdog - King Boomba's Crew.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62FE1FA8840500B82A23 /* 陈冠希,MC Hotdog - King Boomba's Crew.mp3 */; };
+		2EBA630B1FA8840600B82A23 /* 大鹏-塑料袋.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62FF1FA8840500B82A23 /* 大鹏-塑料袋.mp3 */; };
+		2EBA630C1FA8840600B82A23 /* Ryan.B,AY楊佬叁 - 再也没有.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA63001FA8840500B82A23 /* Ryan.B,AY楊佬叁 - 再也没有.mp3 */; };
+		2EBA630D1FA8840600B82A23 /* 陈鸿宇 - 理想三旬.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA63011FA8840500B82A23 /* 陈鸿宇 - 理想三旬.mp3 */; };
+		2EBA630E1FA8840600B82A23 /* Oh Susanna - Sleepy Little Sailor.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA63021FA8840500B82A23 /* Oh Susanna - Sleepy Little Sailor.mp3 */; };
+		2EBA630F1FA8840600B82A23 /* 陈梓童-控制.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA63031FA8840600B82A23 /* 陈梓童-控制.mp3 */; };
+		2EBA63101FA8840600B82A23 /* Bruno Mars,Royce Da,Eminem - Lighters.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA63041FA8840600B82A23 /* Bruno Mars,Royce Da,Eminem - Lighters.mp3 */; };
+		2EBA63111FA8840600B82A23 /* 陈冠希-Salute.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA63051FA8840600B82A23 /* 陈冠希-Salute.mp3 */; };
+		2EBA63121FA8840600B82A23 /* 低调组合 - 终点起点.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA63061FA8840600B82A23 /* 低调组合 - 终点起点.mp3 */; };
+		2EBA63241FA99E2800B82A23 /* DeviceRelevant.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA63231FA99E2800B82A23 /* DeviceRelevant.m */; };
+		2EBA63271FA9A20600B82A23 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA63261FA9A20600B82A23 /* AdSupport.framework */; };
+		2EBA63291FA9A20E00B82A23 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA63281FA9A20E00B82A23 /* CoreTelephony.framework */; };
+		2EBA632B1FA9A21A00B82A23 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA632A1FA9A21900B82A23 /* CoreMotion.framework */; };
+		2EBA632D1FA9A24100B82A23 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA632C1FA9A24100B82A23 /* SystemConfiguration.framework */; };
+		2EBA632F1FA9A25100B82A23 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA632E1FA9A25100B82A23 /* libz.tbd */; };
+		2EBA63311FA9A25B00B82A23 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA63301FA9A25B00B82A23 /* libc++.tbd */; };
+		CE2BAD1F213E67380051FD2D /* TIEminem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE2BAD1E213E67380051FD2D /* TIEminem.mp3 */; };
+		CE2BB13E214266DE0051FD2D /* dongdong1.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CE2BB13D214266DD0051FD2D /* dongdong1.tiff */; };
+		CE2BB1412142673E0051FD2D /* dongdong2.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CE2BB13F2142673E0051FD2D /* dongdong2.tiff */; };
+		CE2BB1422142673E0051FD2D /* dongdong3.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CE2BB1402142673E0051FD2D /* dongdong3.tiff */; };
+		CE2BB144214275B50051FD2D /* dongdong.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE2BB143214275B50051FD2D /* dongdong.gif */; };
+		CEB9357E21464A8F00C36C59 /* PlayTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB9357D21464A8F00C36C59 /* PlayTool.m */; };
+		CEBDEF2021391D8700EE6182 /* Start.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBDEF1F21391D8700EE6182 /* Start.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2E63E7451FA306FD00C37FDE /* BOB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BOB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E63E7481FA306FD00C37FDE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2E63E7491FA306FD00C37FDE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2E63E76C1FA3186000C37FDE /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		2E63E76D1FA3186000C37FDE /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		2E63E76E1FA3186000C37FDE /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		2E63E76F1FA3186000C37FDE /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		2E63E7701FA3186000C37FDE /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		2E63E7711FA3186000C37FDE /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		2E63E7721FA3186000C37FDE /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		2E63E7731FA3186000C37FDE /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		2E63E7741FA3186000C37FDE /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		2E63E7751FA3186000C37FDE /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		2E63E7AB1FA31FDD00C37FDE /* Alan Walker-Spectre.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Alan Walker-Spectre.mp3"; sourceTree = "<group>"; };
+		2E63E7AC1FA31FDD00C37FDE /* Rihanna-Diamonds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Rihanna-Diamonds.mp3"; sourceTree = "<group>"; };
+		2E63E7AD1FA31FDD00C37FDE /* 江语晨 - 最后一页.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "江语晨 - 最后一页.mp3"; sourceTree = "<group>"; };
+		2E6450F71FA9C77D00FCCF70 /* MusicPlayVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicPlayVCViewController.h; sourceTree = "<group>"; };
+		2E6450F81FA9C77D00FCCF70 /* MusicPlayVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicPlayVCViewController.m; sourceTree = "<group>"; };
+		2E6450FA1FA9CA9800FCCF70 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		2E6451301FAAB4B100FCCF70 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
+		2E6451311FAAB4B100FCCF70 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
+		2E6451321FAAB4B100FCCF70 /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
+		2E6451331FAAB4B100FCCF70 /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCache.m; sourceTree = "<group>"; };
+		2E6451341FAAB4B100FCCF70 /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCompat.h; sourceTree = "<group>"; };
+		2E6451351FAAB4B100FCCF70 /* SDWebImageCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageCompat.m; sourceTree = "<group>"; };
+		2E6451361FAAB4B100FCCF70 /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDecoder.h; sourceTree = "<group>"; };
+		2E6451371FAAB4B100FCCF70 /* SDWebImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDecoder.m; sourceTree = "<group>"; };
+		2E6451381FAAB4B100FCCF70 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloader.h; sourceTree = "<group>"; };
+		2E6451391FAAB4B100FCCF70 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloader.m; sourceTree = "<group>"; };
+		2E64513A1FAAB4B100FCCF70 /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
+		2E64513B1FAAB4B100FCCF70 /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
+		2E64513C1FAAB4B100FCCF70 /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManager.h; sourceTree = "<group>"; };
+		2E64513D1FAAB4B100FCCF70 /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageManager.m; sourceTree = "<group>"; };
+		2E64513E1FAAB4B100FCCF70 /* SDWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageOperation.h; sourceTree = "<group>"; };
+		2E64513F1FAAB4B100FCCF70 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImagePrefetcher.h; sourceTree = "<group>"; };
+		2E6451401FAAB4B100FCCF70 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
+		2E6451411FAAB4B100FCCF70 /* UIButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WebCache.h"; sourceTree = "<group>"; };
+		2E6451421FAAB4B100FCCF70 /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
+		2E6451431FAAB4B100FCCF70 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
+		2E6451441FAAB4B100FCCF70 /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
+		2E6451451FAAB4B100FCCF70 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
+		2E6451461FAAB4B100FCCF70 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MultiFormat.m"; sourceTree = "<group>"; };
+		2E6451471FAAB4B100FCCF70 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
+		2E6451481FAAB4B100FCCF70 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
+		2E6451491FAAB4B100FCCF70 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		2E64514A1FAAB4B100FCCF70 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		2E64514B1FAAB4B100FCCF70 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
+		2E64514C1FAAB4B100FCCF70 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		2E667CAF1FA7811D00892AF0 /* libTalkingData.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkingData.a; sourceTree = "<group>"; };
+		2E667CB01FA7811D00892AF0 /* TalkingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingData.h; sourceTree = "<group>"; };
+		2EBA627E1FA84D3C00B82A23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2EBA627F1FA84D3D00B82A23 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2EBA62861FA84DB300B82A23 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EBA62A11FA856ED00B82A23 /* BOBPublicHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BOBPublicHeader.pch; sourceTree = "<group>"; };
+		2EBA62BC1FA86D4000B82A23 /* musicPiccry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicPiccry.png; sourceTree = "<group>"; };
+		2EBA62BD1FA86D4000B82A23 /* musicPicFinder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicPicFinder.png; sourceTree = "<group>"; };
+		2EBA62BE1FA86D4000B82A23 /* musicPicSmile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicPicSmile.png; sourceTree = "<group>"; };
+		2EBA62BF1FA86D4000B82A23 /* musicPic灯泡.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "musicPic灯泡.png"; sourceTree = "<group>"; };
+		2EBA62C01FA86D4000B82A23 /* musicPic笑脸.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "musicPic笑脸.png"; sourceTree = "<group>"; };
+		2EBA62C11FA86D4000B82A23 /* musicPic跑酷.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "musicPic跑酷.png"; sourceTree = "<group>"; };
+		2EBA62C21FA86D4000B82A23 /* musicPic酷.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "musicPic酷.png"; sourceTree = "<group>"; };
+		2EBA62C41FA86D4000B82A23 /* musicPic06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicPic06.png; sourceTree = "<group>"; };
+		2EBA62C51FA86D4000B82A23 /* musicPicadidasi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = musicPicadidasi.jpg; sourceTree = "<group>"; };
+		2EBA62C61FA86D4000B82A23 /* musicPic小丑妹.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "musicPic小丑妹.png"; sourceTree = "<group>"; };
+		2EBA62C71FA86D4000B82A23 /* musicPic小马.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "musicPic小马.jpeg"; sourceTree = "<group>"; };
+		2EBA62C81FA86D4000B82A23 /* musicPic拓海.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "musicPic拓海.png"; sourceTree = "<group>"; };
+		2EBA62C91FA86D4000B82A23 /* musicPic润发.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "musicPic润发.jpeg"; sourceTree = "<group>"; };
+		2EBA62CA1FA86D4000B82A23 /* musicPic自杀突击队.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "musicPic自杀突击队.jpg"; sourceTree = "<group>"; };
+		2EBA62FC1FA8840500B82A23 /* Tupac - Ambitionz Az a Ridah.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Tupac - Ambitionz Az a Ridah.mp3"; sourceTree = "<group>"; };
+		2EBA62FD1FA8840500B82A23 /* Cammay Ng - Cry Away.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cammay Ng - Cry Away.mp3"; sourceTree = "<group>"; };
+		2EBA62FE1FA8840500B82A23 /* 陈冠希,MC Hotdog - King Boomba's Crew.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "陈冠希,MC Hotdog - King Boomba's Crew.mp3"; sourceTree = "<group>"; };
+		2EBA62FF1FA8840500B82A23 /* 大鹏-塑料袋.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "大鹏-塑料袋.mp3"; sourceTree = "<group>"; };
+		2EBA63001FA8840500B82A23 /* Ryan.B,AY楊佬叁 - 再也没有.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ryan.B,AY楊佬叁 - 再也没有.mp3"; sourceTree = "<group>"; };
+		2EBA63011FA8840500B82A23 /* 陈鸿宇 - 理想三旬.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "陈鸿宇 - 理想三旬.mp3"; sourceTree = "<group>"; };
+		2EBA63021FA8840500B82A23 /* Oh Susanna - Sleepy Little Sailor.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Oh Susanna - Sleepy Little Sailor.mp3"; sourceTree = "<group>"; };
+		2EBA63031FA8840600B82A23 /* 陈梓童-控制.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "陈梓童-控制.mp3"; sourceTree = "<group>"; };
+		2EBA63041FA8840600B82A23 /* Bruno Mars,Royce Da,Eminem - Lighters.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bruno Mars,Royce Da,Eminem - Lighters.mp3"; sourceTree = "<group>"; };
+		2EBA63051FA8840600B82A23 /* 陈冠希-Salute.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "陈冠希-Salute.mp3"; sourceTree = "<group>"; };
+		2EBA63061FA8840600B82A23 /* 低调组合 - 终点起点.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "低调组合 - 终点起点.mp3"; sourceTree = "<group>"; };
+		2EBA63221FA99E2800B82A23 /* DeviceRelevant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceRelevant.h; sourceTree = "<group>"; };
+		2EBA63231FA99E2800B82A23 /* DeviceRelevant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceRelevant.m; sourceTree = "<group>"; };
+		2EBA63261FA9A20600B82A23 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		2EBA63281FA9A20E00B82A23 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		2EBA632A1FA9A21900B82A23 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		2EBA632C1FA9A24100B82A23 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2EBA632E1FA9A25100B82A23 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		2EBA63301FA9A25B00B82A23 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		CE2BAD1E213E67380051FD2D /* TIEminem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TIEminem.mp3; sourceTree = "<group>"; };
+		CE2BB13D214266DD0051FD2D /* dongdong1.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = dongdong1.tiff; sourceTree = "<group>"; };
+		CE2BB13F2142673E0051FD2D /* dongdong2.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = dongdong2.tiff; sourceTree = "<group>"; };
+		CE2BB1402142673E0051FD2D /* dongdong3.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = dongdong3.tiff; sourceTree = "<group>"; };
+		CE2BB143214275B50051FD2D /* dongdong.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dongdong.gif; sourceTree = "<group>"; };
+		CEB9357C21464A8E00C36C59 /* PlayTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayTool.h; sourceTree = "<group>"; };
+		CEB9357D21464A8F00C36C59 /* PlayTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayTool.m; sourceTree = "<group>"; };
+		CEBDEF1D21391CBF00EE6182 /* GlobalDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalDefine.h; sourceTree = "<group>"; };
+		CEBDEF1E21391D8700EE6182 /* Start.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Start.h; sourceTree = "<group>"; };
+		CEBDEF1F21391D8700EE6182 /* Start.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Start.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E63E7421FA306FD00C37FDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EBA63291FA9A20E00B82A23 /* CoreTelephony.framework in Frameworks */,
+				2EBA63311FA9A25B00B82A23 /* libc++.tbd in Frameworks */,
+				2EBA632F1FA9A25100B82A23 /* libz.tbd in Frameworks */,
+				2EBA632D1FA9A24100B82A23 /* SystemConfiguration.framework in Frameworks */,
+				2EBA632B1FA9A21A00B82A23 /* CoreMotion.framework in Frameworks */,
+				2EBA63271FA9A20600B82A23 /* AdSupport.framework in Frameworks */,
+				2E667CB11FA7811D00892AF0 /* libTalkingData.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E63E73C1FA306FD00C37FDE = {
+			isa = PBXGroup;
+			children = (
+				2E63E7471FA306FD00C37FDE /* BOB */,
+				2E63E7461FA306FD00C37FDE /* Products */,
+				2EBA63251FA9A20600B82A23 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2E63E7461FA306FD00C37FDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2E63E7451FA306FD00C37FDE /* BOB.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2E63E7471FA306FD00C37FDE /* BOB */ = {
+			isa = PBXGroup;
+			children = (
+				2E63E7481FA306FD00C37FDE /* AppDelegate.h */,
+				2E63E7491FA306FD00C37FDE /* AppDelegate.m */,
+				CEBDEF1E21391D8700EE6182 /* Start.h */,
+				CEBDEF1F21391D8700EE6182 /* Start.m */,
+				2EBA63431FA9B59300B82A23 /* ViewController */,
+				2EBA631E1FA99C8300B82A23 /* PublicTool */,
+				2EBA62851FA84D5400B82A23 /* Supporting Files */,
+				2E63E7A91FA31FDD00C37FDE /* Resource */,
+				2E63E76A1FA3186000C37FDE /* SDK */,
+			);
+			path = BOB;
+			sourceTree = "<group>";
+		};
+		2E63E76A1FA3186000C37FDE /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				2E64512F1FAAB4B100FCCF70 /* SDWebImage */,
+				2E667CAE1FA7811D00892AF0 /* TD */,
+				2E63E76B1FA3186000C37FDE /* SVProgressHUD */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		2E63E76B1FA3186000C37FDE /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				2E63E76C1FA3186000C37FDE /* SVIndefiniteAnimatedView.h */,
+				2E63E76D1FA3186000C37FDE /* SVIndefiniteAnimatedView.m */,
+				2E63E76E1FA3186000C37FDE /* SVProgressAnimatedView.h */,
+				2E63E76F1FA3186000C37FDE /* SVProgressAnimatedView.m */,
+				2E63E7701FA3186000C37FDE /* SVProgressHUD-Prefix.pch */,
+				2E63E7711FA3186000C37FDE /* SVProgressHUD.bundle */,
+				2E63E7721FA3186000C37FDE /* SVProgressHUD.h */,
+				2E63E7731FA3186000C37FDE /* SVProgressHUD.m */,
+				2E63E7741FA3186000C37FDE /* SVRadialGradientLayer.h */,
+				2E63E7751FA3186000C37FDE /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		2E63E7A91FA31FDD00C37FDE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2EBA62BA1FA86D4000B82A23 /* pic */,
+				2E63E7AA1FA31FDD00C37FDE /* sound */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		2E63E7AA1FA31FDD00C37FDE /* sound */ = {
+			isa = PBXGroup;
+			children = (
+				CE2BAD1E213E67380051FD2D /* TIEminem.mp3 */,
+				2EBA63051FA8840600B82A23 /* 陈冠希-Salute.mp3 */,
+				2EBA62FE1FA8840500B82A23 /* 陈冠希,MC Hotdog - King Boomba's Crew.mp3 */,
+				2EBA63011FA8840500B82A23 /* 陈鸿宇 - 理想三旬.mp3 */,
+				2EBA63031FA8840600B82A23 /* 陈梓童-控制.mp3 */,
+				2EBA62FF1FA8840500B82A23 /* 大鹏-塑料袋.mp3 */,
+				2EBA63061FA8840600B82A23 /* 低调组合 - 终点起点.mp3 */,
+				2EBA63041FA8840600B82A23 /* Bruno Mars,Royce Da,Eminem - Lighters.mp3 */,
+				2EBA62FD1FA8840500B82A23 /* Cammay Ng - Cry Away.mp3 */,
+				2EBA63021FA8840500B82A23 /* Oh Susanna - Sleepy Little Sailor.mp3 */,
+				2EBA63001FA8840500B82A23 /* Ryan.B,AY楊佬叁 - 再也没有.mp3 */,
+				2EBA62FC1FA8840500B82A23 /* Tupac - Ambitionz Az a Ridah.mp3 */,
+				2E63E7AB1FA31FDD00C37FDE /* Alan Walker-Spectre.mp3 */,
+				2E63E7AC1FA31FDD00C37FDE /* Rihanna-Diamonds.mp3 */,
+				2E63E7AD1FA31FDD00C37FDE /* 江语晨 - 最后一页.mp3 */,
+			);
+			path = sound;
+			sourceTree = "<group>";
+		};
+		2E64512F1FAAB4B100FCCF70 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				2E6451301FAAB4B100FCCF70 /* NSData+ImageContentType.h */,
+				2E6451311FAAB4B100FCCF70 /* NSData+ImageContentType.m */,
+				2E6451321FAAB4B100FCCF70 /* SDImageCache.h */,
+				2E6451331FAAB4B100FCCF70 /* SDImageCache.m */,
+				2E6451341FAAB4B100FCCF70 /* SDWebImageCompat.h */,
+				2E6451351FAAB4B100FCCF70 /* SDWebImageCompat.m */,
+				2E6451361FAAB4B100FCCF70 /* SDWebImageDecoder.h */,
+				2E6451371FAAB4B100FCCF70 /* SDWebImageDecoder.m */,
+				2E6451381FAAB4B100FCCF70 /* SDWebImageDownloader.h */,
+				2E6451391FAAB4B100FCCF70 /* SDWebImageDownloader.m */,
+				2E64513A1FAAB4B100FCCF70 /* SDWebImageDownloaderOperation.h */,
+				2E64513B1FAAB4B100FCCF70 /* SDWebImageDownloaderOperation.m */,
+				2E64513C1FAAB4B100FCCF70 /* SDWebImageManager.h */,
+				2E64513D1FAAB4B100FCCF70 /* SDWebImageManager.m */,
+				2E64513E1FAAB4B100FCCF70 /* SDWebImageOperation.h */,
+				2E64513F1FAAB4B100FCCF70 /* SDWebImagePrefetcher.h */,
+				2E6451401FAAB4B100FCCF70 /* SDWebImagePrefetcher.m */,
+				2E6451411FAAB4B100FCCF70 /* UIButton+WebCache.h */,
+				2E6451421FAAB4B100FCCF70 /* UIButton+WebCache.m */,
+				2E6451431FAAB4B100FCCF70 /* UIImage+GIF.h */,
+				2E6451441FAAB4B100FCCF70 /* UIImage+GIF.m */,
+				2E6451451FAAB4B100FCCF70 /* UIImage+MultiFormat.h */,
+				2E6451461FAAB4B100FCCF70 /* UIImage+MultiFormat.m */,
+				2E6451471FAAB4B100FCCF70 /* UIImageView+HighlightedWebCache.h */,
+				2E6451481FAAB4B100FCCF70 /* UIImageView+HighlightedWebCache.m */,
+				2E6451491FAAB4B100FCCF70 /* UIImageView+WebCache.h */,
+				2E64514A1FAAB4B100FCCF70 /* UIImageView+WebCache.m */,
+				2E64514B1FAAB4B100FCCF70 /* UIView+WebCacheOperation.h */,
+				2E64514C1FAAB4B100FCCF70 /* UIView+WebCacheOperation.m */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		2E667CAE1FA7811D00892AF0 /* TD */ = {
+			isa = PBXGroup;
+			children = (
+				2E667CAF1FA7811D00892AF0 /* libTalkingData.a */,
+				2E667CB01FA7811D00892AF0 /* TalkingData.h */,
+			);
+			path = TD;
+			sourceTree = "<group>";
+		};
+		2EBA62851FA84D5400B82A23 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2EBA62861FA84DB300B82A23 /* Info.plist */,
+				2EBA627E1FA84D3C00B82A23 /* Assets.xcassets */,
+				2EBA627F1FA84D3D00B82A23 /* main.m */,
+				2EBA62A11FA856ED00B82A23 /* BOBPublicHeader.pch */,
+				2E6450FA1FA9CA9800FCCF70 /* Launch Screen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2EBA62BA1FA86D4000B82A23 /* pic */ = {
+			isa = PBXGroup;
+			children = (
+				2EBA62BB1FA86D4000B82A23 /* icon */,
+				2EBA62C31FA86D4000B82A23 /* image */,
+			);
+			path = pic;
+			sourceTree = "<group>";
+		};
+		2EBA62BB1FA86D4000B82A23 /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				2EBA62BC1FA86D4000B82A23 /* musicPiccry.png */,
+				2EBA62BD1FA86D4000B82A23 /* musicPicFinder.png */,
+				2EBA62BE1FA86D4000B82A23 /* musicPicSmile.png */,
+				2EBA62BF1FA86D4000B82A23 /* musicPic灯泡.png */,
+				2EBA62C01FA86D4000B82A23 /* musicPic笑脸.png */,
+				2EBA62C11FA86D4000B82A23 /* musicPic跑酷.png */,
+				2EBA62C21FA86D4000B82A23 /* musicPic酷.png */,
+			);
+			path = icon;
+			sourceTree = "<group>";
+		};
+		2EBA62C31FA86D4000B82A23 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				CE2BB143214275B50051FD2D /* dongdong.gif */,
+				CE2BB13D214266DD0051FD2D /* dongdong1.tiff */,
+				CE2BB13F2142673E0051FD2D /* dongdong2.tiff */,
+				CE2BB1402142673E0051FD2D /* dongdong3.tiff */,
+				2EBA62C41FA86D4000B82A23 /* musicPic06.png */,
+				2EBA62C51FA86D4000B82A23 /* musicPicadidasi.jpg */,
+				2EBA62C61FA86D4000B82A23 /* musicPic小丑妹.png */,
+				2EBA62C71FA86D4000B82A23 /* musicPic小马.jpeg */,
+				2EBA62C81FA86D4000B82A23 /* musicPic拓海.png */,
+				2EBA62C91FA86D4000B82A23 /* musicPic润发.jpeg */,
+				2EBA62CA1FA86D4000B82A23 /* musicPic自杀突击队.jpg */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		2EBA631E1FA99C8300B82A23 /* PublicTool */ = {
+			isa = PBXGroup;
+			children = (
+				2EBA63221FA99E2800B82A23 /* DeviceRelevant.h */,
+				2EBA63231FA99E2800B82A23 /* DeviceRelevant.m */,
+				CEBDEF1D21391CBF00EE6182 /* GlobalDefine.h */,
+				CEB9357C21464A8E00C36C59 /* PlayTool.h */,
+				CEB9357D21464A8F00C36C59 /* PlayTool.m */,
+			);
+			path = PublicTool;
+			sourceTree = "<group>";
+		};
+		2EBA63251FA9A20600B82A23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2EBA63301FA9A25B00B82A23 /* libc++.tbd */,
+				2EBA632E1FA9A25100B82A23 /* libz.tbd */,
+				2EBA632C1FA9A24100B82A23 /* SystemConfiguration.framework */,
+				2EBA632A1FA9A21900B82A23 /* CoreMotion.framework */,
+				2EBA63281FA9A20E00B82A23 /* CoreTelephony.framework */,
+				2EBA63261FA9A20600B82A23 /* AdSupport.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2EBA63431FA9B59300B82A23 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E6450F71FA9C77D00FCCF70 /* MusicPlayVCViewController.h */,
+				2E6450F81FA9C77D00FCCF70 /* MusicPlayVCViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2E63E7441FA306FD00C37FDE /* BOB */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E63E75B1FA306FD00C37FDE /* Build configuration list for PBXNativeTarget "BOB" */;
+			buildPhases = (
+				2E63E7411FA306FD00C37FDE /* Sources */,
+				2E63E7421FA306FD00C37FDE /* Frameworks */,
+				2E63E7431FA306FD00C37FDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BOB;
+			productName = BOB;
+			productReference = 2E63E7451FA306FD00C37FDE /* BOB.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2E63E73D1FA306FD00C37FDE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = qunyingji;
+				TargetAttributes = {
+					2E63E7441FA306FD00C37FDE = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 2E63E7401FA306FD00C37FDE /* Build configuration list for PBXProject "BOB" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2E63E73C1FA306FD00C37FDE;
+			productRefGroup = 2E63E7461FA306FD00C37FDE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E63E7441FA306FD00C37FDE /* BOB */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E63E7431FA306FD00C37FDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EBA62D51FA86D4000B82A23 /* musicPic小马.jpeg in Resources */,
+				2EBA63111FA8840600B82A23 /* 陈冠希-Salute.mp3 in Resources */,
+				2EBA630D1FA8840600B82A23 /* 陈鸿宇 - 理想三旬.mp3 in Resources */,
+				2EBA62D11FA86D4000B82A23 /* musicPic酷.png in Resources */,
+				2EBA63081FA8840600B82A23 /* Tupac - Ambitionz Az a Ridah.mp3 in Resources */,
+				2EBA62CF1FA86D4000B82A23 /* musicPic笑脸.png in Resources */,
+				2E6450FB1FA9CA9800FCCF70 /* Launch Screen.storyboard in Resources */,
+				2EBA62831FA84D3D00B82A23 /* Assets.xcassets in Resources */,
+				2EBA630A1FA8840600B82A23 /* 陈冠希,MC Hotdog - King Boomba's Crew.mp3 in Resources */,
+				2EBA62D21FA86D4000B82A23 /* musicPic06.png in Resources */,
+				2EBA63101FA8840600B82A23 /* Bruno Mars,Royce Da,Eminem - Lighters.mp3 in Resources */,
+				2EBA62CC1FA86D4000B82A23 /* musicPicFinder.png in Resources */,
+				2EBA62871FA84DB300B82A23 /* Info.plist in Resources */,
+				2EBA63091FA8840600B82A23 /* Cammay Ng - Cry Away.mp3 in Resources */,
+				2EBA630E1FA8840600B82A23 /* Oh Susanna - Sleepy Little Sailor.mp3 in Resources */,
+				2EBA63121FA8840600B82A23 /* 低调组合 - 终点起点.mp3 in Resources */,
+				CE2BB144214275B50051FD2D /* dongdong.gif in Resources */,
+				2EBA62CB1FA86D4000B82A23 /* musicPiccry.png in Resources */,
+				2EBA62D71FA86D4000B82A23 /* musicPic润发.jpeg in Resources */,
+				2E63E7AE1FA31FDD00C37FDE /* Alan Walker-Spectre.mp3 in Resources */,
+				2EBA62CD1FA86D4000B82A23 /* musicPicSmile.png in Resources */,
+				2EBA62D81FA86D4000B82A23 /* musicPic自杀突击队.jpg in Resources */,
+				2EBA62D41FA86D4000B82A23 /* musicPic小丑妹.png in Resources */,
+				2EBA62D61FA86D4000B82A23 /* musicPic拓海.png in Resources */,
+				2EBA630C1FA8840600B82A23 /* Ryan.B,AY楊佬叁 - 再也没有.mp3 in Resources */,
+				2E63E7AF1FA31FDD00C37FDE /* Rihanna-Diamonds.mp3 in Resources */,
+				CE2BB13E214266DE0051FD2D /* dongdong1.tiff in Resources */,
+				2EBA630F1FA8840600B82A23 /* 陈梓童-控制.mp3 in Resources */,
+				2EBA630B1FA8840600B82A23 /* 大鹏-塑料袋.mp3 in Resources */,
+				CE2BB1422142673E0051FD2D /* dongdong3.tiff in Resources */,
+				2EBA62D01FA86D4000B82A23 /* musicPic跑酷.png in Resources */,
+				2E63E7781FA3186000C37FDE /* SVProgressHUD.bundle in Resources */,
+				CE2BB1412142673E0051FD2D /* dongdong2.tiff in Resources */,
+				2EBA62D31FA86D4000B82A23 /* musicPicadidasi.jpg in Resources */,
+				2EBA62CE1FA86D4000B82A23 /* musicPic灯泡.png in Resources */,
+				CE2BAD1F213E67380051FD2D /* TIEminem.mp3 in Resources */,
+				2E63E7B01FA31FDD00C37FDE /* 江语晨 - 最后一页.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E63E7411FA306FD00C37FDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEBDEF2021391D8700EE6182 /* Start.m in Sources */,
+				2E6451591FAAB4B100FCCF70 /* UIImageView+WebCache.m in Sources */,
+				2E6451501FAAB4B100FCCF70 /* SDWebImageDecoder.m in Sources */,
+				2E6451531FAAB4B100FCCF70 /* SDWebImageManager.m in Sources */,
+				2E64514D1FAAB4B100FCCF70 /* NSData+ImageContentType.m in Sources */,
+				2E64514F1FAAB4B100FCCF70 /* SDWebImageCompat.m in Sources */,
+				2E63E77A1FA3186000C37FDE /* SVRadialGradientLayer.m in Sources */,
+				2E6450F91FA9C77D00FCCF70 /* MusicPlayVCViewController.m in Sources */,
+				2E64515A1FAAB4B100FCCF70 /* UIView+WebCacheOperation.m in Sources */,
+				2EBA63241FA99E2800B82A23 /* DeviceRelevant.m in Sources */,
+				2E6451551FAAB4B100FCCF70 /* UIButton+WebCache.m in Sources */,
+				2E6451541FAAB4B100FCCF70 /* SDWebImagePrefetcher.m in Sources */,
+				2E6451521FAAB4B100FCCF70 /* SDWebImageDownloaderOperation.m in Sources */,
+				2E63E7771FA3186000C37FDE /* SVProgressAnimatedView.m in Sources */,
+				2E63E74A1FA306FD00C37FDE /* AppDelegate.m in Sources */,
+				2E6451581FAAB4B100FCCF70 /* UIImageView+HighlightedWebCache.m in Sources */,
+				2E6451571FAAB4B100FCCF70 /* UIImage+MultiFormat.m in Sources */,
+				CEB9357E21464A8F00C36C59 /* PlayTool.m in Sources */,
+				2E63E7761FA3186000C37FDE /* SVIndefiniteAnimatedView.m in Sources */,
+				2E64514E1FAAB4B100FCCF70 /* SDImageCache.m in Sources */,
+				2EBA62841FA84D3D00B82A23 /* main.m in Sources */,
+				2E6451561FAAB4B100FCCF70 /* UIImage+GIF.m in Sources */,
+				2E6451511FAAB4B100FCCF70 /* SDWebImageDownloader.m in Sources */,
+				2E63E7791FA3186000C37FDE /* SVProgressHUD.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2E63E7591FA306FD00C37FDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2E63E75A1FA306FD00C37FDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2E63E75C1FA306FD00C37FDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XP56ZJ4JW8;
+				GCC_PREFIX_HEADER = "BOB/Supporting Files/BOBPublicHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/BOB/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BOB/SDK/TD",
+				);
+				OTHER_LDFLAGS = "-Objc";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingan.koudai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "350a8572-8ad1-47b1-b060-fb18dccf45dd";
+				PROVISIONING_PROFILE_SPECIFIER = koudai_dev;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2E63E75D1FA306FD00C37FDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XP56ZJ4JW8;
+				GCC_PREFIX_HEADER = "BOB/Supporting Files/BOBPublicHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/BOB/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BOB/SDK/TD",
+				);
+				OTHER_LDFLAGS = "-Objc";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingan.koudai;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "350a8572-8ad1-47b1-b060-fb18dccf45dd";
+				PROVISIONING_PROFILE_SPECIFIER = koudai_dev;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2E63E7401FA306FD00C37FDE /* Build configuration list for PBXProject "BOB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E63E7591FA306FD00C37FDE /* Debug */,
+				2E63E75A1FA306FD00C37FDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E63E75B1FA306FD00C37FDE /* Build configuration list for PBXNativeTarget "BOB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E63E75C1FA306FD00C37FDE /* Debug */,
+				2E63E75D1FA306FD00C37FDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2E63E73D1FA306FD00C37FDE /* Project object */;
+}
