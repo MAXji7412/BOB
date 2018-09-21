@@ -10,6 +10,7 @@
 
 #import "Start.h"
 #import "PlayTool.h"
+#import "TabBarController.h"
 
 @interface AppDelegate ()
 
@@ -32,13 +33,18 @@
     
     self.window. backgroundColor = [UIColor orangeColor];
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[NSClassFromString(@"MusicPlayVCViewController") new]];
-    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[TabBarController share]];
     self.window.rootViewController = nav;
     
     [self.window makeKeyAndVisible];
 }
 
+
+/**
+ 将要失去活跃状态
+
+ @param application <#application description#>
+ */
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

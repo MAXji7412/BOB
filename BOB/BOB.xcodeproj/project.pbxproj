@@ -16,7 +16,6 @@
 		2E63E7AE1FA31FDD00C37FDE /* Alan Walker-Spectre.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E63E7AB1FA31FDD00C37FDE /* Alan Walker-Spectre.mp3 */; };
 		2E63E7AF1FA31FDD00C37FDE /* Rihanna-Diamonds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E63E7AC1FA31FDD00C37FDE /* Rihanna-Diamonds.mp3 */; };
 		2E63E7B01FA31FDD00C37FDE /* 江语晨 - 最后一页.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2E63E7AD1FA31FDD00C37FDE /* 江语晨 - 最后一页.mp3 */; };
-		2E6450F91FA9C77D00FCCF70 /* MusicPlayVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6450F81FA9C77D00FCCF70 /* MusicPlayVCViewController.m */; };
 		2E6450FB1FA9CA9800FCCF70 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E6450FA1FA9CA9800FCCF70 /* Launch Screen.storyboard */; };
 		2E64514D1FAAB4B100FCCF70 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6451311FAAB4B100FCCF70 /* NSData+ImageContentType.m */; };
 		2E64514E1FAAB4B100FCCF70 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E6451331FAAB4B100FCCF70 /* SDImageCache.m */; };
@@ -75,6 +74,17 @@
 		CE2BB144214275B50051FD2D /* dongdong.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE2BB143214275B50051FD2D /* dongdong.gif */; };
 		CEB9357E21464A8F00C36C59 /* PlayTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB9357D21464A8F00C36C59 /* PlayTool.m */; };
 		CEBDEF2021391D8700EE6182 /* Start.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBDEF1F21391D8700EE6182 /* Start.m */; };
+		CEC665AB2153913300838C88 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC665AA2153913300838C88 /* TabBarController.m */; };
+		CEC665AE2153920E00838C88 /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC665AD2153920E00838C88 /* TabViewController.m */; };
+		CEC665B42153933100838C88 /* MusicPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC665B32153933100838C88 /* MusicPlayViewController.m */; };
+		CEC665BD2153ADD800838C88 /* tab_xizi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC665B72153ADD800838C88 /* tab_xizi@3x.png */; };
+		CEC665BE2153ADD800838C88 /* tab_xizi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC665B82153ADD800838C88 /* tab_xizi@2x.png */; };
+		CEC665BF2153ADD800838C88 /* tab_niu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC665B92153ADD800838C88 /* tab_niu@3x.png */; };
+		CEC665C02153ADD800838C88 /* tab_tuzi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC665BA2153ADD800838C88 /* tab_tuzi@3x.png */; };
+		CEC665C12153ADD800838C88 /* tab_tuzi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC665BB2153ADD800838C88 /* tab_tuzi@2x.png */; };
+		CEC665C22153ADD800838C88 /* tab_niu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC665BC2153ADD800838C88 /* tab_niu@2x.png */; };
+		CEC665C52153AE9B00838C88 /* tab_shatan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC665C32153AE9B00838C88 /* tab_shatan@2x.png */; };
+		CEC665C62153AE9B00838C88 /* tab_shatan@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC665C42153AE9B00838C88 /* tab_shatan@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,8 +104,6 @@
 		2E63E7AB1FA31FDD00C37FDE /* Alan Walker-Spectre.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Alan Walker-Spectre.mp3"; sourceTree = "<group>"; };
 		2E63E7AC1FA31FDD00C37FDE /* Rihanna-Diamonds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Rihanna-Diamonds.mp3"; sourceTree = "<group>"; };
 		2E63E7AD1FA31FDD00C37FDE /* 江语晨 - 最后一页.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "江语晨 - 最后一页.mp3"; sourceTree = "<group>"; };
-		2E6450F71FA9C77D00FCCF70 /* MusicPlayVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicPlayVCViewController.h; sourceTree = "<group>"; };
-		2E6450F81FA9C77D00FCCF70 /* MusicPlayVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicPlayVCViewController.m; sourceTree = "<group>"; };
 		2E6450FA1FA9CA9800FCCF70 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		2E6451301FAAB4B100FCCF70 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
 		2E6451311FAAB4B100FCCF70 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
@@ -175,6 +183,20 @@
 		CEBDEF1D21391CBF00EE6182 /* GlobalDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalDefine.h; sourceTree = "<group>"; };
 		CEBDEF1E21391D8700EE6182 /* Start.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Start.h; sourceTree = "<group>"; };
 		CEBDEF1F21391D8700EE6182 /* Start.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Start.m; sourceTree = "<group>"; };
+		CEC665A92153913300838C88 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		CEC665AA2153913300838C88 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		CEC665AC2153920E00838C88 /* TabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabViewController.h; sourceTree = "<group>"; };
+		CEC665AD2153920E00838C88 /* TabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabViewController.m; sourceTree = "<group>"; };
+		CEC665B22153933100838C88 /* MusicPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicPlayViewController.h; sourceTree = "<group>"; };
+		CEC665B32153933100838C88 /* MusicPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicPlayViewController.m; sourceTree = "<group>"; };
+		CEC665B72153ADD800838C88 /* tab_xizi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_xizi@3x.png"; sourceTree = "<group>"; };
+		CEC665B82153ADD800838C88 /* tab_xizi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_xizi@2x.png"; sourceTree = "<group>"; };
+		CEC665B92153ADD800838C88 /* tab_niu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_niu@3x.png"; sourceTree = "<group>"; };
+		CEC665BA2153ADD800838C88 /* tab_tuzi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_tuzi@3x.png"; sourceTree = "<group>"; };
+		CEC665BB2153ADD800838C88 /* tab_tuzi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_tuzi@2x.png"; sourceTree = "<group>"; };
+		CEC665BC2153ADD800838C88 /* tab_niu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_niu@2x.png"; sourceTree = "<group>"; };
+		CEC665C32153AE9B00838C88 /* tab_shatan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_shatan@2x.png"; sourceTree = "<group>"; };
+		CEC665C42153AE9B00838C88 /* tab_shatan@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_shatan@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +377,7 @@
 		2EBA62BB1FA86D4000B82A23 /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				CEC665B62153ADD800838C88 /* tab_icon */,
 				2EBA62BC1FA86D4000B82A23 /* musicPiccry.png */,
 				2EBA62BD1FA86D4000B82A23 /* musicPicFinder.png */,
 				2EBA62BE1FA86D4000B82A23 /* musicPicSmile.png */,
@@ -412,10 +435,29 @@
 		2EBA63431FA9B59300B82A23 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2E6450F71FA9C77D00FCCF70 /* MusicPlayVCViewController.h */,
-				2E6450F81FA9C77D00FCCF70 /* MusicPlayVCViewController.m */,
+				CEC665A92153913300838C88 /* TabBarController.h */,
+				CEC665AA2153913300838C88 /* TabBarController.m */,
+				CEC665AC2153920E00838C88 /* TabViewController.h */,
+				CEC665AD2153920E00838C88 /* TabViewController.m */,
+				CEC665B22153933100838C88 /* MusicPlayViewController.h */,
+				CEC665B32153933100838C88 /* MusicPlayViewController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CEC665B62153ADD800838C88 /* tab_icon */ = {
+			isa = PBXGroup;
+			children = (
+				CEC665C32153AE9B00838C88 /* tab_shatan@2x.png */,
+				CEC665C42153AE9B00838C88 /* tab_shatan@3x.png */,
+				CEC665B72153ADD800838C88 /* tab_xizi@3x.png */,
+				CEC665B82153ADD800838C88 /* tab_xizi@2x.png */,
+				CEC665B92153ADD800838C88 /* tab_niu@3x.png */,
+				CEC665BA2153ADD800838C88 /* tab_tuzi@3x.png */,
+				CEC665BB2153ADD800838C88 /* tab_tuzi@2x.png */,
+				CEC665BC2153ADD800838C88 /* tab_niu@2x.png */,
+			);
+			path = tab_icon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,6 +532,8 @@
 				2EBA62D11FA86D4000B82A23 /* musicPic酷.png in Resources */,
 				2EBA63081FA8840600B82A23 /* Tupac - Ambitionz Az a Ridah.mp3 in Resources */,
 				2EBA62CF1FA86D4000B82A23 /* musicPic笑脸.png in Resources */,
+				CEC665BE2153ADD800838C88 /* tab_xizi@2x.png in Resources */,
+				CEC665C02153ADD800838C88 /* tab_tuzi@3x.png in Resources */,
 				2E6450FB1FA9CA9800FCCF70 /* Launch Screen.storyboard in Resources */,
 				2EBA62831FA84D3D00B82A23 /* Assets.xcassets in Resources */,
 				2EBA630A1FA8840600B82A23 /* 陈冠希,MC Hotdog - King Boomba's Crew.mp3 in Resources */,
@@ -498,17 +542,21 @@
 				2EBA62CC1FA86D4000B82A23 /* musicPicFinder.png in Resources */,
 				2EBA62871FA84DB300B82A23 /* Info.plist in Resources */,
 				2EBA63091FA8840600B82A23 /* Cammay Ng - Cry Away.mp3 in Resources */,
+				CEC665C12153ADD800838C88 /* tab_tuzi@2x.png in Resources */,
 				2EBA630E1FA8840600B82A23 /* Oh Susanna - Sleepy Little Sailor.mp3 in Resources */,
 				2EBA63121FA8840600B82A23 /* 低调组合 - 终点起点.mp3 in Resources */,
 				CE2BB144214275B50051FD2D /* dongdong.gif in Resources */,
 				2EBA62CB1FA86D4000B82A23 /* musicPiccry.png in Resources */,
 				2EBA62D71FA86D4000B82A23 /* musicPic润发.jpeg in Resources */,
 				2E63E7AE1FA31FDD00C37FDE /* Alan Walker-Spectre.mp3 in Resources */,
+				CEC665C52153AE9B00838C88 /* tab_shatan@2x.png in Resources */,
 				2EBA62CD1FA86D4000B82A23 /* musicPicSmile.png in Resources */,
 				2EBA62D81FA86D4000B82A23 /* musicPic自杀突击队.jpg in Resources */,
 				2EBA62D41FA86D4000B82A23 /* musicPic小丑妹.png in Resources */,
 				2EBA62D61FA86D4000B82A23 /* musicPic拓海.png in Resources */,
 				2EBA630C1FA8840600B82A23 /* Ryan.B,AY楊佬叁 - 再也没有.mp3 in Resources */,
+				CEC665C22153ADD800838C88 /* tab_niu@2x.png in Resources */,
+				CEC665C62153AE9B00838C88 /* tab_shatan@3x.png in Resources */,
 				2E63E7AF1FA31FDD00C37FDE /* Rihanna-Diamonds.mp3 in Resources */,
 				CE2BB13E214266DE0051FD2D /* dongdong1.tiff in Resources */,
 				2EBA630F1FA8840600B82A23 /* 陈梓童-控制.mp3 in Resources */,
@@ -521,6 +569,8 @@
 				2EBA62CE1FA86D4000B82A23 /* musicPic灯泡.png in Resources */,
 				CE2BAD1F213E67380051FD2D /* TIEminem.mp3 in Resources */,
 				2E63E7B01FA31FDD00C37FDE /* 江语晨 - 最后一页.mp3 in Resources */,
+				CEC665BF2153ADD800838C88 /* tab_niu@3x.png in Resources */,
+				CEC665BD2153ADD800838C88 /* tab_xizi@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,8 +587,9 @@
 				2E6451531FAAB4B100FCCF70 /* SDWebImageManager.m in Sources */,
 				2E64514D1FAAB4B100FCCF70 /* NSData+ImageContentType.m in Sources */,
 				2E64514F1FAAB4B100FCCF70 /* SDWebImageCompat.m in Sources */,
+				CEC665AE2153920E00838C88 /* TabViewController.m in Sources */,
 				2E63E77A1FA3186000C37FDE /* SVRadialGradientLayer.m in Sources */,
-				2E6450F91FA9C77D00FCCF70 /* MusicPlayVCViewController.m in Sources */,
+				CEC665B42153933100838C88 /* MusicPlayViewController.m in Sources */,
 				2E64515A1FAAB4B100FCCF70 /* UIView+WebCacheOperation.m in Sources */,
 				2EBA63241FA99E2800B82A23 /* DeviceRelevant.m in Sources */,
 				2E6451551FAAB4B100FCCF70 /* UIButton+WebCache.m in Sources */,
@@ -553,6 +604,7 @@
 				2E64514E1FAAB4B100FCCF70 /* SDImageCache.m in Sources */,
 				2EBA62841FA84D3D00B82A23 /* main.m in Sources */,
 				2E6451561FAAB4B100FCCF70 /* UIImage+GIF.m in Sources */,
+				CEC665AB2153913300838C88 /* TabBarController.m in Sources */,
 				2E6451511FAAB4B100FCCF70 /* SDWebImageDownloader.m in Sources */,
 				2E63E7791FA3186000C37FDE /* SVProgressHUD.m in Sources */,
 			);

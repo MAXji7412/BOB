@@ -1,14 +1,14 @@
 //
-//  MusicPlayVCViewController.m
+//  MusicPlayViewController.m
 //  BOB
 //
-//  Created by ying on 2017/11/1.
-//  Copyright © 2017年 qunyingji. All rights reserved.
+//  Created by 汲群英 on 2018/9/20.
+//  Copyright © 2018年 qunyingji. All rights reserved.
 //
 
-#import "MusicPlayVCViewController.h"
+#import "MusicPlayViewController.h"
 
-//#import "UIImage+GIF.h"
+#import "TabBarController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "GlobalDefine.h"
 #import <UIKit/UIKit.h>
@@ -16,7 +16,7 @@
 
 #define ExcessTag 50
 
-@interface MusicPlayVCViewController ()<AVAudioPlayerDelegate,UIScrollViewDelegate,CALayerDelegate>
+@interface MusicPlayViewController ()<AVAudioPlayerDelegate,UIScrollViewDelegate,CALayerDelegate>
 {
     NSTimer *_timer;
     UIScrollView *scrollV;
@@ -30,9 +30,11 @@
 
 @end
 
-@implementation MusicPlayVCViewController
+@implementation MusicPlayViewController
 
 #pragma mark ViewControllerLife
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -98,7 +100,7 @@
         return;
     }
     NSString *name = CheckString(musicInfo[MusicNeme]);
-    self.title = name;
+    [TabBarController share].title = name;
     [self creatAudioPlayerWithName:musicInfo[MusicUrl] complete:^(NSError *error,NSString *path) {
         
         if (!error) {
@@ -215,7 +217,7 @@
     // 动画初始化
     dynamicEffectImage.layer.speed = 1;
     dynamicEffectImage.layer.timeOffset = 0;
-//    dynamicEffectImage.layer.beginTime = 0;
+    //    dynamicEffectImage.layer.beginTime = 0;
     // 程序到这里，动画就能继续进行了，但不是连贯的，而是动画在背后默默“偷跑”的位置，如果超过一个动画周期，则是初始位置
     // 当前时间（恢复时的时间）
     CFTimeInterval continueTime = [dynamicEffectImage.layer convertTime:CACurrentMediaTime() fromLayer:nil];
