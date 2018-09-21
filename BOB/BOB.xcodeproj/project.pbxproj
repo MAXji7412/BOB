@@ -85,6 +85,7 @@
 		CEC665C22153ADD800838C88 /* tab_niu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC665BC2153ADD800838C88 /* tab_niu@2x.png */; };
 		CEC665C52153AE9B00838C88 /* tab_shatan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC665C32153AE9B00838C88 /* tab_shatan@2x.png */; };
 		CEC665C62153AE9B00838C88 /* tab_shatan@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC665C42153AE9B00838C88 /* tab_shatan@3x.png */; };
+		CEC6660821548C0900838C88 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC6660721548C0900838C88 /* NavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -197,6 +198,8 @@
 		CEC665BC2153ADD800838C88 /* tab_niu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_niu@2x.png"; sourceTree = "<group>"; };
 		CEC665C32153AE9B00838C88 /* tab_shatan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_shatan@2x.png"; sourceTree = "<group>"; };
 		CEC665C42153AE9B00838C88 /* tab_shatan@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_shatan@3x.png"; sourceTree = "<group>"; };
+		CEC6660621548C0900838C88 /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		CEC6660721548C0900838C88 /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,6 +444,8 @@
 				CEC665AD2153920E00838C88 /* TabViewController.m */,
 				CEC665B22153933100838C88 /* MusicPlayViewController.h */,
 				CEC665B32153933100838C88 /* MusicPlayViewController.m */,
+				CEC6660621548C0900838C88 /* NavigationController.h */,
+				CEC6660721548C0900838C88 /* NavigationController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -593,6 +598,7 @@
 				2E64515A1FAAB4B100FCCF70 /* UIView+WebCacheOperation.m in Sources */,
 				2EBA63241FA99E2800B82A23 /* DeviceRelevant.m in Sources */,
 				2E6451551FAAB4B100FCCF70 /* UIButton+WebCache.m in Sources */,
+				CEC6660821548C0900838C88 /* NavigationController.m in Sources */,
 				2E6451541FAAB4B100FCCF70 /* SDWebImagePrefetcher.m in Sources */,
 				2E6451521FAAB4B100FCCF70 /* SDWebImageDownloaderOperation.m in Sources */,
 				2E63E7771FA3186000C37FDE /* SVProgressAnimatedView.m in Sources */,

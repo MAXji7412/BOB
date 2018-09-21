@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PlayTool : NSObject
+#import <AVFoundation/AVFoundation.h>
 
 
 extern NSString *MusicNeme;//歌名
@@ -16,6 +16,14 @@ extern NSString *MusicUrl;//路径(NSURL)
 extern NSString *MusicAlbumName;//专辑名称
 extern NSString *MusicArtist;//艺术家
 extern NSString *MusicImage;//专辑封面(UIImage)
+
+
+@interface PlayTool : NSObject
+
+
+
+
+
 
 
 
@@ -31,6 +39,45 @@ extern NSString *MusicImage;//专辑封面(UIImage)
  @return 当前工程内置歌曲及信息，
  */
 + (NSArray *)getMusicData;
+
+
+
+
+/**
+ 播放音乐
+
+ @param musicInfo 音乐信息
+ @param delegate AVAudioPlayer的代理
+ @return 错误信息，nil代表成功
+ */
++ (NSError *)playByMusicInfo:(NSDictionary *)musicInfo delegate:(id)delegate;
+
+
+
+/**
+ 获取播放实体
+
+ @return 播放实体
+ */
++ (AVAudioPlayer *)getPlayer;
+
+/**
+ 恢复播放
+ */
++ (void)resume;
+
+
+/**
+ 暂停
+ */
++ (void)suspend;
+
+
+
+
+
+
+
 
 
 @end

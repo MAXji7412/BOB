@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "TabViewController.h"
 #import "MusicPlayViewController.h"
+#import "NavigationController.h"
 
 @interface TabBarController ()
 
@@ -34,21 +35,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    MusicPlayViewController *tabVC0 = [MusicPlayViewController new];
-    tabVC0.tabBarItem.image = [UIImage imageNamed:@"tab_niu"];
-    tabVC0.tabBarItem.badgeValue = @"bob";
+    NavigationController *tabNC0 = [[NavigationController alloc] initWithRootViewController:[MusicPlayViewController new]];
+    tabNC0.tabBarItem.image = [UIImage imageNamed:@"tab_niu"];
+    tabNC0.tabBarItem.badgeValue = @"bob";
     
-    TabViewController *tabVC1 = [TabViewController new];
-    tabVC1.tabBarItem.title = @"灯泡";
-    tabVC1.tabBarItem.image = [UIImage imageNamed:@"tab_tuzi"];
+    NavigationController *tabNC1 = [[NavigationController alloc] initWithRootViewController:[TabViewController new]];
     
-    TabViewController *tabVC2 = [TabViewController new];
-    tabVC2.tabBarItem.title = @"🏖";
-    tabVC2.tabBarItem.image = [UIImage imageNamed:@"tab_shatan"];
+    tabNC1.tabBarItem.title = @"灯泡";
+    tabNC1.tabBarItem.image = [UIImage imageNamed:@"tab_tuzi"];
     
-    NSArray *viewControllers = @[tabVC0,tabVC1,tabVC2];
+    NavigationController *tabNC2 = [[NavigationController alloc] initWithRootViewController:[TabViewController new]];
+    tabNC2.tabBarItem.title = @"🏖";
+    tabNC2.tabBarItem.image = [UIImage imageNamed:@"tab_shatan"];
     
-    for (TabViewController *tabVC in viewControllers) {
+    NSArray *viewControllers = @[tabNC0,tabNC1,tabNC2];
+    
+    for (NavigationController *tabVC in viewControllers) {
         
         [tabVC.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}
                                         forState:UIControlStateSelected];

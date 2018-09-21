@@ -16,7 +16,7 @@
 
 #define ExcessTag 50
 
-@interface MusicPlayViewController ()<AVAudioPlayerDelegate,UIScrollViewDelegate,CALayerDelegate>
+@interface MusicPlayViewController ()<AVAudioPlayerDelegate,UIScrollViewDelegate>
 {
     NSTimer *_timer;
     UIScrollView *scrollV;
@@ -25,7 +25,6 @@
     UIImageView *dynamicEffectImage;
 }
 
-@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (assign) NSInteger scrollViewLastPage;//scrollview位置
 
 @end
@@ -74,7 +73,7 @@
         }
         
         NSInteger oldPage = [change[@"old"] integerValue];
-        if ((_scrollViewLastPage == oldPage) && _audioPlayer) {
+        if ((_scrollViewLastPage == oldPage) && [PlayTool getPlayer]) {
             
             return ;
         }
@@ -84,7 +83,7 @@
         [self reductionCurrentImageAngle:oldPage];
         NSDictionary *musicDic = musicDataArr[_scrollViewLastPage];
         
-        [self playByMusicInfo:musicDic];
+        [self playMusic:musicDic];
         
         [UIView animateWithDuration:.3 animations:^{
             [scrollV setContentOffset:CGPointMake(_scrollViewLastPage*ScreenSize.width, 0)];
@@ -93,31 +92,26 @@
     
 }
 
-#pragma mark MusicPlay
-- (void)playByMusicInfo:(NSDictionary *)musicInfo{
-    if (![musicInfo isKindOfClass:NSDictionary.class]) {
-        NSLog(@"数据内容错误1");
-        return;
-    }
-    NSString *name = CheckString(musicInfo[MusicNeme]);
-    [TabBarController share].title = name;
-    [self creatAudioPlayerWithName:musicInfo[MusicUrl] complete:^(NSError *error,NSString *path) {
+- (void)playMusic:(NSDictionary *)musicDic
+{
+    NSError *err = [PlayTool playByMusicInfo:musicDic delegate:self];
+    NSString *name = musicDic[MusicNeme];
+    self.title = name;
+    if (!err) {
         
-        if (!error) {
-            [SVProgressHUD showImage:nil status:name];
-            
-            [TalkingData trackEvent:@"musicPlay" label:name];
-        }else{
-            [SVProgressHUD showErrorWithStatus:error.description];
-            
-            [TalkingData trackEvent:@"musicPlay_Error"
-                              label:name
-                         parameters:@{
-                                      @"error":error.description,
-                                      @"path":CheckString(path)
-                                      }];
-        }
-    }];
+        [self palyResume];
+        [SVProgressHUD showImage:nil status:name];
+        [TalkingData trackEvent:@"musicPlay" label:name];
+    }else{
+        
+        [SVProgressHUD showErrorWithStatus:err.description];
+        [TalkingData trackEvent:@"musicPlay_Error"
+                          label:name
+                     parameters:@{
+                                  @"error":err.description,
+                                  @"path":CheckString(musicDic[MusicUrl])
+                                  }];
+    }
 }
 
 #pragma mark ScrollView
@@ -237,46 +231,21 @@
     dynamicEffectImage.layer.timeOffset = pauseTime;
 }
 
-#pragma mark 播放器
-//创建播放器
-- (void)creatAudioPlayerWithName:(NSURL *)musicUrl complete:(void(^)(NSError *error,NSString *path))complete{
-    
-    NSError *err;
-    
-    if (_audioPlayer) {
-        [_audioPlayer stop];
-        _audioPlayer = nil;
-    }
-    
-    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:musicUrl error:&err];
-    
-    
-    _audioPlayer.delegate = self;
-    if (err) {
-        NSLog(@"声音err:%@",err);
-    }
-    _audioPlayer.enableRate = YES;
-    _audioPlayer.numberOfLoops = 0;
-    if ([_audioPlayer prepareToPlay]) {
-        [self palyResume];
-    }
-    
-    if (complete) {
-        complete(err,musicUrl.absoluteString);
-    }
-}
+
 
 //图片点击事件
 - (void)musicIconClick:(UITapGestureRecognizer *)tap{
-    if (!_audioPlayer) {
+    if (![PlayTool getPlayer]) {
         return;
     }
-    if (_audioPlayer.playing)//播放--》暂停
+    if ([PlayTool getPlayer].playing)//播放--》暂停
     {
+        [PlayTool suspend];
         [self playSuspend];
         
     }else//暂停--》播放
     {
+        [PlayTool resume];
         [self palyResume];
         
     }
@@ -289,24 +258,16 @@
 - (void)palyResume
 {
     [self creatTimer];
-    if (![_audioPlayer isPlaying]) {
-        [_audioPlayer play];
-        _timer.fireDate = [NSDate date];
-        
-        [self audienceContinue];
-        
-    }
+    _timer.fireDate = [NSDate date];
+    [self audienceContinue];
     
 }
 
 //暂停
 - (void)playSuspend
 {
-    if ([_audioPlayer isPlaying]) {
-        [_audioPlayer pause];
-        _timer.fireDate = [NSDate distantFuture];
-        [self audiencePause];
-    }
+    _timer.fireDate = [NSDate distantFuture];
+    [self audiencePause];
     
 }
 
@@ -329,7 +290,7 @@
 
 - (void)timerLoop
 {
-    float accounting = (_audioPlayer.currentTime/_audioPlayer.duration)*M_PI*2;
+    float accounting = ([PlayTool getPlayer].currentTime/[PlayTool getPlayer].duration)*M_PI*2;
     UIImageView *imageV = [scrollV viewWithTag:self.scrollViewLastPage + ExcessTag];
     imageV.transform = CGAffineTransformMakeRotation(accounting);
 }

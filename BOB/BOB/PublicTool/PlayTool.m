@@ -138,30 +138,79 @@ NSString *MusicImage = @"musicImage";//专辑封面(UIImage)
         
     }
     
-    
     //                         sortedArrayUsingComparator:^NSComparisonResult(NSDictionary * _Nonnull obj1, NSDictionary *  _Nonnull obj2) {
     //
     //                             int randomInt = arc4random() %2;
     //                             return randomInt ? [obj1[@"name"] compare:obj2[@"name"]] : [obj2[@"name"] compare:obj1[@"name"]] ;
     //                         }]
     
-    
-    
-    
     return musicDataArrM;
 }
 
 
 
+#pragma mark MusicPlay
+
+static AVAudioPlayer *audioPlayer;
+
++ (NSError *)playByMusicInfo:(NSDictionary *)musicInfo
+               delegate:(id)delegate{
+    
+    if (![musicInfo isKindOfClass:NSDictionary.class]) {
+        NSLog(@"数据内容错误1");
+        return [NSError errorWithDomain:@"" code:0 userInfo:@{
+                                                              @"msg":@"数据内容错误1"
+                                                              }];
+    }
+    
+    NSError *err;
+    
+    if (audioPlayer) {
+        [audioPlayer stop];
+        audioPlayer = nil;
+    }
+    
+    audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:musicInfo[MusicUrl] error:&err];
+    
+    
+    audioPlayer.delegate = delegate;
+    if (err) {
+        NSLog(@"声音err:%@",err);
+    }
+    audioPlayer.enableRate = YES;
+    audioPlayer.numberOfLoops = 0;
+    [audioPlayer play];
+    
+    return err;
+}
 
 
+/**
+ 恢复播放
+ */
++ (void)resume
+{
+    if (![audioPlayer isPlaying]) {
+        [audioPlayer play];
+    }
+}
 
 
+/**
+ 暂停
+ */
++ (void)suspend
+{
+    if ([audioPlayer isPlaying]) {
+        [audioPlayer pause];
+    }
+}
 
 
-
-
-
++ (AVAudioPlayer *)getPlayer
+{
+    return audioPlayer;
+}
 
 
 
