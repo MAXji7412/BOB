@@ -143,7 +143,6 @@ NSString *MusicImage = @"musicImage";//专辑封面(UIImage)
     [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         NSLog(@"???系统要杀我???");
     }];
-    //    [UIApplication sharedApplication].backgroundTimeRemaining
     
 }
 
@@ -176,7 +175,6 @@ static id playDelegate;
     }
     else if(audioPlayer)
     {
-//        [self addResponseToRemoteCommandCenter];
         [self setMediaItemArtworkPlayingInfo:musicInfo];
         
         audioPlayer.delegate = delegate;
@@ -203,45 +201,6 @@ static id playDelegate;
     
     //允许应用程序接收远程控制
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-}
-
-//添加控制中心播放事件
-+ (void)addResponseToRemoteCommandCenter
-{
-    MPRemoteCommandCenter *remoteCommandCenter = [MPRemoteCommandCenter sharedCommandCenter];
-
-    //暂停
-    MPRemoteCommand *pause = remoteCommandCenter.pauseCommand;
-    pause.enabled = YES;
-    [pause addTargetWithHandler:^MPRemoteCommandHandlerStatus(MPRemoteCommandEvent * _Nonnull event) {
-        if (audioPlayer.playing) {
-            [self suspend];
-            return MPRemoteCommandHandlerStatusSuccess;
-        }else{
-            return MPRemoteCommandHandlerStatusNoSuchContent;
-        }
-    }];
-
-    //播放
-    MPRemoteCommand *play = remoteCommandCenter.playCommand;
-    play.enabled = YES;
-    [play addTarget:self action:@selector(resume)];
-
-    //@"下一首"
-    MPRemoteCommand *next = remoteCommandCenter.nextTrackCommand;
-    next.enabled = YES;
-    [next addTargetWithHandler:^MPRemoteCommandHandlerStatus(MPRemoteCommandEvent * _Nonnull event) {
-        NSLog(@"下一首");
-        return MPRemoteCommandHandlerStatusSuccess;
-    }];
-
-    //@"上一首"
-    MPRemoteCommand *previous = remoteCommandCenter.previousTrackCommand;
-    previous.enabled = YES;
-    [previous addTargetWithHandler:^MPRemoteCommandHandlerStatus(MPRemoteCommandEvent * _Nonnull event) {
-        NSLog(@"上一首");
-        return MPRemoteCommandHandlerStatusSuccess;
-    }];
 }
 
 //更新控制中心播放信息

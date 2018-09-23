@@ -48,7 +48,7 @@
     
     
     WKWebViewController *shatanVC = [[ShaTanViewController alloc] initByUrlStr:@"https://weibo.com"];
-    shatanVC.title = @"🏖";
+    shatanVC.title = @"🏖🏖🏖";
     NavigationController *tabNC2 = [[NavigationController alloc] initWithRootViewController:shatanVC];
     tabNC2.tabBarItem.image = [UIImage imageNamed:@"tab_shatan"];
     

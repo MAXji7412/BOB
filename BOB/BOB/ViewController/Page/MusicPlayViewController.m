@@ -14,6 +14,7 @@
 #import <UIKit/UIKit.h>
 #import "PlayTool.h"
 
+#define ImageSize 200
 #define ExcessTag 50
 
 @interface MusicPlayViewController ()<AVAudioPlayerDelegate,UIScrollViewDelegate>
@@ -131,11 +132,12 @@
     for (NSDictionary *musicDic in musicDataArr) {
         
         CGFloat orignX = [musicDataArr indexOfObject:musicDic] *scrollV.bounds.size.width;
+        CGFloat orignY = [self imageTopOrign]-ImageSize/2;
         
         UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(orignX+50,
-                                                                            164,
-                                                                            200,
-                                                                            200)];
+                                                                            orignY,
+                                                                            ImageSize,
+                                                                            ImageSize)];
         
         imageV.tag = [musicDataArr indexOfObject:musicDic] + ExcessTag;
         imageV.layer.cornerRadius = 10;
@@ -157,6 +159,7 @@
         }else{
             imageV.image = image;
         }
+        
         [scrollV addSubview:imageV];
     }
     
@@ -295,6 +298,7 @@
     float accounting = ([PlayTool getPlayer].currentTime/[PlayTool getPlayer].duration)*M_PI*2;
     UIImageView *imageV = [scrollV viewWithTag:self.currentMusicIndex + ExcessTag];
     imageV.transform = CGAffineTransformMakeRotation(accounting);
+    
 }
 
 #pragma mark viewcontroller delegate
@@ -318,12 +322,18 @@
     for (UIView *subView in scrollV.subviews) {
         NSInteger viewIndex = [scrollV.subviews indexOfObject:subView];
         
-        CGFloat orignX = viewIndex *scrollV.bounds.size.width;
+        CGFloat x = viewIndex *scrollV.bounds.size.width + 50 + ImageSize/2;
+        CGFloat y = [self imageTopOrign];
         
-        subView.frame = CGRectMake(orignX+50, 164, 200, 200);
+        subView.center = CGPointMake(x, y);
     }
     
     scrollV.contentOffset = CGPointMake(_currentMusicIndex * scrollV.bounds.size.width, 0);
+}
+
+- (CGFloat)imageTopOrign
+{
+    return self.navigationController.navigationBar.bounds.size.height + [UIApplication sharedApplication].statusBarFrame.size.height + sqrt(pow(ImageSize/2, 2) + pow(ImageSize/2, 2));
 }
 
 #pragma mark AudioPlayer Delegate

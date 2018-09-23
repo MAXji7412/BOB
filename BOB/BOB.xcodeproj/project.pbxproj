@@ -54,6 +54,7 @@
 		2EBA632F1FA9A25100B82A23 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA632E1FA9A25100B82A23 /* libz.tbd */; };
 		2EBA63311FA9A25B00B82A23 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA63301FA9A25B00B82A23 /* libc++.tbd */; };
 		CE17E0822157989200EF19D0 /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE17E0812157989200EF19D0 /* WKWebViewController.m */; };
+		CE17E0842157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE17E0832157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 */; };
 		CE2BAD1F213E67380051FD2D /* TIEminem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE2BAD1E213E67380051FD2D /* TIEminem.mp3 */; };
 		CEB9357E21464A8F00C36C59 /* PlayTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB9357D21464A8F00C36C59 /* PlayTool.m */; };
 		CEBDEF2021391D8700EE6182 /* Start.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBDEF1F21391D8700EE6182 /* Start.m */; };
@@ -169,6 +170,7 @@
 		2EBA63301FA9A25B00B82A23 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		CE17E0802157989200EF19D0 /* WKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
 		CE17E0812157989200EF19D0 /* WKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
+		CE17E0832157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "纵贯线 - 亡命之徒(Live) - live.mp3"; sourceTree = "<group>"; };
 		CE2BAD1E213E67380051FD2D /* TIEminem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TIEminem.mp3; sourceTree = "<group>"; };
 		CEB91E702155C55C00C3B26D /* BOB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BOB.entitlements; sourceTree = "<group>"; };
 		CEB9357C21464A8E00C36C59 /* PlayTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayTool.h; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 		2E63E7AA1FA31FDD00C37FDE /* sound */ = {
 			isa = PBXGroup;
 			children = (
+				CE17E0832157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 */,
 				CE2BAD1E213E67380051FD2D /* TIEminem.mp3 */,
 				2EBA63051FA8840600B82A23 /* 陈冠希-Salute.mp3 */,
 				2EBA62FE1FA8840500B82A23 /* 陈冠希,MC Hotdog - King Boomba's Crew.mp3 */,
@@ -610,6 +613,7 @@
 				CEC6664C2154D0A600838C88 /* tab_niu@2x.png in Resources */,
 				CEC666792154E82E00838C88 /* Smile.png in Resources */,
 				2EBA63091FA8840600B82A23 /* Cammay Ng - Cry Away.mp3 in Resources */,
+				CE17E0842157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 in Resources */,
 				CEC666472154D0A600838C88 /* tab_xizi@3x.png in Resources */,
 				2EBA630E1FA8840600B82A23 /* Oh Susanna - Sleepy Little Sailor.mp3 in Resources */,
 				2EBA63121FA8840600B82A23 /* 低调组合 - 终点起点.mp3 in Resources */,
