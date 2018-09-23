@@ -20,12 +20,11 @@
 {
     NSTimer *_timer;
     UIScrollView *scrollV;
-    UIImageView *scrollViewLastImage;
     NSArray<NSDictionary *> *musicDataArr;
     UIImageView *dynamicEffectImage;
 }
 
-@property (assign) NSInteger scrollViewLastPage;//scrollview位置
+@property (assign) NSInteger currentMusicIndex;//scrollview位置
 
 @end
 
@@ -42,7 +41,6 @@
     [self defalutConfig];//默认配置
     [self creatScrollView];//播放视图
     [self creatAudience];
-    self.scrollViewLastPage = 0;
     
 }
 
@@ -60,12 +58,12 @@
 
 #pragma mark KVO,图片旋转、滑动换音乐
 - (void)registeredKVO{
-    [self addObserver:self forKeyPath:@"self.scrollViewLastPage" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
+    [self addObserver:self forKeyPath:@"self.currentMusicIndex" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
-    if ([keyPath isEqualToString:@"self.scrollViewLastPage"])//换歌
+    if ([keyPath isEqualToString:@"self.currentMusicIndex"])//换歌
     {
         if (!musicDataArr.count) {
             [SVProgressHUD showErrorWithStatus:@"资源错误"];
@@ -73,20 +71,20 @@
         }
         
         NSInteger oldPage = [change[@"old"] integerValue];
-        if ((_scrollViewLastPage == oldPage) && [PlayTool getPlayer]) {
+        if ((_currentMusicIndex == oldPage) && [PlayTool getPlayer]) {
             
             return ;
         }
-        if (_scrollViewLastPage >= musicDataArr.count) {
-            _scrollViewLastPage = 0;
+        if ((_currentMusicIndex >= musicDataArr.count) || _currentMusicIndex < 0 ) {
+            _currentMusicIndex = 0;
         }
         [self reductionCurrentImageAngle:oldPage];
-        NSDictionary *musicDic = musicDataArr[_scrollViewLastPage];
+        NSDictionary *musicDic = musicDataArr[_currentMusicIndex];
         
         [self playMusic:musicDic];
         
         [UIView animateWithDuration:.3 animations:^{
-            [scrollV setContentOffset:CGPointMake(_scrollViewLastPage*ScreenSize.width, 0)];
+            [scrollV setContentOffset:CGPointMake(_currentMusicIndex*ScreenSize.width, 0)];
         }];
     }
     
@@ -118,7 +116,7 @@
 - (void)creatScrollView{
     scrollV = [[UIScrollView alloc] initWithFrame:self.view.frame];
     
-    scrollV.contentSize = CGSizeMake(ScreenSize.width * musicDataArr.count, 0);
+    scrollV.contentSize = CGSizeMake(scrollV.bounds.size.width * musicDataArr.count, 0);
     scrollV.delegate = self;
     scrollV.bounces = YES;
     scrollV.pagingEnabled = YES;
@@ -131,9 +129,8 @@
     scrollV.showsVerticalScrollIndicator = NO;
     
     for (NSDictionary *musicDic in musicDataArr) {
-        UIImage *image = musicDic[MusicImage];
         
-        CGFloat orignX = [musicDataArr indexOfObject:musicDic] *ScreenSize.width;
+        CGFloat orignX = [musicDataArr indexOfObject:musicDic] *scrollV.bounds.size.width;
         
         UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(orignX+50,
                                                                             164,
@@ -154,6 +151,7 @@
                                       initWithTarget:self
                                       action:@selector(musicIconClick:)]];
         
+        UIImage *image = musicDic[MusicImage];
         if (!image) {
             imageV.backgroundColor = ArcColor;
         }else{
@@ -172,21 +170,22 @@
         return;
     }
     
-    CGFloat H = ScreenSize.height/4/2;
-    CGFloat W = ScreenSize.width/2;
-    CGFloat X = (ScreenSize.width - W)/2;
-    CGFloat Y = ScreenSize.height - H;
-    dynamicEffectImage = [[UIImageView alloc] initWithFrame:CGRectMake(X, Y, W,H)];
+    CGSize imageSize = CGSizeMake(100, 100);
     
     NSArray *imageNameArr = @[@"dongdong1",@"dongdong2",@"dongdong3"];
     NSMutableArray *images = [NSMutableArray arrayWithCapacity:imageNameArr.count];
     for (NSString *imageName in imageNameArr) {
-        NSString *imagePath = [[NSBundle mainBundle] pathForResource:imageName ofType:@".tiff"];
-        UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
+        
+        NSString *imageName_scale = [NSString stringWithFormat:@"%@@%dx.tiff",imageName,(int)[UIScreen mainScreen].scale];
+        UIImage *image = [UIImage imageNamed:imageName_scale];
         if (image) {
             [images addObject:image];
         }
     }
+    
+    
+    CGFloat Y = ScreenSize.height - imageSize.height - CGRectGetHeight([TabBarController share].tabBar.bounds);
+    dynamicEffectImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, Y, imageSize.width, imageSize.height)];
     
     dynamicEffectImage.layer.masksToBounds = NO;
     dynamicEffectImage.animationImages = images;
@@ -236,16 +235,17 @@
 //图片点击事件
 - (void)musicIconClick:(UITapGestureRecognizer *)tap{
     if (![PlayTool getPlayer]) {
+        self.currentMusicIndex = 0;
         return;
     }
+    
     if ([PlayTool getPlayer].playing)//播放--》暂停
     {
-        [PlayTool suspend];
         [self playSuspend];
         
     }else//暂停--》播放
     {
-        [PlayTool resume];
+        
         [self palyResume];
         
     }
@@ -257,6 +257,7 @@
 //播放
 - (void)palyResume
 {
+    [PlayTool play];
     [self creatTimer];
     _timer.fireDate = [NSDate date];
     [self audienceContinue];
@@ -267,6 +268,7 @@
 - (void)playSuspend
 {
     _timer.fireDate = [NSDate distantFuture];
+    [PlayTool suspend];
     [self audiencePause];
     
 }
@@ -291,8 +293,37 @@
 - (void)timerLoop
 {
     float accounting = ([PlayTool getPlayer].currentTime/[PlayTool getPlayer].duration)*M_PI*2;
-    UIImageView *imageV = [scrollV viewWithTag:self.scrollViewLastPage + ExcessTag];
+    UIImageView *imageV = [scrollV viewWithTag:self.currentMusicIndex + ExcessTag];
     imageV.transform = CGAffineTransformMakeRotation(accounting);
+}
+
+#pragma mark viewcontroller delegate
+
+//屏幕方向将要发生改变
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    
+}
+
+//屏幕方向已经发生改变
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    
+    [self configScrViewContent];
+}
+
+- (void)configScrViewContent
+{
+    scrollV.frame = self.view.bounds;
+    for (UIView *subView in scrollV.subviews) {
+        NSInteger viewIndex = [scrollV.subviews indexOfObject:subView];
+        
+        CGFloat orignX = viewIndex *scrollV.bounds.size.width;
+        
+        subView.frame = CGRectMake(orignX+50, 164, 200, 200);
+    }
+    
+    scrollV.contentOffset = CGPointMake(_currentMusicIndex * scrollV.bounds.size.width, 0);
 }
 
 #pragma mark AudioPlayer Delegate
@@ -302,8 +333,8 @@
         return ;
     }
     NSLog(@"%@:播放结束",player.url);
-    [self reductionCurrentImageAngle:self.scrollViewLastPage];
-    self.scrollViewLastPage++;
+    [self reductionCurrentImageAngle:self.currentMusicIndex];
+    self.currentMusicIndex++;
     
 }
 
@@ -311,7 +342,7 @@
 //滑动动画结束
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     
-    self.scrollViewLastPage = (NSInteger)(scrollView.contentOffset.x/ScreenSize.width);
+    self.currentMusicIndex = (NSInteger)(scrollView.contentOffset.x/ScreenSize.width);
 }
 
 - (void)reductionCurrentImageAngle:(NSInteger)pageIndex

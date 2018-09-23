@@ -9,9 +9,10 @@
 #import "TabBarController.h"
 
 #import "AppDelegate.h"
-#import "TabViewController.h"
 #import "MusicPlayViewController.h"
+#import "ShaTanViewController.h"
 #import "NavigationController.h"
+#import "WKWebViewController.h"
 
 @interface TabBarController ()
 
@@ -34,19 +35,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     NavigationController *tabNC0 = [[NavigationController alloc] initWithRootViewController:[MusicPlayViewController new]];
     tabNC0.tabBarItem.image = [UIImage imageNamed:@"tab_niu"];
-    tabNC0.tabBarItem.badgeValue = @"bob";
+//    tabNC0.tabBarItem.badgeValue = @"bob";
     
-    NavigationController *tabNC1 = [[NavigationController alloc] initWithRootViewController:[TabViewController new]];
     
-    tabNC1.tabBarItem.title = @"灯泡";
+    WKWebViewController *tuziVC = [[WKWebViewController alloc] initByUrlStr:@"https://huya.com"];
+    tuziVC.title = @"兔子";
+    NavigationController *tabNC1 = [[NavigationController alloc] initWithRootViewController:tuziVC];
     tabNC1.tabBarItem.image = [UIImage imageNamed:@"tab_tuzi"];
     
-    NavigationController *tabNC2 = [[NavigationController alloc] initWithRootViewController:[TabViewController new]];
-    tabNC2.tabBarItem.title = @"🏖";
+    
+    WKWebViewController *shatanVC = [[ShaTanViewController alloc] initByUrlStr:@"https://weibo.com"];
+    shatanVC.title = @"🏖";
+    NavigationController *tabNC2 = [[NavigationController alloc] initWithRootViewController:shatanVC];
     tabNC2.tabBarItem.image = [UIImage imageNamed:@"tab_shatan"];
+    
+    
+    
+    
+    
     
     NSArray *viewControllers = @[tabNC0,tabNC1,tabNC2];
     
@@ -66,9 +75,6 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self setViewControllers:viewControllers animated:YES];
     });
-    
-//    self.navigationController.navigationBarHidden = NO;
-    
     
 }
 

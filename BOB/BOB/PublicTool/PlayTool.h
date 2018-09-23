@@ -21,17 +21,10 @@ extern NSString *MusicImage;//专辑封面(UIImage)
 @interface PlayTool : NSObject
 
 
-
-
-
-
-
-
 /**
- 后台播放，在APP将要退到后台时调用
+ 后台播放
  */
-+ (void)turnOnBackgroundProcessingMultimediaEvents;
-
++ (void)backgroundPlayer;
 
 /**
  获取歌曲信息字典
@@ -64,7 +57,7 @@ extern NSString *MusicImage;//专辑封面(UIImage)
 /**
  恢复播放
  */
-+ (void)resume;
++ (void)play;
 
 
 /**
@@ -74,8 +67,20 @@ extern NSString *MusicImage;//专辑封面(UIImage)
 
 
 
+/**
+ 远程通知的响应
+
+ @param event 事件
+ */
++ (void)remoteControlReceivedWithEvent:(UIEvent *)event;
 
 
+/**
+ 设置控制中心播放状态
+
+ @param musicInfo 音乐信息
+ */
++ (void)setMediaItemArtworkPlayingInfo:(NSDictionary *)musicInfo;
 
 
 
