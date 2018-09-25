@@ -17,6 +17,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+    self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
     [self removeFromSuperview];
 }
 
@@ -66,7 +67,7 @@
         
         self.moreWebsitesBgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
         [UIView animateWithDuration:.2 animations:^{
-            self.moreWebsitesBgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.1];
+            self.moreWebsitesBgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:1];
         } completion:^(BOOL finished) {
             [self creatTabViewIn:self.moreWebsitesBgView];
         }];
