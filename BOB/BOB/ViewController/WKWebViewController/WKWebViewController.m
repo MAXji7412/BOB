@@ -335,19 +335,35 @@
         return;
     }
     
-    if (((currentInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || currentInterfaceOrientation == UIInterfaceOrientationLandscapeRight) && (interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown))
-        ||
-        ((currentInterfaceOrientation == UIInterfaceOrientationPortrait || currentInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) && (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight)))
+    CGFloat navMaxY = 0;
+    CGFloat tabMinY = 0;
+    
+    if (((currentInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || currentInterfaceOrientation == UIInterfaceOrientationLandscapeRight) && (interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)))
     {
-        //竖>横 || 横>竖
-        
-        CGRect rect = self.webview.frame;
-        CGFloat width = rect.size.width;
-        rect.size.width = rect.size.height;
-        rect.size.height = width;
-        
-        self.webview.frame = rect;
+        //横>竖
+        navMaxY = 64;
+        tabMinY = 49;
     }
+        else if
+        (((currentInterfaceOrientation == UIInterfaceOrientationPortrait || currentInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) && (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight)))
+    {
+        //竖>横
+        navMaxY = 32;
+        tabMinY = 32;
+    }
+    
+    
+    if (!navMaxY) {
+        return;
+    }
+    CGRect rect = self.webview.frame;
+    CGFloat width = rect.size.width;
+    rect.size.width = rect.size.height;
+    rect.size.height = width;
+    
+    self.webview.frame = rect;
+    
+    self.webview.scrollView.contentInset = UIEdgeInsetsMake(navMaxY, 0, tabMinY, 0);
 }
 
 #pragma mark event
