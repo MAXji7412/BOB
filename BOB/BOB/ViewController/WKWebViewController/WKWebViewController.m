@@ -8,12 +8,8 @@
 
 #import "WKWebViewController.h"
 
-#import <WebKit/WebKit.h>
 
 @interface WKWebViewController ()<WKNavigationDelegate,WKUIDelegate>
-
-@property (retain) WKWebView *webview;
-@property (copy) NSString *urlStr;
 
 @end
 
@@ -22,32 +18,35 @@
 
 #pragma mark controller life
 
-- (instancetype)initByUrlStr:(NSString *)urlStr
-{
-    
-    self = [super init];
-    
-    if (self && [urlStr isKindOfClass:NSString.class]) {
-        self.urlStr = urlStr;
-    }
-    
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self creatWebview];
+    [self registerNotification];
+    [self loadRequest];
     [self creatGoBackAndGoForwardButton];
 }
 
 - (void)dealloc
 {
     [self.webview removeObserver:self forKeyPath:@"estimatedProgress"];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)registerNotification
+{
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(handleStatusBarOrientationWillChange:)
+                                                name:UIApplicationWillChangeStatusBarOrientationNotification object:nil];
+    
+    
 }
 
 - (void)creatWebview
 {
+    if (self.webview) {
+        return;
+    }
     WKWebViewConfiguration *wkWebviewConfig = [WKWebViewConfiguration new];
     
     wkWebviewConfig.preferences.javaScriptCanOpenWindowsAutomatically = YES;
@@ -68,12 +67,20 @@
     
     [self.webview addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:NULL];
     
+    [self.view addSubview:self.webview];
+}
+
+- (void)loadRequest{
     
-    NSURL *url = [NSURL URLWithString:self.urlStr];
+    if ([CheckUrlString(self.urlStr) isEqualToString:@""]) {
+        return;
+    }
+    
+    [self.webview stopLoading];
+    
+    NSURL *url = [NSURL URLWithString:CheckUrlString(self.urlStr)];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webview loadRequest:request];
-    
-    [self.view addSubview:self.webview];
 }
 
 -  (void)configWebViewContent
@@ -273,7 +280,7 @@
 // main frame的导航开始请求时调用
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation{
     NSLog(@"1");
-    
+    [TalkingData trackEvent:@"网络请求" label:@"网页地址" parameters:@{@"urlStr":webView.URL.absoluteString}];
 }
 
 // 当main frame接收到服务重定向时调用
@@ -312,18 +319,35 @@
 }
 
 
-#pragma mark viewcontroller delegate
-//屏幕方向将要发生改变
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+#pragma mark notification
+//接收到屏幕方向将要发生改变的通知
+- (void)handleStatusBarOrientationWillChange:(NSNotification *)noti
 {
     
-}
-
-//屏幕方向已经发生改变
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
+     UIInterfaceOrientation currentInterfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
     
-    [self configWebViewContent];
+    id value = noti.userInfo[UIApplicationStatusBarOrientationUserInfoKey];
+    
+    UIInterfaceOrientation interfaceOrientation = [NSString stringWithFormat:@"%@",value].integerValue;
+    
+    if ((currentInterfaceOrientation == interfaceOrientation) || (currentInterfaceOrientation == UIInterfaceOrientationUnknown) || (interfaceOrientation == UIInterfaceOrientationUnknown))
+    {
+        return;
+    }
+    
+    if (((currentInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || currentInterfaceOrientation == UIInterfaceOrientationLandscapeRight) && (interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown))
+        ||
+        ((currentInterfaceOrientation == UIInterfaceOrientationPortrait || currentInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) && (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight)))
+    {
+        //竖>横 || 横>竖
+        
+        CGRect rect = self.webview.frame;
+        CGFloat width = rect.size.width;
+        rect.size.width = rect.size.height;
+        rect.size.height = width;
+        
+        self.webview.frame = rect;
+    }
 }
 
 #pragma mark event

@@ -45,6 +45,19 @@
     
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)registerNotification
+{
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(handleStatusBarOrientationWillChange:)
+                                                name:UIApplicationWillChangeStatusBarOrientationNotification object:nil];
+    
+    
+}
 
 - (void)defalutConfig{
     self.view.backgroundColor = ArcColor;
@@ -132,7 +145,7 @@
     for (NSDictionary *musicDic in musicDataArr) {
         
         CGFloat orignX = [musicDataArr indexOfObject:musicDic] *scrollV.bounds.size.width;
-        CGFloat orignY = [self imageTopOrign]-ImageSize/2;
+        CGFloat orignY = NavMaxY + sqrt(pow(ImageSize/2, 2) + pow(ImageSize/2, 2)) - ImageSize/2;
         
         UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(orignX+50,
                                                                             orignY,
@@ -302,38 +315,56 @@
 }
 
 #pragma mark viewcontroller delegate
-
 //屏幕方向将要发生改变
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+- (void)handleStatusBarOrientationWillChange:(NSNotification *)noti
 {
+    UIInterfaceOrientation currentInterfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
     
-}
-
-//屏幕方向已经发生改变
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
+    id value = noti.userInfo[UIApplicationStatusBarOrientationUserInfoKey];
     
-    [self configScrViewContent];
-}
-
-- (void)configScrViewContent
-{
-    scrollV.frame = self.view.bounds;
+    UIInterfaceOrientation interfaceOrientation = [NSString stringWithFormat:@"%@",value].integerValue;
+    
+    if ((currentInterfaceOrientation == interfaceOrientation) || (currentInterfaceOrientation == UIInterfaceOrientationUnknown) || (interfaceOrientation == UIInterfaceOrientationUnknown))
+    {
+        return;
+    }
+    
+    CGFloat navMaxY = 0;
+    
+    if (((currentInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || currentInterfaceOrientation == UIInterfaceOrientationLandscapeRight) && (interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)))
+    {
+        // 横>竖
+        navMaxY = 64;
+    }
+    else if(((currentInterfaceOrientation == UIInterfaceOrientationPortrait || currentInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) && (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight)))
+    {
+        //竖>横
+        navMaxY = 32;
+    }
+    
+    if (!navMaxY) {
+        return;
+    }
+    
+    CGRect rect = scrollV.frame;
+    CGFloat width = rect.size.width;
+    rect.size.width = rect.size.height;
+    rect.size.height = width;
+    
+    scrollV.frame = rect;
+    
+    
     for (UIView *subView in scrollV.subviews) {
         NSInteger viewIndex = [scrollV.subviews indexOfObject:subView];
         
         CGFloat x = viewIndex *scrollV.bounds.size.width + 50 + ImageSize/2;
-        CGFloat y = [self imageTopOrign];
+        CGFloat y = navMaxY + sqrt(pow(ImageSize/2, 2) + pow(ImageSize/2, 2));
         
         subView.center = CGPointMake(x, y);
     }
     
     scrollV.contentOffset = CGPointMake(_currentMusicIndex * scrollV.bounds.size.width, 0);
-}
-
-- (CGFloat)imageTopOrign
-{
-    return self.navigationController.navigationBar.bounds.size.height + [UIApplication sharedApplication].statusBarFrame.size.height + sqrt(pow(ImageSize/2, 2) + pow(ImageSize/2, 2));
+    
 }
 
 #pragma mark AudioPlayer Delegate

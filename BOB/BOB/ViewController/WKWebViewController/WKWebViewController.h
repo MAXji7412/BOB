@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+#import <WebKit/WebKit.h>
+
 @interface WKWebViewController : UIViewController
 
-- (instancetype)initByUrlStr:(NSString *)urlStr;
+@property (retain) WKWebView *webview;
+@property (nonatomic,copy) NSString *urlStr;
 
+
+/**
+ load self.urlStr
+ */
+- (void)loadRequest;
 
 @end

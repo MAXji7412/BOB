@@ -27,18 +27,6 @@ NSString *MusicImage = @"musicImage";//专辑封面(UIImage)
 
 @implementation PlayTool
 
-
-//+ (instancetype)staticInstance
-//{
-//    static PlayTool *pt;
-//    if (!pt) {
-//        pt = [self new];
-//    }
-//
-//    return pt;
-//}
-
-
 + (NSArray *)getMusicData
 {
     NSMutableArray<NSDictionary *> *musicDataArrM = [NSMutableArray array];;
@@ -133,7 +121,6 @@ NSString *MusicImage = @"musicImage";//专辑封面(UIImage)
         return arc4random() %2 ? NSOrderedAscending : NSOrderedDescending ;
     }].mutableCopy;
 
-    
     return musicDataArrM;
 }
 

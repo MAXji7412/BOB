@@ -41,13 +41,14 @@
 //    tabNC0.tabBarItem.badgeValue = @"bob";
     
     
-    WKWebViewController *tuziVC = [[WKWebViewController alloc] initByUrlStr:@"https://huya.com"];
-    tuziVC.title = @"兔子";
+    UIViewController *tuziVC = [UIViewController new];
+    
+    tuziVC.title = @"bob";
     NavigationController *tabNC1 = [[NavigationController alloc] initWithRootViewController:tuziVC];
     tabNC1.tabBarItem.image = [UIImage imageNamed:@"tab_tuzi"];
     
     
-    WKWebViewController *shatanVC = [[ShaTanViewController alloc] initByUrlStr:@"https://weibo.com"];
+    WKWebViewController *shatanVC = [ShaTanViewController new];
     shatanVC.title = @"🏖🏖🏖";
     NavigationController *tabNC2 = [[NavigationController alloc] initWithRootViewController:shatanVC];
     tabNC2.tabBarItem.image = [UIImage imageNamed:@"tab_shatan"];
@@ -77,6 +78,10 @@
     });
     
 }
+
+
+
+
 
 
 

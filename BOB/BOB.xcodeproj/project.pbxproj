@@ -58,6 +58,8 @@
 		CE2BAD1F213E67380051FD2D /* TIEminem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE2BAD1E213E67380051FD2D /* TIEminem.mp3 */; };
 		CEB9357E21464A8F00C36C59 /* PlayTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB9357D21464A8F00C36C59 /* PlayTool.m */; };
 		CEBDEF2021391D8700EE6182 /* Start.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBDEF1F21391D8700EE6182 /* Start.m */; };
+		CEBE425D2158716B009A6F92 /* nav_net@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE425B2158716B009A6F92 /* nav_net@2x.png */; };
+		CEBE425E2158716B009A6F92 /* nav_net@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE425C2158716B009A6F92 /* nav_net@3x.png */; };
 		CEC665AB2153913300838C88 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC665AA2153913300838C88 /* TabBarController.m */; };
 		CEC6660821548C0900838C88 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC6660721548C0900838C88 /* NavigationController.m */; };
 		CEC6660C2154C99300838C88 /* MusicPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC6660A2154C99300838C88 /* MusicPlayViewController.m */; };
@@ -178,6 +180,8 @@
 		CEBDEF1D21391CBF00EE6182 /* GlobalDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalDefine.h; sourceTree = "<group>"; };
 		CEBDEF1E21391D8700EE6182 /* Start.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Start.h; sourceTree = "<group>"; };
 		CEBDEF1F21391D8700EE6182 /* Start.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Start.m; sourceTree = "<group>"; };
+		CEBE425B2158716B009A6F92 /* nav_net@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_net@2x.png"; sourceTree = "<group>"; };
+		CEBE425C2158716B009A6F92 /* nav_net@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_net@3x.png"; sourceTree = "<group>"; };
 		CEC665A92153913300838C88 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		CEC665AA2153913300838C88 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		CEC6660621548C0900838C88 /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
@@ -467,6 +471,8 @@
 		CEC666252154D0A600838C88 /* nav_icon */ = {
 			isa = PBXGroup;
 			children = (
+				CEBE425B2158716B009A6F92 /* nav_net@2x.png */,
+				CEBE425C2158716B009A6F92 /* nav_net@3x.png */,
 				CEC6664E2154D63500838C88 /* nav_forward@2x.png */,
 				CEC6664D2154D63500838C88 /* nav_forward@3x.png */,
 				CEC666262154D0A600838C88 /* nav_back@2x.png */,
@@ -597,6 +603,7 @@
 				CEC6667D2154EB0A00838C88 /* dongdong2@2x.tiff in Resources */,
 				CEC6664F2154D63500838C88 /* nav_forward@3x.png in Resources */,
 				CEC666502154D63500838C88 /* nav_forward@2x.png in Resources */,
+				CEBE425D2158716B009A6F92 /* nav_net@2x.png in Resources */,
 				2EBA630A1FA8840600B82A23 /* 陈冠希,MC Hotdog - King Boomba's Crew.mp3 in Resources */,
 				CEC666482154D0A600838C88 /* tab_xizi@2x.png in Resources */,
 				CEC6666E2154E82E00838C88 /* 自杀突击队.jpg in Resources */,
@@ -613,6 +620,7 @@
 				CEC6664C2154D0A600838C88 /* tab_niu@2x.png in Resources */,
 				CEC666792154E82E00838C88 /* Smile.png in Resources */,
 				2EBA63091FA8840600B82A23 /* Cammay Ng - Cry Away.mp3 in Resources */,
+				CEBE425E2158716B009A6F92 /* nav_net@3x.png in Resources */,
 				CE17E0842157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 in Resources */,
 				CEC666472154D0A600838C88 /* tab_xizi@3x.png in Resources */,
 				2EBA630E1FA8840600B82A23 /* Oh Susanna - Sleepy Little Sailor.mp3 in Resources */,
