@@ -72,14 +72,27 @@
 
 - (void)loadRequest{
     
-    if ([CheckUrlString(self.urlStr) isEqualToString:@""]) {
+    if (![self.urlStr isKindOfClass:NSString.class] || !self.urlStr.length) {
         return;
     }
     
-    [self.webview stopLoading];
+    NSString *urlPrefix = @"http://";
+    NSString *secUrlPrefix = @"https://";
+    NSString *singleSlashPrefix = @"http:/";
+    NSString *secSingleSlashPrefix = @"https:/";
+    if (![self.urlStr hasPrefix:urlPrefix] && ![self.urlStr hasPrefix:secUrlPrefix] && [self.urlStr hasPrefix:singleSlashPrefix] && [self.urlStr hasPrefix:secSingleSlashPrefix])
+    {
+        self.urlStr = [secUrlPrefix stringByAppendingString:self.urlStr];//todo
+    }
     
-    NSURL *url = [NSURL URLWithString:CheckUrlString(self.urlStr)];
+    NSURL *url = [NSURL URLWithString:self.urlStr];
+    if (!url) {
+        return;
+    }
+    
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    [self.webview stopLoading];
     [self.webview loadRequest:request];
 }
 

@@ -29,6 +29,7 @@
 
 @property (nonatomic,retain) NSDictionary *websitesDic;
 @property (nonatomic,retain) BgView *moreWebsitesBgView;
+@property (nonatomic,retain) UITableView *tabView;
 
 @end
 
@@ -65,12 +66,6 @@
     if (!self.moreWebsitesBgView) {
         self.moreWebsitesBgView = [[BgView alloc] initWithFrame:self.view.bounds];
         
-        self.moreWebsitesBgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
-        [UIView animateWithDuration:.2 animations:^{
-            self.moreWebsitesBgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:1];
-        } completion:^(BOOL finished) {
-            [self creatTabViewIn:self.moreWebsitesBgView];
-        }];
     }
     
     if (!self.moreWebsitesBgView.superview) {
@@ -78,6 +73,12 @@
         [self.navigationController.view addSubview:self.moreWebsitesBgView];
     }
     
+    self.moreWebsitesBgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
+    [UIView animateWithDuration:.2 animations:^{
+        self.moreWebsitesBgView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.7];
+    } completion:^(BOOL finished) {
+        [self creatTabViewIn:self.moreWebsitesBgView];
+    }];
 }
 
 - (void)disMissMoreWebsitesBgView
@@ -87,6 +88,9 @@
 
 - (void)creatTabViewIn:(UIView *)bgView
 {
+    if (self.tabView) {
+        return;
+    }
     CGFloat X,Y,W,H ;
     CGFloat gap = 10;
     
@@ -95,19 +99,19 @@
     X = bgView.bounds.size.width - W - gap;
     Y = CGRectGetMaxY(self.navigationController.navigationBar.frame);
     
-    UITableView *tabView = [[UITableView alloc] initWithFrame:CGRectMake(X, Y, W, H) style:UITableViewStylePlain];
+    self.tabView = [[UITableView alloc] initWithFrame:CGRectMake(X, Y, W, H) style:UITableViewStylePlain];
     
 //    tabView.bounces = NO;
-    tabView.backgroundColor = [UIColor whiteColor];
-    tabView.layer.masksToBounds = YES;
-    tabView.layer.cornerRadius = gap;
-    tabView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    tabView.layer.borderWidth = 1;
-    tabView.delegate = self;
-    tabView.dataSource = self;
+    self.tabView.backgroundColor = [UIColor whiteColor];
+    self.tabView.layer.masksToBounds = YES;
+    self.tabView.layer.cornerRadius = gap;
+    self.tabView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.tabView.layer.borderWidth = 1;
+    self.tabView.delegate = self;
+    self.tabView.dataSource = self;
     
     
-    [bgView addSubview:tabView];
+    [bgView addSubview:self.tabView];
 }
 
 #pragma mark TableView Delegate

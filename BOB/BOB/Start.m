@@ -15,6 +15,10 @@
 
 + (void)start
 {
+    //系统设置
+    [self sysConfig];
+    
+    //启动数据采集
     [self talkingdataStart];
 }
 
@@ -28,6 +32,11 @@
     [TalkingData setGlobalKV:@"deviceName" value:[DeviceRelevant getDeviceInfo][@"deviceName"]];
     
     [TalkingData trackEvent:@"BOB启动"];
+}
+
++ (void)sysConfig
+{
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 @end

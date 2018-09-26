@@ -13,8 +13,6 @@
 
 #define CheckString(string) [string isKindOfClass:NSString.class]?string:@""
 
-#define CheckUrlString(string) ([self.urlStr isKindOfClass:NSString.class] && [[NSPredicate predicateWithFormat:@"SELF MATCHES %@",@"[a-zA-z]+://[^\\s]*"] evaluateWithObject:self.urlStr])?self.urlStr:@""
-
 #define ArcColor [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1]
 
 #define ScreenSize [UIScreen mainScreen].bounds.size
