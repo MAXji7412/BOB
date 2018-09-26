@@ -50,7 +50,6 @@
     WKWebViewConfiguration *wkWebviewConfig = [WKWebViewConfiguration new];
     
     wkWebviewConfig.preferences.javaScriptCanOpenWindowsAutomatically = YES;
-    wkWebviewConfig.allowsInlineMediaPlayback = YES;
     
     self.webview = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:wkWebviewConfig];
     

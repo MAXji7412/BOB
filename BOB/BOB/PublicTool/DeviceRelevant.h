@@ -12,4 +12,6 @@
 
 + (NSDictionary *)getDeviceInfo;
 
++ (NSString *)getDeviceModelName;
+
 @end

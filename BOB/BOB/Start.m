@@ -29,7 +29,7 @@
     [TalkingData setSignalReportEnabled:YES];//异常信号
     [TalkingData sessionStarted:@"79997EA2B662472F88ED0EB267A0AFD7" withChannelId:@"safari"];
     
-    [TalkingData setGlobalKV:@"deviceName" value:[DeviceRelevant getDeviceInfo][@"deviceName"]];
+    [TalkingData setGlobalKV:@"deviceName" value:[DeviceRelevant getDeviceModelName]];
     
     [TalkingData trackEvent:@"BOB启动"];
 }

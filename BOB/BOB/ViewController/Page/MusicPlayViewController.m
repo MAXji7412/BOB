@@ -33,14 +33,13 @@
 
 #pragma mark ViewControllerLife
 
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
     [self defalutConfig];//默认配置
     [self creatScrollView];//播放视图
+    [self registerNotification];
     [self creatAudience];
     
 }
@@ -48,6 +47,7 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self removeObserver:self forKeyPath:@"self.currentMusicIndex"];
 }
 
 - (void)registerNotification
@@ -59,7 +59,8 @@
     
 }
 
-- (void)defalutConfig{
+- (void)defalutConfig
+{
     self.view.backgroundColor = ArcColor;
     
     musicDataArr = [PlayTool getMusicData];
@@ -71,7 +72,8 @@
 
 
 #pragma mark KVO,图片旋转、滑动换音乐
-- (void)registeredKVO{
+- (void)registeredKVO
+{
     [self addObserver:self forKeyPath:@"self.currentMusicIndex" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:NULL];
 }
 
@@ -142,8 +144,8 @@
     scrollV.showsHorizontalScrollIndicator = NO;
     scrollV.showsVerticalScrollIndicator = NO;
     
-    for (NSDictionary *musicDic in musicDataArr) {
-        
+    for (NSDictionary *musicDic in musicDataArr)
+    {
         CGFloat orignX = [musicDataArr indexOfObject:musicDic] *scrollV.bounds.size.width;
         CGFloat orignY = NavMaxY + sqrt(pow(ImageSize/2, 2) + pow(ImageSize/2, 2)) - ImageSize/2;
         
@@ -167,9 +169,11 @@
                                       action:@selector(musicIconClick:)]];
         
         UIImage *image = musicDic[MusicImage];
-        if (!image) {
+        if (!image)
+        {
             imageV.backgroundColor = ArcColor;
-        }else{
+        }else
+        {
             imageV.image = image;
         }
         
@@ -181,8 +185,10 @@
 
 #pragma mark 听众
 //创建
-- (void)creatAudience{
-    if (dynamicEffectImage) {
+- (void)creatAudience
+{
+    if (dynamicEffectImage)
+    {
         return;
     }
     
@@ -190,11 +196,12 @@
     
     NSArray *imageNameArr = @[@"dongdong1",@"dongdong2",@"dongdong3"];
     NSMutableArray *images = [NSMutableArray arrayWithCapacity:imageNameArr.count];
-    for (NSString *imageName in imageNameArr) {
-        
+    for (NSString *imageName in imageNameArr)
+    {
         NSString *imageName_scale = [NSString stringWithFormat:@"%@@%dx.tiff",imageName,(int)[UIScreen mainScreen].scale];
         UIImage *image = [UIImage imageNamed:imageName_scale];
-        if (image) {
+        if (image)
+        {
             [images addObject:image];
         }
     }
@@ -217,7 +224,8 @@
 //继续
 - (void)audienceContinue
 {
-    if (dynamicEffectImage.layer.speed == 1) {
+    if (dynamicEffectImage.layer.speed == 1)
+    {
         return;
     }
     
@@ -249,8 +257,10 @@
 
 
 //图片点击事件
-- (void)musicIconClick:(UITapGestureRecognizer *)tap{
-    if (![PlayTool getPlayer]) {
+- (void)musicIconClick:(UITapGestureRecognizer *)tap
+{
+    if (![PlayTool getPlayer])
+    {
         self.currentMusicIndex = 0;
         return;
     }
@@ -258,12 +268,10 @@
     if ([PlayTool getPlayer].playing)//播放--》暂停
     {
         [self playSuspend];
-        
-    }else//暂停--》播放
+    }
+    else//暂停--》播放
     {
-        
         [self palyResume];
-        
     }
     
     //    tap.view
@@ -291,9 +299,10 @@
 
 #pragma mark 定时器
 //定时器，用来使图片旋转
-- (void)creatTimer{
-    
-    if (_timer) {
+- (void)creatTimer
+{
+    if (_timer)
+    {
         return;
     }
     //定时器
@@ -342,7 +351,8 @@
         navMaxY = 32;
     }
     
-    if (!navMaxY) {
+    if (!navMaxY)
+    {
         return;
     }
     
@@ -354,7 +364,8 @@
     scrollV.frame = rect;
     
     
-    for (UIView *subView in scrollV.subviews) {
+    for (UIView *subView in scrollV.subviews)
+    {
         NSInteger viewIndex = [scrollV.subviews indexOfObject:subView];
         
         CGFloat x = viewIndex *scrollV.bounds.size.width + 50 + ImageSize/2;
@@ -369,8 +380,10 @@
 
 #pragma mark AudioPlayer Delegate
 //一首播放结束
-- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
-    if (!flag) {
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+    if (!flag)
+    {
         return ;
     }
     NSLog(@"%@:播放结束",player.url);
@@ -381,8 +394,8 @@
 
 #pragma mark scrollView delegate
 //滑动动画结束
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
     self.currentMusicIndex = (NSInteger)(scrollView.contentOffset.x/ScreenSize.width);
 }
 
