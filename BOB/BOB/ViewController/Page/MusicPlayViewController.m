@@ -301,8 +301,7 @@
 //定时器，用来使图片旋转
 - (void)creatTimer
 {
-    if (_timer)
-    {
+    if (_timer){
         return;
     }
     //定时器
@@ -349,12 +348,12 @@
     {
         //竖>横
         navMaxY = 32;
-    }
-    
-    if (!navMaxY)
+    }else
     {
+        //左>右，右>左,上>下,下>上???
         return;
     }
+    
     
     CGRect rect = scrollV.frame;
     CGFloat width = rect.size.width;
@@ -363,6 +362,7 @@
     
     scrollV.frame = rect;
     
+    scrollV.contentSize = CGSizeMake(scrollV.bounds.size.width * musicDataArr.count, 0);
     
     for (UIView *subView in scrollV.subviews)
     {

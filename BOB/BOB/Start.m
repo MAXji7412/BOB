@@ -10,6 +10,8 @@
 
 #import "TalkingData.h"
 #import "DeviceRelevant.h"
+#import "TabBarController.h"
+#import "AppDelegate.h"
 
 @implementation Start
 
@@ -17,6 +19,9 @@
 {
     //系统设置
     [self sysConfig];
+    
+    //展示KeyWindow
+    [self makeMainWindow];
     
     //启动数据采集
     [self talkingdataStart];
@@ -28,8 +33,7 @@
     [TalkingData setExceptionReportEnabled:YES];//捕捉崩溃
     [TalkingData setSignalReportEnabled:YES];//异常信号
     [TalkingData sessionStarted:@"79997EA2B662472F88ED0EB267A0AFD7" withChannelId:@"safari"];
-    
-    [TalkingData setGlobalKV:@"deviceName" value:[DeviceRelevant getDeviceModelName]];
+    [TalkingData setGlobalKV:@"deviceName" value:CheckString([DeviceRelevant getDeviceModelName])];
     
     [TalkingData trackEvent:@"BOB启动"];
 }
@@ -37,6 +41,19 @@
 + (void)sysConfig
 {
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+}
+
++ (void)makeMainWindow
+{
+    AppDelegate *appdel = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    appdel.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    appdel.window. backgroundColor = [UIColor orangeColor];
+    
+    appdel.window.rootViewController = [TabBarController share];
+    
+    [appdel.window makeKeyAndVisible];
 }
 
 @end

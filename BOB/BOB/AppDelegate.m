@@ -10,7 +10,6 @@
 
 #import "Start.h"
 #import "PlayTool.h"
-#import "TabBarController.h"
 
 @interface AppDelegate ()
 
@@ -23,21 +22,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [Start start];
-    [self showMainWindow];
     
     return YES;
 }
-
-- (void)showMainWindow{
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    self.window. backgroundColor = [UIColor orangeColor];
-    
-    self.window.rootViewController = [TabBarController share];
-    
-    [self.window makeKeyAndVisible];
-}
-
 
 /**
  将要失去活跃状态

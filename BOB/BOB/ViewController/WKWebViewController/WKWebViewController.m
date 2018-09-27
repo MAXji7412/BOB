@@ -144,11 +144,11 @@
 
 - (void)webviewGoBack
 {
-    if ([self.webview canGoBack]) {
+    if ([self.webview canGoBack])
+    {
         [self.webview goBack];
-    }else{
-        
-        
+    }else
+    {
         [self.webview reload];
     }
     
@@ -388,17 +388,18 @@
     if ([keyPath isEqualToString:@"estimatedProgress"])
     {
         id valueNew = change[NSKeyValueChangeNewKey];
-        if ([valueNew isKindOfClass:NSNumber.class]) {
+        if ([valueNew isKindOfClass:NSNumber.class])
+        {
             NSString *progressStr = [NSString stringWithFormat:@"%@",valueNew];
             float progress = progressStr.floatValue;
-            if (progress < 1) {
+            if (progress < 1)
+            {
                 [SVProgressHUD showProgress:progress];
-            }else{
+            }else
+            {
                 [SVProgressHUD dismiss];
             }
-            
         }
-        
     }
 }
 
