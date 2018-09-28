@@ -98,25 +98,13 @@
 -  (void)configWebViewContent
 {
     CGFloat navH = self.navigationController.navigationBar.bounds.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
-    CGFloat tabH = 0;
-    
-    UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    if ([rootVC isKindOfClass:UITabBarController.class]) {
-        
-        UITabBarController *tabBarVC = (UITabBarController *)rootVC;
-        tabH = tabBarVC.tabBar.bounds.size.height;
-    }
-    else if ([rootVC isKindOfClass:UINavigationController.class])
-    {
-        UINavigationController *navVC = (UINavigationController *)rootVC;
-        UITabBarController *tabBarVC = navVC.viewControllers.firstObject;
-        if ([tabBarVC isKindOfClass:UITabBarController.class]) {
-            tabH = tabBarVC.tabBar.bounds.size.height;
-        }
-    }
     
     
-    self.webview.scrollView.contentInset = UIEdgeInsetsMake(navH, 0, tabH, 0);
+    
+    
+    
+    
+    self.webview.scrollView.contentInset = UIEdgeInsetsMake(navH, 0, TabBarH, 0);
     
     self.webview.frame = self.view.bounds;
 }
