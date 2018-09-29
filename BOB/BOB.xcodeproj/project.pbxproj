@@ -96,6 +96,7 @@
 		CEC6667D2154EB0A00838C88 /* dongdong2@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CEC6667A2154EB0A00838C88 /* dongdong2@2x.tiff */; };
 		CEC6667E2154EB0A00838C88 /* dongdong3@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CEC6667B2154EB0A00838C88 /* dongdong3@2x.tiff */; };
 		CEC6667F2154EB0A00838C88 /* dongdong1@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CEC6667C2154EB0A00838C88 /* dongdong1@2x.tiff */; };
+		CEF92169215E37D600F0BA1E /* BOBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF92168215E37D600F0BA1E /* BOBTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -222,6 +223,8 @@
 		CEC6667A2154EB0A00838C88 /* dongdong2@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong2@2x.tiff"; sourceTree = "<group>"; };
 		CEC6667B2154EB0A00838C88 /* dongdong3@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong3@2x.tiff"; sourceTree = "<group>"; };
 		CEC6667C2154EB0A00838C88 /* dongdong1@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong1@2x.tiff"; sourceTree = "<group>"; };
+		CEF92167215E37D600F0BA1E /* BOBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BOBTool.h; sourceTree = "<group>"; };
+		CEF92168215E37D600F0BA1E /* BOBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BOBTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -398,6 +401,8 @@
 				2EBA63221FA99E2800B82A23 /* DeviceRelevant.h */,
 				2EBA63231FA99E2800B82A23 /* DeviceRelevant.m */,
 				CEBDEF1D21391CBF00EE6182 /* GlobalDefine.h */,
+				CEF92167215E37D600F0BA1E /* BOBTool.h */,
+				CEF92168215E37D600F0BA1E /* BOBTool.m */,
 				CEB9357C21464A8E00C36C59 /* PlayTool.h */,
 				CEB9357D21464A8F00C36C59 /* PlayTool.m */,
 			);
@@ -672,6 +677,7 @@
 				2E63E7771FA3186000C37FDE /* SVProgressAnimatedView.m in Sources */,
 				2E63E74A1FA306FD00C37FDE /* AppDelegate.m in Sources */,
 				2E6451581FAAB4B100FCCF70 /* UIImageView+HighlightedWebCache.m in Sources */,
+				CEF92169215E37D600F0BA1E /* BOBTool.m in Sources */,
 				2E6451571FAAB4B100FCCF70 /* UIImage+MultiFormat.m in Sources */,
 				CEB9357E21464A8F00C36C59 /* PlayTool.m in Sources */,
 				2E63E7761FA3186000C37FDE /* SVIndefiniteAnimatedView.m in Sources */,

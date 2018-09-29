@@ -49,7 +49,7 @@
     
     appdel.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    appdel.window. backgroundColor = [UIColor orangeColor];
+    appdel.window. backgroundColor = [DeviceRelevant deviceColor];
     
     appdel.window.rootViewController = [TabBarController share];
     
