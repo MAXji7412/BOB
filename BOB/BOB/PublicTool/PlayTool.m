@@ -11,8 +11,6 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MPNowPlayingInfoCenter.h>
 #import <MediaPlayer/MPMediaItem.h>
-#import <MediaPlayer/MPRemoteCommand.h>
-#import <MediaPlayer/MPRemoteCommandCenter.h>
 
 
 NSString *MusicNeme = @"musicNeme";//歌名
@@ -20,10 +18,6 @@ NSString *MusicUrl = @"musicUrl";//路径(NSURL)
 NSString *MusicAlbumName = @"musicAlbumName";//专辑名称
 NSString *MusicArtist = @"musicArtist";//艺术家
 NSString *MusicImage = @"musicImage";//专辑封面(UIImage)
-
-@interface PlayTool()
-
-@end
 
 @implementation PlayTool
 
@@ -75,10 +69,10 @@ NSString *MusicImage = @"musicImage";//专辑封面(UIImage)
         [asset loadValuesAsynchronouslyForKeys:@[infoKey] completionHandler:^{
             
             
-            NSError *error;
+            NSError *error = nil;
             AVKeyValueStatus status = [asset statusOfValueForKey:infoKey error:&error];
             if (error) {
-                NSLog(@"%@",error);
+                BOBLog(@"%@",error);
             }
             if (status == AVKeyValueStatusLoaded) {
                 NSArray *artworkss = [AVMetadataItem metadataItemsFromArray:asset.commonMetadata
@@ -128,7 +122,7 @@ NSString *MusicImage = @"musicImage";//专辑封面(UIImage)
 {
     //设置后台任务ID
     [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
-        NSLog(@"???系统要杀我???");
+        BOBLog(@"???系统要杀我???");
     }];
     
 }
@@ -141,7 +135,7 @@ static id playDelegate;
                     delegate:(id)delegate{
     
     if (![musicInfo isKindOfClass:NSDictionary.class]) {
-        NSLog(@"数据内容错误1");
+        BOBLog(@"数据内容错误1");
         return [NSError errorWithDomain:@"" code:0 userInfo:@{
                                                               @"msg":@"数据内容错误1"
                                                               }];
@@ -154,11 +148,11 @@ static id playDelegate;
         [self configPlayerSession];
         
     }
-    NSError *err;
+    NSError *err = nil;
     audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:musicInfo[MusicUrl] error:&err];
     
     if (err) {
-        NSLog(@"声音err:%@",err);
+        BOBLog(@"声音err:%@",err);
     }
     else if(audioPlayer)
     {
@@ -179,12 +173,12 @@ static id playDelegate;
     AVAudioSession *session = [AVAudioSession sharedInstance];
     [session setActive:YES error:nil];
     //后台播放,与其他APP的session一同播放
-    NSError *error;
+    NSError *error = nil;
     [session setCategory:AVAudioSessionCategoryPlayback
 //             withOptions:AVAudioSessionCategoryOptionDuckOthers//AVAudioSessionCategoryOptionMixWithOthers
                    error:&error];
     
-    if(error) NSLog(@"err%@",error);
+    if(error) BOBLog(@"%@",error);//todobob,打印error崩溃？？
     
     //允许应用程序接收远程控制
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
@@ -205,7 +199,7 @@ static NSTimer *mediaItemArtworkUpdateTimer;
       forKeyedSubscript:MPMediaItemPropertyPlaybackDuration];
     //设置歌曲图片
     UIImage *image = musicInfo[MusicImage];
-    if (image) {
+    if ([image isKindOfClass:UIImage.class]) {
         MPMediaItemArtwork *imageItem = [[MPMediaItemArtwork alloc]initWithImage:image];
         [songDict setObject:imageItem forKey:MPMediaItemPropertyArtwork];
     }
@@ -213,18 +207,15 @@ static NSTimer *mediaItemArtworkUpdateTimer;
     //设置到控制中心
     [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songDict];
     
-    if (!mediaItemArtworkUpdateTimer) {
+    if (!mediaItemArtworkUpdateTimer)
+    {
         mediaItemArtworkUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:1
                                                                        target:self
                                                                      selector:@selector(updatePlaySchedule)
                                                                      userInfo:nil
                                                                       repeats:YES];
     }
-    
 }
-
-
-
 
 #pragma mark Event
 
@@ -235,6 +226,7 @@ static NSTimer *mediaItemArtworkUpdateTimer;
 {
     if (![audioPlayer isPlaying]) {
         [audioPlayer play];
+        mediaItemArtworkUpdateTimer.fireDate = [NSDate date];
     }
 }
 
@@ -245,6 +237,7 @@ static NSTimer *mediaItemArtworkUpdateTimer;
 {
     if ([audioPlayer isPlaying]) {
         [audioPlayer pause];
+        mediaItemArtworkUpdateTimer.fireDate = [NSDate distantFuture];
     }
 }
 
@@ -266,37 +259,54 @@ static NSTimer *mediaItemArtworkUpdateTimer;
 
 + (void)delegatePlay
 {
-    SEL play = @selector(palyResume);
-    if ([playDelegate respondsToSelector:play]) {
-        [playDelegate performSelector:play];
+    SEL play = NSSelectorFromString(@"palyResume");
+    if (![playDelegate respondsToSelector:play]) {
+        return;
     }
+    IMP playImp = [playDelegate methodForSelector:play];
+    void (* func)(id,SEL) = (void *)playImp;
+    
+    func(playDelegate,play);
 }
 
 + (void)delegateSuspend
 {
-    SEL suspend = @selector(playSuspend);
-    if ([playDelegate respondsToSelector:suspend]) {
-        [playDelegate performSelector:suspend];
+    SEL suspend = NSSelectorFromString(@"playSuspend");
+    if (![playDelegate respondsToSelector:suspend]) {
+        return;
     }
+    IMP suspendImp = [playDelegate methodForSelector:suspend];
+    void(* func)(id,SEL) = (void *)suspendImp;
+    func(playDelegate,suspend);
 }
 
-+ (void)delegateNaxt{
-    SEL getCurrent = @selector(currentMusicIndex);
-    if ([playDelegate respondsToSelector:getCurrent]) {
-        NSInteger currentmusicIndex = [playDelegate performSelector:getCurrent];
-        currentmusicIndex++;
-        [playDelegate setValue:[NSNumber numberWithInteger:currentmusicIndex] forKey:@"currentMusicIndex"];
++ (void)delegateNaxt
+{
+    NSString *selStr = @"curentMusicIndex";
+    SEL currentPlayIndex = NSSelectorFromString(selStr);
+    if (![playDelegate respondsToSelector:currentPlayIndex]) {
+        return;
     }
+    IMP currentPlayIndexImp = [playDelegate methodForSelector:currentPlayIndex];
+    NSInteger (* func)(id,SEL) = (void *)currentPlayIndexImp;
+    NSInteger currentMusicIndex = func(playDelegate,currentPlayIndex);
+    currentMusicIndex++;
+    [playDelegate setValue:[NSNumber numberWithInteger:currentMusicIndex] forKey:selStr];
 }
 
 + (void)delagatePrevious
 {
-    SEL getCurrent = @selector(currentMusicIndex);
-    if ([playDelegate respondsToSelector:getCurrent]) {
-        NSInteger currentmusicIndex = [playDelegate performSelector:getCurrent];
-        currentmusicIndex--;
-        [playDelegate setValue:[NSNumber numberWithInteger:currentmusicIndex] forKey:@"currentMusicIndex"];
+    NSString *selStr = @"currentMusicIndex";
+    SEL currentpPlayIndex = NSSelectorFromString(selStr);
+    if (![playDelegate respondsToSelector:currentpPlayIndex]) {
+        return;
     }
+    IMP currentPlayIndexImp = [playDelegate methodForSelector:currentpPlayIndex];
+    NSInteger (* func)(id,SEL) = (void *)currentPlayIndexImp;
+    NSInteger currentMusicIndex = func(playDelegate,currentpPlayIndex);
+    
+    currentMusicIndex++;
+    [playDelegate setValue:[NSNumber numberWithInteger:currentMusicIndex] forKey:selStr];
 }
 
 + (AVAudioPlayer *)getPlayer

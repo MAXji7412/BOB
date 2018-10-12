@@ -14,6 +14,7 @@
 
 @property (retain) WKWebView *webview;
 @property (nonatomic,copy) NSString *urlStr;
+@property (nonatomic,retain) NSMutableDictionary *websitesDicM;
 
 
 /**

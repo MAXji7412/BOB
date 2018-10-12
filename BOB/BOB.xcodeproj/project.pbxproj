@@ -34,7 +34,6 @@
 		2E667CB11FA7811D00892AF0 /* libTalkingData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E667CAF1FA7811D00892AF0 /* libTalkingData.a */; };
 		2EBA62831FA84D3D00B82A23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA627E1FA84D3C00B82A23 /* Assets.xcassets */; };
 		2EBA62841FA84D3D00B82A23 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA627F1FA84D3D00B82A23 /* main.m */; };
-		2EBA62871FA84DB300B82A23 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62861FA84DB300B82A23 /* Info.plist */; };
 		2EBA63081FA8840600B82A23 /* Tupac - Ambitionz Az a Ridah.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62FC1FA8840500B82A23 /* Tupac - Ambitionz Az a Ridah.mp3 */; };
 		2EBA63091FA8840600B82A23 /* Cammay Ng - Cry Away.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62FD1FA8840500B82A23 /* Cammay Ng - Cry Away.mp3 */; };
 		2EBA630A1FA8840600B82A23 /* 陈冠希,MC Hotdog - King Boomba's Crew.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2EBA62FE1FA8840500B82A23 /* 陈冠希,MC Hotdog - King Boomba's Crew.mp3 */; };
@@ -55,11 +54,15 @@
 		2EBA63311FA9A25B00B82A23 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA63301FA9A25B00B82A23 /* libc++.tbd */; };
 		CE17E0822157989200EF19D0 /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE17E0812157989200EF19D0 /* WKWebViewController.m */; };
 		CE17E0842157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE17E0832157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 */; };
+		CE242B4A216EF973009C4440 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE242B49216EF973009C4440 /* libc++.1.tbd */; };
+		CE242B4C216EF97F009C4440 /* libc++abi.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE242B4B216EF97F009C4440 /* libc++abi.tbd */; };
+		CE295B89216F3C3B00353F85 /* BOBNSlog.m in Sources */ = {isa = PBXBuildFile; fileRef = CE295B88216F3C3B00353F85 /* BOBNSlog.m */; };
 		CE2BAD1F213E67380051FD2D /* TIEminem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE2BAD1E213E67380051FD2D /* TIEminem.mp3 */; };
-		CEB9357E21464A8F00C36C59 /* PlayTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB9357D21464A8F00C36C59 /* PlayTool.m */; };
+		CE745DB3216CB3EB00766D9B /* nav_book@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE745DB1216CB3EB00766D9B /* nav_book@3x.png */; };
+		CE745DB4216CB3EB00766D9B /* nav_book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE745DB2216CB3EB00766D9B /* nav_book@2x.png */; };
+		CE745DB8216D8F8800766D9B /* PopView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745DB7216D8F8800766D9B /* PopView.m */; };
+		CEB9357E21464A8F00C36C59 /* PlayTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB9357D21464A8F00C36C59 /* PlayTool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wundeclared-selector"; }; };
 		CEBDEF2021391D8700EE6182 /* Start.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBDEF1F21391D8700EE6182 /* Start.m */; };
-		CEBE425D2158716B009A6F92 /* nav_net@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE425B2158716B009A6F92 /* nav_net@2x.png */; };
-		CEBE425E2158716B009A6F92 /* nav_net@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEBE425C2158716B009A6F92 /* nav_net@3x.png */; };
 		CEC665AB2153913300838C88 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC665AA2153913300838C88 /* TabBarController.m */; };
 		CEC6660821548C0900838C88 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC6660721548C0900838C88 /* NavigationController.m */; };
 		CEC6660C2154C99300838C88 /* MusicPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC6660A2154C99300838C88 /* MusicPlayViewController.m */; };
@@ -174,15 +177,21 @@
 		CE17E0802157989200EF19D0 /* WKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
 		CE17E0812157989200EF19D0 /* WKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
 		CE17E0832157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "纵贯线 - 亡命之徒(Live) - live.mp3"; sourceTree = "<group>"; };
+		CE242B49216EF973009C4440 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		CE242B4B216EF97F009C4440 /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "usr/lib/libc++abi.tbd"; sourceTree = SDKROOT; };
+		CE295B87216F3C3B00353F85 /* BOBNSlog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BOBNSlog.h; sourceTree = "<group>"; };
+		CE295B88216F3C3B00353F85 /* BOBNSlog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BOBNSlog.m; sourceTree = "<group>"; };
 		CE2BAD1E213E67380051FD2D /* TIEminem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TIEminem.mp3; sourceTree = "<group>"; };
+		CE745DB1216CB3EB00766D9B /* nav_book@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_book@3x.png"; sourceTree = "<group>"; };
+		CE745DB2216CB3EB00766D9B /* nav_book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_book@2x.png"; sourceTree = "<group>"; };
+		CE745DB6216D8F8800766D9B /* PopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopView.h; sourceTree = "<group>"; };
+		CE745DB7216D8F8800766D9B /* PopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopView.m; sourceTree = "<group>"; };
 		CEB91E702155C55C00C3B26D /* BOB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BOB.entitlements; sourceTree = "<group>"; };
 		CEB9357C21464A8E00C36C59 /* PlayTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayTool.h; sourceTree = "<group>"; };
 		CEB9357D21464A8F00C36C59 /* PlayTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayTool.m; sourceTree = "<group>"; };
 		CEBDEF1D21391CBF00EE6182 /* GlobalDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalDefine.h; sourceTree = "<group>"; };
 		CEBDEF1E21391D8700EE6182 /* Start.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Start.h; sourceTree = "<group>"; };
 		CEBDEF1F21391D8700EE6182 /* Start.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Start.m; sourceTree = "<group>"; };
-		CEBE425B2158716B009A6F92 /* nav_net@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_net@2x.png"; sourceTree = "<group>"; };
-		CEBE425C2158716B009A6F92 /* nav_net@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_net@3x.png"; sourceTree = "<group>"; };
 		CEC665A92153913300838C88 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		CEC665AA2153913300838C88 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		CEC6660621548C0900838C88 /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
@@ -232,8 +241,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EBA63291FA9A20E00B82A23 /* CoreTelephony.framework in Frameworks */,
+				CE242B4C216EF97F009C4440 /* libc++abi.tbd in Frameworks */,
 				2EBA63311FA9A25B00B82A23 /* libc++.tbd in Frameworks */,
+				CE242B4A216EF973009C4440 /* libc++.1.tbd in Frameworks */,
+				2EBA63291FA9A20E00B82A23 /* CoreTelephony.framework in Frameworks */,
 				2EBA632F1FA9A25100B82A23 /* libz.tbd in Frameworks */,
 				2EBA632D1FA9A24100B82A23 /* SystemConfiguration.framework in Frameworks */,
 				2EBA632B1FA9A21A00B82A23 /* CoreMotion.framework in Frameworks */,
@@ -405,6 +416,8 @@
 				CEF92168215E37D600F0BA1E /* BOBTool.m */,
 				CEB9357C21464A8E00C36C59 /* PlayTool.h */,
 				CEB9357D21464A8F00C36C59 /* PlayTool.m */,
+				CE295B87216F3C3B00353F85 /* BOBNSlog.h */,
+				CE295B88216F3C3B00353F85 /* BOBNSlog.m */,
 			);
 			path = PublicTool;
 			sourceTree = "<group>";
@@ -412,6 +425,8 @@
 		2EBA63251FA9A20600B82A23 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE242B4B216EF97F009C4440 /* libc++abi.tbd */,
+				CE242B49216EF973009C4440 /* libc++.1.tbd */,
 				2EBA63301FA9A25B00B82A23 /* libc++.tbd */,
 				2EBA632E1FA9A25100B82A23 /* libz.tbd */,
 				2EBA632C1FA9A24100B82A23 /* SystemConfiguration.framework */,
@@ -425,6 +440,7 @@
 		2EBA63431FA9B59300B82A23 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CE745DB5216D8F6600766D9B /* CustomView */,
 				CE17E07F2157980200EF19D0 /* WKWebViewController */,
 				CEC666092154C99300838C88 /* Page */,
 				CEC665A92153913300838C88 /* TabBarController.h */,
@@ -442,6 +458,15 @@
 				CE17E0812157989200EF19D0 /* WKWebViewController.m */,
 			);
 			path = WKWebViewController;
+			sourceTree = "<group>";
+		};
+		CE745DB5216D8F6600766D9B /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				CE745DB6216D8F8800766D9B /* PopView.h */,
+				CE745DB7216D8F8800766D9B /* PopView.m */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		CEC666092154C99300838C88 /* Page */ = {
@@ -476,12 +501,12 @@
 		CEC666252154D0A600838C88 /* nav_icon */ = {
 			isa = PBXGroup;
 			children = (
-				CEBE425B2158716B009A6F92 /* nav_net@2x.png */,
-				CEBE425C2158716B009A6F92 /* nav_net@3x.png */,
 				CEC6664E2154D63500838C88 /* nav_forward@2x.png */,
 				CEC6664D2154D63500838C88 /* nav_forward@3x.png */,
 				CEC666262154D0A600838C88 /* nav_back@2x.png */,
 				CEC666272154D0A600838C88 /* nav_back@3x.png */,
+				CE745DB2216CB3EB00766D9B /* nav_book@2x.png */,
+				CE745DB1216CB3EB00766D9B /* nav_book@3x.png */,
 			);
 			path = nav_icon;
 			sourceTree = "<group>";
@@ -554,7 +579,7 @@
 		2E63E73D1FA306FD00C37FDE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = qunyingji;
 				TargetAttributes = {
 					2E63E7441FA306FD00C37FDE = {
@@ -603,12 +628,12 @@
 				2EBA63081FA8840600B82A23 /* Tupac - Ambitionz Az a Ridah.mp3 in Resources */,
 				CEC666682154E82E00838C88 /* dongdong3@3x.tiff in Resources */,
 				2E6450FB1FA9CA9800FCCF70 /* Launch Screen.storyboard in Resources */,
+				CE745DB3216CB3EB00766D9B /* nav_book@3x.png in Resources */,
 				CEC666692154E82E00838C88 /* cry.png in Resources */,
 				2EBA62831FA84D3D00B82A23 /* Assets.xcassets in Resources */,
 				CEC6667D2154EB0A00838C88 /* dongdong2@2x.tiff in Resources */,
 				CEC6664F2154D63500838C88 /* nav_forward@3x.png in Resources */,
 				CEC666502154D63500838C88 /* nav_forward@2x.png in Resources */,
-				CEBE425D2158716B009A6F92 /* nav_net@2x.png in Resources */,
 				2EBA630A1FA8840600B82A23 /* 陈冠希,MC Hotdog - King Boomba's Crew.mp3 in Resources */,
 				CEC666482154D0A600838C88 /* tab_xizi@2x.png in Resources */,
 				CEC6666E2154E82E00838C88 /* 自杀突击队.jpg in Resources */,
@@ -621,13 +646,12 @@
 				CEC666732154E82E00838C88 /* 小丑妹.png in Resources */,
 				CEC666722154E82E00838C88 /* 润发.jpeg in Resources */,
 				CEC666492154D0A600838C88 /* tab_niu@3x.png in Resources */,
-				2EBA62871FA84DB300B82A23 /* Info.plist in Resources */,
 				CEC6664C2154D0A600838C88 /* tab_niu@2x.png in Resources */,
 				CEC666792154E82E00838C88 /* Smile.png in Resources */,
 				2EBA63091FA8840600B82A23 /* Cammay Ng - Cry Away.mp3 in Resources */,
-				CEBE425E2158716B009A6F92 /* nav_net@3x.png in Resources */,
 				CE17E0842157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 in Resources */,
 				CEC666472154D0A600838C88 /* tab_xizi@3x.png in Resources */,
+				CE745DB4216CB3EB00766D9B /* nav_book@2x.png in Resources */,
 				2EBA630E1FA8840600B82A23 /* Oh Susanna - Sleepy Little Sailor.mp3 in Resources */,
 				2EBA63121FA8840600B82A23 /* 低调组合 - 终点起点.mp3 in Resources */,
 				CEC6664B2154D0A600838C88 /* tab_tuzi@2x.png in Resources */,
@@ -679,9 +703,11 @@
 				2E6451581FAAB4B100FCCF70 /* UIImageView+HighlightedWebCache.m in Sources */,
 				CEF92169215E37D600F0BA1E /* BOBTool.m in Sources */,
 				2E6451571FAAB4B100FCCF70 /* UIImage+MultiFormat.m in Sources */,
+				CE295B89216F3C3B00353F85 /* BOBNSlog.m in Sources */,
 				CEB9357E21464A8F00C36C59 /* PlayTool.m in Sources */,
 				2E63E7761FA3186000C37FDE /* SVIndefiniteAnimatedView.m in Sources */,
 				2E64514E1FAAB4B100FCCF70 /* SDImageCache.m in Sources */,
+				CE745DB8216D8F8800766D9B /* PopView.m in Sources */,
 				2EBA62841FA84D3D00B82A23 /* main.m in Sources */,
 				2E6451561FAAB4B100FCCF70 /* UIImage+GIF.m in Sources */,
 				CEC665AB2153913300838C88 /* TabBarController.m in Sources */,
@@ -707,6 +733,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -714,6 +741,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -762,6 +790,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -769,6 +798,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

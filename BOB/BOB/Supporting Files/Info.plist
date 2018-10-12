@@ -52,5 +52,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>BOB想要读取相册</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>BOB想要向相册添加图片</string>
 </dict>
 </plist>

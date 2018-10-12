@@ -35,6 +35,7 @@ static const CGFloat SVProgressHUDHorizontalSpacing = 12.0f;
 static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
 
 
+API_AVAILABLE(ios(10.0))
 @interface SVProgressHUD ()
 
 @property (nonatomic, strong) NSTimer *fadeOutTimer;
@@ -859,13 +860,13 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
             [strongSelf cancelRingLayerAnimation];
             [strongSelf cancelIndefiniteAnimatedViewAnimation];
             
-            // Update imageView
-            UIColor *tintColor = strongSelf.foregroundColorForStyle;
+            // Update imageView todobob
+//            UIColor *tintColor = strongSelf.foregroundColorForStyle;
             UIImage *tintedImage = image;
-            if (image.renderingMode != UIImageRenderingModeAlwaysTemplate) {
-                tintedImage = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-            }
-            strongSelf.imageView.tintColor = tintColor;
+//            if (image.renderingMode != UIImageRenderingModeAlwaysTemplate) {
+//                tintedImage = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//            }
+//            strongSelf.imageView.tintColor = tintColor;
             strongSelf.imageView.image = tintedImage;
             strongSelf.imageView.hidden = NO;
             
@@ -1375,6 +1376,7 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
 - (UIImageView*)imageView {
     if(!_imageView) {
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 28.0f, 28.0f)];
+        _imageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     if(!_imageView.superview) {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
@@ -1442,17 +1444,17 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
 }
 
 #if TARGET_OS_IOS && __IPHONE_OS_VERSION_MAX_ALLOWED >= 100000
-- (UINotificationFeedbackGenerator *)hapticGenerator {
-	// Only return if haptics are enabled
-	if(!self.hapticsEnabled) {
-		return nil;
-	}
-	
-	if(!_hapticGenerator) {
-		_hapticGenerator = [[UINotificationFeedbackGenerator alloc] init];
-	}
-	return _hapticGenerator;
-}
+    - (UINotificationFeedbackGenerator *)hapticGenerator  API_AVAILABLE(ios(10.0)){
+        // Only return if haptics are enabled
+        if(!self.hapticsEnabled) {
+            return nil;
+        }
+        
+        if(!_hapticGenerator) {
+            _hapticGenerator = [[UINotificationFeedbackGenerator alloc] init];
+        }
+        return _hapticGenerator;
+    }
 #endif
 
     

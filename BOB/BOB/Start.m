@@ -24,7 +24,9 @@
     [self makeMainWindow];
     
     //启动数据采集
-    [self talkingdataStart];
+//    [self talkingdataStart];
+    //SVPconfig
+    [self svpConfig];
 }
 
 + (void)talkingdataStart
@@ -54,6 +56,12 @@
     appdel.window.rootViewController = [TabBarController share];
     
     [appdel.window makeKeyAndVisible];
+}
+
++ (void)svpConfig
+{
+    [SVProgressHUD setMinimumDismissTimeInterval:2];
+    [SVProgressHUD setMaximumDismissTimeInterval:15];
 }
 
 @end

@@ -46,6 +46,8 @@
 
 - (void)dealloc
 {
+    [_timer invalidate];
+    _timer = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self removeObserver:self forKeyPath:@"self.currentMusicIndex"];
 }
@@ -55,8 +57,6 @@
     [[NSNotificationCenter defaultCenter]addObserver:self
                                             selector:@selector(handleStatusBarOrientationWillChange:)
                                                 name:UIApplicationWillChangeStatusBarOrientationNotification object:nil];
-    
-    
 }
 
 - (void)defalutConfig
@@ -99,9 +99,7 @@
         
         [self playMusic:musicDic];
         
-        [UIView animateWithDuration:.3 animations:^{
-            [scrollV setContentOffset:CGPointMake(_currentMusicIndex*ScreenSize.width, 0)];
-        }];
+        [scrollV setContentOffset:CGPointMake(_currentMusicIndex*ScreenSize.width, 0) animated:YES];
     }
     
 }
@@ -386,7 +384,7 @@
     {
         return ;
     }
-    NSLog(@"%@:播放结束",player.url);
+    BOBLog(@"%@:播放结束",player.url);
     [self reductionCurrentImageAngle:self.currentMusicIndex];
     self.currentMusicIndex++;
     
