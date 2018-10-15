@@ -10,7 +10,8 @@
 
 #define WebsitesDicKey @"WebsitesDicKey"
 
-@interface WKWebViewController ()<WKNavigationDelegate,WKUIDelegate>
+
+@interface WKWebViewController ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler>
 
 @end
 
@@ -52,6 +53,8 @@
     }
     WKWebViewConfiguration *wkWebviewConfig = [WKWebViewConfiguration new];
     
+    
+    wkWebviewConfig.userContentController = [self getWKUserContentController];
     wkWebviewConfig.preferences.javaScriptCanOpenWindowsAutomatically = YES;
     
     self.webview = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:wkWebviewConfig];
@@ -70,6 +73,31 @@
     [self.webview addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:NULL];
     
     [self.view addSubview:self.webview];
+}
+
+
+- (WKUserContentController *)getWKUserContentController
+{
+    WKUserContentController *userContentCon = [WKUserContentController new];
+    
+    /*
+     point:这里的name是js调用native时的标识
+     window.webkit.messageHandlers.bob.postMessage({cc:"ss"})
+     */
+    [userContentCon addScriptMessageHandler:self name:@"bob"];
+    
+    
+    /*
+    //提前注入JS方法
+    NSString *jsCode = @"alerttt";
+
+    WKUserScript *userScript = [[WKUserScript alloc] initWithSource:jsCode
+                                                      injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
+                                                   forMainFrameOnly:NO];
+    [userContentCon addUserScript:userScript];
+    */
+    
+    return userContentCon;
 }
 
 - (void)loadRequest{
@@ -136,10 +164,10 @@
                                                        [self.webview reload];
                                                    }];
     
-    UIAlertAction* reloadFormOrign = [UIAlertAction actionWithTitle:@"加载原始地址(无缓存刷新)"
+    UIAlertAction* input = [UIAlertAction actionWithTitle:@"输入"
                                                               style:UIAlertActionStyleDefault
                                                             handler:^(UIAlertAction * _Nonnull action) {
-                                                                [self.webview reloadFromOrigin];
+                                                                [self inputUrl];
                                                             }];
     
     UIAlertAction* save = [UIAlertAction actionWithTitle:@"添加到书签"
@@ -180,7 +208,7 @@
                                                    handler:nil];
     
     [alert addAction:reload];
-    [alert addAction:reloadFormOrign];
+    [alert addAction:input];
     [alert addAction:save];
     [alert addAction:delete];
     [alert addAction:orignBookMark];
@@ -196,6 +224,31 @@
 - (void)bookMarkSel
 {
     [self bookMarkSelDelete:NO];
+}
+
+- (void)inputUrl
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入地址"
+                                                                   message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addTextFieldWithConfigurationHandler:nil];
+    
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"前往"
+                                                 style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * _Nonnull action) {
+                                                   self.urlStr = alert.textFields.firstObject.text;
+                                                   [self loadRequest];
+                                               }];
+    
+    
+    [alert addAction:ok];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消"
+                                                     style:UIAlertActionStyleCancel handler:nil];
+    
+    [alert addAction:cancel];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 //选择书签,delete:跳转或删除
@@ -342,8 +395,35 @@
 //保存地址到书签
 - (void)saveCurrentUrl
 {
-    [self.websitesDicM setObject:CheckString(self.webview.URL.absoluteString) forKey:CheckString(self.webview.title)];
-    [[NSUserDefaults standardUserDefaults] setObject:self.websitesDicM forKey:WebsitesDicKey];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"保存"
+                                                                   message:CheckString(self.webview.URL.absoluteString)
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.text = CheckString(self.webview.title);
+    }];
+    
+    
+    UIAlertAction *determine = [UIAlertAction
+                                actionWithTitle:@"存入"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * _Nonnull action) {
+                                    NSString *title = CheckString(alert.textFields.firstObject.text);
+                                    if(title.length)
+                                    {
+                                        [self.websitesDicM setObject:CheckString(self.webview.URL.absoluteString) forKey:title];
+                                        [[NSUserDefaults standardUserDefaults] setObject:self.websitesDicM forKey:WebsitesDicKey];
+                                    }
+                                }];
+    
+    [alert addAction:determine];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消"
+                                                     style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:cancel];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
 }
 
 //重置书签数据
@@ -401,9 +481,8 @@
  */
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
     
-    [SVProgressHUD showImage:nil status:[NSString stringWithFormat:@"H5alert"]];
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"警告" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"我知道了" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         completionHandler();
     }];
@@ -422,14 +501,13 @@
  */
 - (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL result))completionHandler {
     
-    [SVProgressHUD showImage:nil status:[NSString stringWithFormat:@"H5alert"]];
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请选择" message:message preferredStyle:(UIAlertControllerStyleAlert)];
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"同意" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确认" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         completionHandler(YES);
     }];
     
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"不同意" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
         completionHandler(NO);
     }];
     
@@ -449,13 +527,10 @@
  */
 - (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(nullable NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable result))completionHandler {
     
-    [SVProgressHUD showImage:nil status:[NSString stringWithFormat:@"H5alert"]];
-    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入" message:prompt preferredStyle:(UIAlertControllerStyleAlert)];
     
-    
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        textField.placeholder = @"请输入";
+        textField.placeholder = defaultText ?: @"请输入";
     }];
     
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
@@ -465,9 +540,7 @@
         completionHandler(tf.text);
     }];
     
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
-        completionHandler(defaultText);
-    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
     
     [alert addAction:ok];
     [alert addAction:cancel];
@@ -483,10 +556,7 @@
 // 这个是决定是否Request
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
 {
-    
-    BOBLog(@"decidePolicyForNavigationAction:%@",webView.URL.absoluteString);
-    
-    //  在发送请求之前，决定是否跳转
+    //  在发送请求之前，决定是否跳转,我怎么决定
     decisionHandler(WKNavigationActionPolicyAllow);
 }
 
@@ -538,6 +608,18 @@
 - (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView {
 }
 
+#pragma mark ================== WKScriptMessageHandler =============================
+
+- (void)userContentController:(nonnull WKUserContentController *)userContentController didReceiveScriptMessage:(nonnull WKScriptMessage *)message
+{
+    if (!message.body)
+    {
+        return;
+    }
+    
+    
+    BOBLog(@"%@",message.body);
+}
 
 #pragma mark ================ notification ================
 //接收到屏幕方向将要发生改变的通知

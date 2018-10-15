@@ -451,11 +451,19 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		CE09AFB821709A990003D230 /* WKMessageHandler */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WKMessageHandler;
+			sourceTree = "<group>";
+		};
 		CE17E07F2157980200EF19D0 /* WKWebViewController */ = {
 			isa = PBXGroup;
 			children = (
 				CE17E0802157989200EF19D0 /* WKWebViewController.h */,
 				CE17E0812157989200EF19D0 /* WKWebViewController.m */,
+				CE09AFB821709A990003D230 /* WKMessageHandler */,
 			);
 			path = WKWebViewController;
 			sourceTree = "<group>";
