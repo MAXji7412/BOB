@@ -41,7 +41,7 @@
 //    tabNC0.tabBarItem.badgeValue = @"bob";
     
     
-    UIViewController *tuziVC = [UIViewController new];
+    WKWebViewController *tuziVC = [WKWebViewController new];
     
     tuziVC.title = @"bob";
     NavigationController *tabNC1 = [[NavigationController alloc] initWithRootViewController:tuziVC];
@@ -60,13 +60,12 @@
     
     NSArray *viewControllers = @[tabNC0,tabNC1,tabNC2];
     
-    for (NavigationController *tabVC in viewControllers) {
-        
+    for (NavigationController *tabVC in viewControllers)
+    {
         [tabVC.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}
                                         forState:UIControlStateSelected];
         [tabVC.tabBarItem setTitleTextAttributes:@{NSBackgroundColorAttributeName:[UIColor orangeColor]}
                                         forState:UIControlStateNormal];
-        
     }
     
     self.tabBar.barStyle = UIBarStyleBlack;

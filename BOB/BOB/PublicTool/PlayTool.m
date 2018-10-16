@@ -79,9 +79,10 @@ NSString *MusicImage = @"musicImage";//专辑封面(UIImage)
                                                                     withKey:AVMetadataCommonKeyArtwork
                                                                    keySpace:AVMetadataKeySpaceCommon];
                 
-                for (AVMetadataItem *item in artworkss) {
-                    if ([item.keySpace isEqualToString:AVMetadataKeySpaceID3]) {
-                        
+                for (AVMetadataItem *item in artworkss)
+                {
+                    if ([item.keySpace isEqualToString:AVMetadataKeySpaceID3])
+                    {
                         NSAssert([item.value isKindOfClass:NSData.class], @"???");
                         
                         NSData *imageData = (NSData *)item.value;
@@ -90,9 +91,12 @@ NSString *MusicImage = @"musicImage";//专辑封面(UIImage)
                             [mp3InfoDicM setObject:image forKey:MusicImage];
                         }
                         
-                    } else if ([item.keySpace isEqualToString:AVMetadataKeySpaceiTunes]) {
+                    }
+                    else if ([item.keySpace isEqualToString:AVMetadataKeySpaceiTunes])
+                    {
                         image = [UIImage imageWithData:[item.value copyWithZone:nil]];
-                        if ([image isKindOfClass:UIImage.class]) {
+                        if ([image isKindOfClass:UIImage.class])
+                        {
                             [mp3InfoDicM setObject:image forKey:MusicImage];
                         }
                     }
@@ -317,8 +321,6 @@ static NSTimer *mediaItemArtworkUpdateTimer;
 
 + (void)remoteControlReceivedWithEvent:(UIEvent *)event
 {
-    
-    
     if(event.type != UIEventTypeRemoteControl) return ;
     switch (event.subtype) {
         case UIEventSubtypeRemoteControlPlay:

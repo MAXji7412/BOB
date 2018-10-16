@@ -276,7 +276,6 @@
 		2E63E7471FA306FD00C37FDE /* BOB */ = {
 			isa = PBXGroup;
 			children = (
-				CEB91E702155C55C00C3B26D /* BOB.entitlements */,
 				2E63E7481FA306FD00C37FDE /* AppDelegate.h */,
 				2E63E7491FA306FD00C37FDE /* AppDelegate.m */,
 				CEBDEF1E21391D8700EE6182 /* Start.h */,
@@ -397,6 +396,7 @@
 		2EBA62851FA84D5400B82A23 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CEB91E702155C55C00C3B26D /* BOB.entitlements */,
 				2EBA62861FA84DB300B82A23 /* Info.plist */,
 				2EBA627E1FA84D3C00B82A23 /* Assets.xcassets */,
 				2EBA627F1FA84D3D00B82A23 /* main.m */,
@@ -839,6 +839,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "/Users/jiqunying/BOB/BOB/BOB/Supporting Files/BOB.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jinping Zhang (293KMBB29W)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jinping Zhang (293KMBB29W)";
 				CODE_SIGN_STYLE = Manual;
@@ -864,6 +865,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "/Users/jiqunying/BOB/BOB/BOB/Supporting Files/BOB.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jinping Zhang (293KMBB29W)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jinping Zhang (293KMBB29W)";
 				CODE_SIGN_STYLE = Manual;

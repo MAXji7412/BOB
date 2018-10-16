@@ -59,7 +59,6 @@
     tabView.dataSource = self;
     
     [self addSubview:tabView];
-    [self setNeedsDisplay];
 }
 
 - (void)animations
@@ -96,8 +95,8 @@
     CGFloat dependX = location -  RowHight;
     CGFloat dependY = NavMaxY;
     
-    //勾股定理, 全等三角形斜边长X,pow(X, 2) - pow(X/2, 2) = pow(高, 2)，X = sqrt(pow(高, 2) * pow(2, 2) / 3)
-    CGFloat hypotenuseLength = sqrt(pow(GAP, 2) * pow(2, 2) / 3);
+    //勾股定理, 全等三角形斜边长X,pow(X, 2) - pow(X/2, 2) = pow(高, 2)，X = sqrt(pow(高, 2) * 4 / 3)
+    CGFloat hypotenuseLength = sqrt(pow(GAP, 2) * 4 / 3);
     
     CGContextMoveToPoint(context, dependX, dependY);//设置起点（三角形顶）
     CGContextAddLineToPoint(context, dependX - hypotenuseLength/2, GAP+dependY);//经过点（三角形左下角）
