@@ -52,6 +52,10 @@
 		2EBA632D1FA9A24100B82A23 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA632C1FA9A24100B82A23 /* SystemConfiguration.framework */; };
 		2EBA632F1FA9A25100B82A23 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA632E1FA9A25100B82A23 /* libz.tbd */; };
 		2EBA63311FA9A25B00B82A23 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA63301FA9A25B00B82A23 /* libc++.tbd */; };
+		CE17988B21770F500004FACB /* music@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE17988921770F4F0004FACB /* music@3x.png */; };
+		CE17988C21770F500004FACB /* music@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE17988A21770F500004FACB /* music@2x.png */; };
+		CE17988F217713510004FACB /* peace@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE17988D217713510004FACB /* peace@3x.png */; };
+		CE179890217713510004FACB /* peace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE17988E217713510004FACB /* peace@2x.png */; };
 		CE17E0822157989200EF19D0 /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE17E0812157989200EF19D0 /* WKWebViewController.m */; };
 		CE17E0842157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE17E0832157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 */; };
 		CE242B4A216EF973009C4440 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE242B49216EF973009C4440 /* libc++.1.tbd */; };
@@ -73,10 +77,8 @@
 		CEC666462154D0A600838C88 /* tab_shatan@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6662A2154D0A600838C88 /* tab_shatan@3x.png */; };
 		CEC666472154D0A600838C88 /* tab_xizi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6662B2154D0A600838C88 /* tab_xizi@3x.png */; };
 		CEC666482154D0A600838C88 /* tab_xizi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6662C2154D0A600838C88 /* tab_xizi@2x.png */; };
-		CEC666492154D0A600838C88 /* tab_niu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6662D2154D0A600838C88 /* tab_niu@3x.png */; };
 		CEC6664A2154D0A600838C88 /* tab_tuzi@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6662E2154D0A600838C88 /* tab_tuzi@3x.png */; };
 		CEC6664B2154D0A600838C88 /* tab_tuzi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6662F2154D0A600838C88 /* tab_tuzi@2x.png */; };
-		CEC6664C2154D0A600838C88 /* tab_niu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC666302154D0A600838C88 /* tab_niu@2x.png */; };
 		CEC6664F2154D63500838C88 /* nav_forward@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6664D2154D63500838C88 /* nav_forward@3x.png */; };
 		CEC666502154D63500838C88 /* nav_forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6664E2154D63500838C88 /* nav_forward@2x.png */; };
 		CEC666662154E82E00838C88 /* dongdong2@3x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CEC666522154E82E00838C88 /* dongdong2@3x.tiff */; };
@@ -174,6 +176,10 @@
 		2EBA632C1FA9A24100B82A23 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2EBA632E1FA9A25100B82A23 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2EBA63301FA9A25B00B82A23 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		CE17988921770F4F0004FACB /* music@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music@3x.png"; sourceTree = "<group>"; };
+		CE17988A21770F500004FACB /* music@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music@2x.png"; sourceTree = "<group>"; };
+		CE17988D217713510004FACB /* peace@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "peace@3x.png"; path = "icon/peace@3x.png"; sourceTree = "<group>"; };
+		CE17988E217713510004FACB /* peace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "peace@2x.png"; path = "icon/peace@2x.png"; sourceTree = "<group>"; };
 		CE17E0802157989200EF19D0 /* WKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
 		CE17E0812157989200EF19D0 /* WKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
 		CE17E0832157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "纵贯线 - 亡命之徒(Live) - live.mp3"; sourceTree = "<group>"; };
@@ -206,10 +212,8 @@
 		CEC6662A2154D0A600838C88 /* tab_shatan@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_shatan@3x.png"; sourceTree = "<group>"; };
 		CEC6662B2154D0A600838C88 /* tab_xizi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_xizi@3x.png"; sourceTree = "<group>"; };
 		CEC6662C2154D0A600838C88 /* tab_xizi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_xizi@2x.png"; sourceTree = "<group>"; };
-		CEC6662D2154D0A600838C88 /* tab_niu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_niu@3x.png"; sourceTree = "<group>"; };
 		CEC6662E2154D0A600838C88 /* tab_tuzi@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_tuzi@3x.png"; sourceTree = "<group>"; };
 		CEC6662F2154D0A600838C88 /* tab_tuzi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_tuzi@2x.png"; sourceTree = "<group>"; };
-		CEC666302154D0A600838C88 /* tab_niu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_niu@2x.png"; sourceTree = "<group>"; };
 		CEC6664D2154D63500838C88 /* nav_forward@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_forward@3x.png"; sourceTree = "<group>"; };
 		CEC6664E2154D63500838C88 /* nav_forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_forward@2x.png"; sourceTree = "<group>"; };
 		CEC666522154E82E00838C88 /* dongdong2@3x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong2@3x.tiff"; sourceTree = "<group>"; };
@@ -491,6 +495,8 @@
 		CEC666102154D0A600838C88 /* pic */ = {
 			isa = PBXGroup;
 			children = (
+				CE17988E217713510004FACB /* peace@2x.png */,
+				CE17988D217713510004FACB /* peace@3x.png */,
 				CEC666512154E82E00838C88 /* image */,
 				CEC666242154D0A600838C88 /* icon */,
 			);
@@ -500,6 +506,8 @@
 		CEC666242154D0A600838C88 /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				CE17988A21770F500004FACB /* music@2x.png */,
+				CE17988921770F4F0004FACB /* music@3x.png */,
 				CEC666252154D0A600838C88 /* nav_icon */,
 				CEC666282154D0A600838C88 /* tab_icon */,
 			);
@@ -526,10 +534,8 @@
 				CEC6662A2154D0A600838C88 /* tab_shatan@3x.png */,
 				CEC6662B2154D0A600838C88 /* tab_xizi@3x.png */,
 				CEC6662C2154D0A600838C88 /* tab_xizi@2x.png */,
-				CEC6662D2154D0A600838C88 /* tab_niu@3x.png */,
 				CEC6662E2154D0A600838C88 /* tab_tuzi@3x.png */,
 				CEC6662F2154D0A600838C88 /* tab_tuzi@2x.png */,
-				CEC666302154D0A600838C88 /* tab_niu@2x.png */,
 			);
 			path = tab_icon;
 			sourceTree = "<group>";
@@ -641,11 +647,14 @@
 				2EBA62831FA84D3D00B82A23 /* Assets.xcassets in Resources */,
 				CEC6667D2154EB0A00838C88 /* dongdong2@2x.tiff in Resources */,
 				CEC6664F2154D63500838C88 /* nav_forward@3x.png in Resources */,
+				CE17988F217713510004FACB /* peace@3x.png in Resources */,
 				CEC666502154D63500838C88 /* nav_forward@2x.png in Resources */,
 				2EBA630A1FA8840600B82A23 /* 陈冠希,MC Hotdog - King Boomba's Crew.mp3 in Resources */,
 				CEC666482154D0A600838C88 /* tab_xizi@2x.png in Resources */,
 				CEC6666E2154E82E00838C88 /* 自杀突击队.jpg in Resources */,
+				CE17988C21770F500004FACB /* music@2x.png in Resources */,
 				2EBA63101FA8840600B82A23 /* Bruno Mars,Royce Da,Eminem - Lighters.mp3 in Resources */,
+				CE17988B21770F500004FACB /* music@3x.png in Resources */,
 				CEC6666A2154E82E00838C88 /* 灯泡.png in Resources */,
 				CEC6666B2154E82E00838C88 /* 小马.jpeg in Resources */,
 				CEC666742154E82E00838C88 /* 酷.png in Resources */,
@@ -653,8 +662,6 @@
 				CEC666782154E82E00838C88 /* 笑脸.png in Resources */,
 				CEC666732154E82E00838C88 /* 小丑妹.png in Resources */,
 				CEC666722154E82E00838C88 /* 润发.jpeg in Resources */,
-				CEC666492154D0A600838C88 /* tab_niu@3x.png in Resources */,
-				CEC6664C2154D0A600838C88 /* tab_niu@2x.png in Resources */,
 				CEC666792154E82E00838C88 /* Smile.png in Resources */,
 				2EBA63091FA8840600B82A23 /* Cammay Ng - Cry Away.mp3 in Resources */,
 				CE17E0842157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 in Resources */,
@@ -671,6 +678,7 @@
 				2EBA630C1FA8840600B82A23 /* Ryan.B,AY楊佬叁 - 再也没有.mp3 in Resources */,
 				2E63E7AF1FA31FDD00C37FDE /* Rihanna-Diamonds.mp3 in Resources */,
 				2EBA630F1FA8840600B82A23 /* 陈梓童-控制.mp3 in Resources */,
+				CE179890217713510004FACB /* peace@2x.png in Resources */,
 				CEC666672154E82E00838C88 /* Finder.png in Resources */,
 				2EBA630B1FA8840600B82A23 /* 大鹏-塑料袋.mp3 in Resources */,
 				CEC666442154D0A600838C88 /* nav_back@3x.png in Resources */,

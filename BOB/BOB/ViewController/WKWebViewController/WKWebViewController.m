@@ -9,7 +9,7 @@
 #import "WKWebViewController.h"
 
 #define WebsitesDicKey @"WebsitesDicKey"
-
+#define JsMessageName @"bob"
 
 @interface WKWebViewController ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler>
 
@@ -81,10 +81,12 @@
     WKUserContentController *userContentCon = [WKUserContentController new];
     
     /*
+     js调oc的方法:
+     window.webkit.messageHandlers.name.postMessage({cc:"ss"});
      point:这里的name是js调用native时的标识
-     window.webkit.messageHandlers.bob.postMessage({cc:"ss"})
+     
      */
-    [userContentCon addScriptMessageHandler:self name:@"bob"];
+    [userContentCon addScriptMessageHandler:self name:JsMessageName];
     
     
     /*
@@ -203,6 +205,12 @@
                                                              [self takeSnapshot];
                                                          }];
     
+    UIAlertAction *clean = [UIAlertAction actionWithTitle:@"清空所有浏览信息"
+                                                    style:UIAlertActionStyleDefault
+                                                  handler:^(UIAlertAction * _Nonnull action) {
+                                                      [self clean];
+                                                  }];
+    
     UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"取消"
                                                      style:UIAlertActionStyleCancel
                                                    handler:nil];
@@ -214,6 +222,7 @@
     [alert addAction:orignBookMark];
     [alert addAction:footprint];
     [alert addAction:takeSnapshot];
+    [alert addAction:clean];
     
     [alert addAction:cancel];
     
@@ -231,7 +240,14 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入地址"
                                                                    message:nil preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert addTextFieldWithConfigurationHandler:nil];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        
+        UIImageView *imageV = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tab_xizi"]];
+        textField.leftViewMode = UITextFieldViewModeAlways;
+        textField.leftView = imageV;
+        
+        textField.returnKeyType = UIReturnKeyGo;
+    }];
     
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"前往"
                                                  style:UIAlertActionStyleDefault
@@ -323,6 +339,24 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+- (void)clean
+{
+    [self.webview loadHTMLString:@"" baseURL:nil];
+    
+    NSString *libraryPath = [NSHomeDirectory() stringByAppendingString:@"/Library/"];
+    
+    NSArray *filePaths = @[@"Cookies",@"WebKit",@"Caches"];
+    for (NSString *path in filePaths)
+    {
+        NSString *fullPath = [libraryPath stringByAppendingString:path];
+        
+        NSError *error = nil;
+        [[NSFileManager defaultManager] removeItemAtPath:fullPath error:&error];
+        if (error) BOBLog(@"%@",error);
+    }
+    
+}
+
 //网页快照
 - (void)takeSnapshot
 {
@@ -395,12 +429,26 @@
 //保存地址到书签
 - (void)saveCurrentUrl
 {
+    if (!self.webview.URL.absoluteString.length)
+    {
+        [SVProgressHUD showImage:nil status:@"无地址"];
+        return;
+    }
+    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"保存"
-                                                                   message:CheckString(self.webview.URL.absoluteString)
+                                                                   message:self.webview.URL.absoluteString
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        textField.returnKeyType = UIReturnKeyDone;
         textField.text = CheckString(self.webview.title);
+        
+        UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tab_xizi"]];
+        image.contentMode = UIViewContentModeScaleAspectFill;
+        textField.leftViewMode = UITextFieldViewModeAlways;
+        textField.leftView = image;
     }];
     
     
@@ -409,9 +457,9 @@
                                 style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * _Nonnull action) {
                                     NSString *title = CheckString(alert.textFields.firstObject.text);
-                                    if(title.length)
+                                    if(title.length && CheckString(self.webview.URL.absoluteString).length)
                                     {
-                                        [self.websitesDicM setObject:CheckString(self.webview.URL.absoluteString) forKey:title];
+                                        [self.websitesDicM setObject:self.webview.URL.absoluteString forKey:title];
                                         [[NSUserDefaults standardUserDefaults] setObject:self.websitesDicM forKey:WebsitesDicKey];
                                     }
                                 }];
@@ -423,7 +471,6 @@
     [alert addAction:cancel];
     
     [self presentViewController:alert animated:YES completion:nil];
-    
 }
 
 //重置书签数据
@@ -479,9 +526,8 @@
  @param frame 可用于区分哪个窗口调用的
  @param completionHandler 警告框消失的时候调用, 回调给JS
  */
-- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
-    
-    
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler
+{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"我知道了" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         completionHandler();
@@ -499,9 +545,8 @@
  @param frame 可用于区分哪个窗口调用的
  @param completionHandler 确认框消失的时候调用, 回调给JS, 参数为选择结果: YES or NO
  */
-- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL result))completionHandler {
-    
-    
+- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL result))completionHandler
+{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请选择" message:message preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确认" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         completionHandler(YES);
@@ -525,8 +570,8 @@
  @param frame 可用于区分哪个窗口调用的
  @param completionHandler 输入框消失的时候调用, 回调给JS, 参数为输入的内容
  */
-- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(nullable NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable result))completionHandler {
-    
+- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(nullable NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable result))completionHandler
+{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入" message:prompt preferredStyle:(UIAlertControllerStyleAlert)];
     
     [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
@@ -613,6 +658,11 @@
 - (void)userContentController:(nonnull WKUserContentController *)userContentController didReceiveScriptMessage:(nonnull WKScriptMessage *)message
 {
     if (!message.body)
+    {
+        return;
+    }
+    
+    if (![JsMessageName isEqualToString:message.name])
     {
         return;
     }

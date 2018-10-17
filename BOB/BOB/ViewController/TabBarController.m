@@ -37,21 +37,15 @@
     [super viewDidLoad];
     
     NavigationController *tabNC0 = [[NavigationController alloc] initWithRootViewController:[MusicPlayViewController new]];
-    tabNC0.tabBarItem.image = [UIImage imageNamed:@"tab_niu"];
+    UIImage *music = [[UIImage imageNamed:@"music"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabNC0.tabBarItem.image = music;
 //    tabNC0.tabBarItem.badgeValue = @"bob";
     
+    NavigationController *tabNC1 = [[NavigationController alloc] initWithRootViewController:[UIViewController new]];
+    tabNC1.tabBarItem.image = [[UIImage imageNamed:@"peace"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    WKWebViewController *tuziVC = [WKWebViewController new];
-    
-    tuziVC.title = @"bob";
-    NavigationController *tabNC1 = [[NavigationController alloc] initWithRootViewController:tuziVC];
-    tabNC1.tabBarItem.image = [UIImage imageNamed:@"tab_tuzi"];
-    
-    
-    WKWebViewController *shatanVC = [ShaTanViewController new];
-    shatanVC.title = @"🏖🏖🏖";
-    NavigationController *tabNC2 = [[NavigationController alloc] initWithRootViewController:shatanVC];
-    tabNC2.tabBarItem.image = [UIImage imageNamed:@"tab_shatan"];
+    NavigationController *tabNC2 = [[NavigationController alloc] initWithRootViewController:[ShaTanViewController new]];
+    tabNC2.tabBarItem.image = [[UIImage imageNamed:@"tab_shatan"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     
     
@@ -69,20 +63,10 @@
     }
     
     self.tabBar.barStyle = UIBarStyleBlack;
-    self.tabBar.tintColor = ArcColor;
-//    self.tabBar.barTintColor = ArcColor;
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self setViewControllers:viewControllers animated:YES];
     });
-    
 }
-
-
-
-
-
-
-
 
 @end
