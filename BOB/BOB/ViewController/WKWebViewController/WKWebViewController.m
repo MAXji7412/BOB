@@ -8,10 +8,11 @@
 
 #import "WKWebViewController.h"
 
-#define WebsitesDicKey @"WebsitesDicKey"
-#define JsMessageName @"bob"
+#import "WebviewMessageHandler.h"
 
-@interface WKWebViewController ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler>
+#define WebsitesDicKey @"WebsitesDicKey"
+
+@interface WKWebViewController ()<WKNavigationDelegate,WKUIDelegate>
 
 @end
 
@@ -53,7 +54,6 @@
     }
     WKWebViewConfiguration *wkWebviewConfig = [WKWebViewConfiguration new];
     
-    
     wkWebviewConfig.userContentController = [self getWKUserContentController];
     wkWebviewConfig.preferences.javaScriptCanOpenWindowsAutomatically = YES;
     
@@ -81,46 +81,35 @@
     WKUserContentController *userContentCon = [WKUserContentController new];
     
     /*
-     js调oc的方法:
+     注册一个js调oc的id（name）:
+     js通过
      window.webkit.messageHandlers.name.postMessage({cc:"ss"});
+     这个APIt调到oc
      point:这里的name是js调用native时的标识
      
      */
-    [userContentCon addScriptMessageHandler:self name:JsMessageName];
+    [userContentCon addScriptMessageHandler:[WebviewMessageHandler new] name:JsMessageName];
     
     
-    /*
+    
     //提前注入JS方法
-    NSString *jsCode = @"alerttt";
-
+    NSString *jsCode =  @"function bobAlert (message)\n"
+                        @"{\n alert(message) \n}";
     WKUserScript *userScript = [[WKUserScript alloc] initWithSource:jsCode
                                                       injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
                                                    forMainFrameOnly:NO];
     [userContentCon addUserScript:userScript];
-    */
+    
     
     return userContentCon;
 }
 
-- (void)loadRequest{
-    
-    if (![self.urlStr isKindOfClass:NSString.class] || !self.urlStr.length) {
-        return;
-    }
-    
-    NSString *urlPrefix = @"http://";
-    NSString *secUrlPrefix = @"https://";
-    NSString *singleSlashPrefix = @"http:/";
-    NSString *secSingleSlashPrefix = @"https:/";
-    if (![self.urlStr hasPrefix:urlPrefix] && ![self.urlStr hasPrefix:secUrlPrefix] && [self.urlStr hasPrefix:singleSlashPrefix] && [self.urlStr hasPrefix:secSingleSlashPrefix])
-    {
-        self.urlStr = [secUrlPrefix stringByAppendingString:self.urlStr];//todo
-    }
+- (void)loadRequest
+{
+    if (!CheckString(self.urlStr).length) return;
     
     NSURL *url = [NSURL URLWithString:self.urlStr];
-    if (!url) {
-        return;
-    }
+    if (!url) return;
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -306,6 +295,48 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+//保存地址到书签
+- (void)saveCurrentUrl
+{
+    if (!self.webview.URL.absoluteString.length)
+    {
+        [SVProgressHUD showImage:nil status:@"无地址"];
+        return;
+    }
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"保存"
+                                                                   message:self.webview.URL.absoluteString
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        textField.returnKeyType = UIReturnKeyDone;
+        textField.text = CheckString(self.webview.title);
+        
+        UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tab_xizi"]];
+        image.contentMode = UIViewContentModeScaleAspectFill;
+        textField.leftViewMode = UITextFieldViewModeAlways;
+        textField.leftView = image;
+    }];
+    
+    
+    UIAlertAction *determine = [UIAlertAction
+                                actionWithTitle:@"存入"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * _Nonnull action) {
+                                    [self saveUrlWithTitle:alert.textFields.firstObject.text];
+                                }];
+    
+    [alert addAction:determine];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消"
+                                                     style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:cancel];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 //足迹
 - (void)footprint
 {
@@ -360,9 +391,8 @@
 //网页快照
 - (void)takeSnapshot
 {
-    if (@available(iOS 11.0, *)) {
-        WKSnapshotConfiguration *snapshotConfig = [WKSnapshotConfiguration new];
-        snapshotConfig.rect = CGRectMake(0, 0, 1000, 1000);
+    if (@available(iOS 11.0, *))
+    {
         [self.webview takeSnapshotWithConfiguration:nil completionHandler:^(UIImage * _Nullable snapshotImage, NSError * _Nullable error) {
             
             NSString *msg = nil;
@@ -426,51 +456,13 @@
     return _websitesDicM;
 }
 
-//保存地址到书签
-- (void)saveCurrentUrl
+- (void)saveUrlWithTitle:(NSString *)title
 {
-    if (!self.webview.URL.absoluteString.length)
+    if(CheckString(title).length && CheckString(self.webview.URL.absoluteString).length)
     {
-        [SVProgressHUD showImage:nil status:@"无地址"];
-        return;
+        [self.websitesDicM setObject:self.webview.URL.absoluteString forKey:title];
+        [[NSUserDefaults standardUserDefaults] setObject:self.websitesDicM forKey:WebsitesDicKey];
     }
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"保存"
-                                                                   message:self.webview.URL.absoluteString
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        
-        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-        textField.returnKeyType = UIReturnKeyDone;
-        textField.text = CheckString(self.webview.title);
-        
-        UIImageView *image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tab_xizi"]];
-        image.contentMode = UIViewContentModeScaleAspectFill;
-        textField.leftViewMode = UITextFieldViewModeAlways;
-        textField.leftView = image;
-    }];
-    
-    
-    UIAlertAction *determine = [UIAlertAction
-                                actionWithTitle:@"存入"
-                                style:UIAlertActionStyleDefault
-                                handler:^(UIAlertAction * _Nonnull action) {
-                                    NSString *title = CheckString(alert.textFields.firstObject.text);
-                                    if(title.length && CheckString(self.webview.URL.absoluteString).length)
-                                    {
-                                        [self.websitesDicM setObject:self.webview.URL.absoluteString forKey:title];
-                                        [[NSUserDefaults standardUserDefaults] setObject:self.websitesDicM forKey:WebsitesDicKey];
-                                    }
-                                }];
-    
-    [alert addAction:determine];
-    
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消"
-                                                     style:UIAlertActionStyleCancel handler:nil];
-    [alert addAction:cancel];
-    
-    [self presentViewController:alert animated:YES completion:nil];
 }
 
 //重置书签数据
@@ -651,24 +643,6 @@
 
 // 当web content处理完成时，会回调
 - (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView {
-}
-
-#pragma mark ================== WKScriptMessageHandler =============================
-
-- (void)userContentController:(nonnull WKUserContentController *)userContentController didReceiveScriptMessage:(nonnull WKScriptMessage *)message
-{
-    if (!message.body)
-    {
-        return;
-    }
-    
-    if (![JsMessageName isEqualToString:message.name])
-    {
-        return;
-    }
-    
-    
-    BOBLog(@"%@",message.body);
 }
 
 #pragma mark ================ notification ================

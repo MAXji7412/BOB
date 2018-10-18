@@ -56,6 +56,11 @@
 		CE17988C21770F500004FACB /* music@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE17988A21770F500004FACB /* music@2x.png */; };
 		CE17988F217713510004FACB /* peace@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE17988D217713510004FACB /* peace@3x.png */; };
 		CE179890217713510004FACB /* peace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE17988E217713510004FACB /* peace@2x.png */; };
+		CE179899217823100004FACB /* WebviewMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CE179898217823100004FACB /* WebviewMessageHandler.m */; };
+		CE1798DE217836300004FACB /* ComponentDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1798DD217836300004FACB /* ComponentDeviceInfo.m */; };
+		CE1798E121785CEC0004FACB /* NSDictionary+JsonConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1798E021785CEC0004FACB /* NSDictionary+JsonConversion.m */; };
+		CE1798E521785D950004FACB /* NSArray+JsonConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1798E421785D950004FACB /* NSArray+JsonConversion.m */; };
+		CE1798E821785DBF0004FACB /* NSString+ObjectConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1798E721785DBF0004FACB /* NSString+ObjectConversion.m */; };
 		CE17E0822157989200EF19D0 /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE17E0812157989200EF19D0 /* WKWebViewController.m */; };
 		CE17E0842157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE17E0832157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 */; };
 		CE242B4A216EF973009C4440 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE242B49216EF973009C4440 /* libc++.1.tbd */; };
@@ -180,6 +185,17 @@
 		CE17988A21770F500004FACB /* music@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music@2x.png"; sourceTree = "<group>"; };
 		CE17988D217713510004FACB /* peace@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "peace@3x.png"; path = "icon/peace@3x.png"; sourceTree = "<group>"; };
 		CE17988E217713510004FACB /* peace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "peace@2x.png"; path = "icon/peace@2x.png"; sourceTree = "<group>"; };
+		CE179897217823100004FACB /* WebviewMessageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebviewMessageHandler.h; sourceTree = "<group>"; };
+		CE179898217823100004FACB /* WebviewMessageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebviewMessageHandler.m; sourceTree = "<group>"; };
+		CE1798DC217836300004FACB /* ComponentDeviceInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComponentDeviceInfo.h; sourceTree = "<group>"; };
+		CE1798DD217836300004FACB /* ComponentDeviceInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComponentDeviceInfo.m; sourceTree = "<group>"; };
+		CE1798DF21785CEC0004FACB /* NSDictionary+JsonConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JsonConversion.h"; sourceTree = "<group>"; };
+		CE1798E021785CEC0004FACB /* NSDictionary+JsonConversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JsonConversion.m"; sourceTree = "<group>"; };
+		CE1798E321785D950004FACB /* NSArray+JsonConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+JsonConversion.h"; sourceTree = "<group>"; };
+		CE1798E421785D950004FACB /* NSArray+JsonConversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JsonConversion.m"; sourceTree = "<group>"; };
+		CE1798E621785DBF0004FACB /* NSString+ObjectConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+ObjectConversion.h"; sourceTree = "<group>"; };
+		CE1798E721785DBF0004FACB /* NSString+ObjectConversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+ObjectConversion.m"; sourceTree = "<group>"; };
+		CE1798E9217861C70004FACB /* Json_Object_Conversions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Json_Object_Conversions.h; sourceTree = "<group>"; };
 		CE17E0802157989200EF19D0 /* WKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
 		CE17E0812157989200EF19D0 /* WKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
 		CE17E0832157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "纵贯线 - 亡命之徒(Live) - live.mp3"; sourceTree = "<group>"; };
@@ -413,6 +429,8 @@
 		2EBA631E1FA99C8300B82A23 /* PublicTool */ = {
 			isa = PBXGroup;
 			children = (
+				CE17989A21782CA90004FACB /* Component */,
+				CE1798E221785D440004FACB /* ObjCategory */,
 				2EBA63221FA99E2800B82A23 /* DeviceRelevant.h */,
 				2EBA63231FA99E2800B82A23 /* DeviceRelevant.m */,
 				CEBDEF1D21391CBF00EE6182 /* GlobalDefine.h */,
@@ -458,8 +476,33 @@
 		CE09AFB821709A990003D230 /* WKMessageHandler */ = {
 			isa = PBXGroup;
 			children = (
+				CE179897217823100004FACB /* WebviewMessageHandler.h */,
+				CE179898217823100004FACB /* WebviewMessageHandler.m */,
 			);
 			path = WKMessageHandler;
+			sourceTree = "<group>";
+		};
+		CE17989A21782CA90004FACB /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				CE1798DC217836300004FACB /* ComponentDeviceInfo.h */,
+				CE1798DD217836300004FACB /* ComponentDeviceInfo.m */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		CE1798E221785D440004FACB /* ObjCategory */ = {
+			isa = PBXGroup;
+			children = (
+				CE1798DF21785CEC0004FACB /* NSDictionary+JsonConversion.h */,
+				CE1798E021785CEC0004FACB /* NSDictionary+JsonConversion.m */,
+				CE1798E321785D950004FACB /* NSArray+JsonConversion.h */,
+				CE1798E421785D950004FACB /* NSArray+JsonConversion.m */,
+				CE1798E621785DBF0004FACB /* NSString+ObjectConversion.h */,
+				CE1798E721785DBF0004FACB /* NSString+ObjectConversion.m */,
+				CE1798E9217861C70004FACB /* Json_Object_Conversions.h */,
+			);
+			path = ObjCategory;
 			sourceTree = "<group>";
 		};
 		CE17E07F2157980200EF19D0 /* WKWebViewController */ = {
@@ -712,12 +755,14 @@
 				2EBA63241FA99E2800B82A23 /* DeviceRelevant.m in Sources */,
 				2E6451551FAAB4B100FCCF70 /* UIButton+WebCache.m in Sources */,
 				CEC6660821548C0900838C88 /* NavigationController.m in Sources */,
+				CE179899217823100004FACB /* WebviewMessageHandler.m in Sources */,
 				2E6451541FAAB4B100FCCF70 /* SDWebImagePrefetcher.m in Sources */,
 				2E6451521FAAB4B100FCCF70 /* SDWebImageDownloaderOperation.m in Sources */,
 				2E63E7771FA3186000C37FDE /* SVProgressAnimatedView.m in Sources */,
 				2E63E74A1FA306FD00C37FDE /* AppDelegate.m in Sources */,
 				2E6451581FAAB4B100FCCF70 /* UIImageView+HighlightedWebCache.m in Sources */,
 				CEF92169215E37D600F0BA1E /* BOBTool.m in Sources */,
+				CE1798E521785D950004FACB /* NSArray+JsonConversion.m in Sources */,
 				2E6451571FAAB4B100FCCF70 /* UIImage+MultiFormat.m in Sources */,
 				CE295B89216F3C3B00353F85 /* BOBNSlog.m in Sources */,
 				CEB9357E21464A8F00C36C59 /* PlayTool.m in Sources */,
@@ -727,7 +772,10 @@
 				2EBA62841FA84D3D00B82A23 /* main.m in Sources */,
 				2E6451561FAAB4B100FCCF70 /* UIImage+GIF.m in Sources */,
 				CEC665AB2153913300838C88 /* TabBarController.m in Sources */,
+				CE1798E121785CEC0004FACB /* NSDictionary+JsonConversion.m in Sources */,
+				CE1798DE217836300004FACB /* ComponentDeviceInfo.m in Sources */,
 				2E6451511FAAB4B100FCCF70 /* SDWebImageDownloader.m in Sources */,
+				CE1798E821785DBF0004FACB /* NSString+ObjectConversion.m in Sources */,
 				2E63E7791FA3186000C37FDE /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

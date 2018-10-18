@@ -24,7 +24,7 @@
     [self makeMainWindow];
     
     //启动数据采集
-//    [self talkingdataStart];
+    [self talkingdataStart];
     //SVPconfig
     [self svpConfig];
 }
@@ -34,8 +34,10 @@
     [TalkingData setLogEnabled:NO];
     [TalkingData setExceptionReportEnabled:YES];//捕捉崩溃
     [TalkingData setSignalReportEnabled:YES];//异常信号
-    [TalkingData sessionStarted:@"79997EA2B662472F88ED0EB267A0AFD7" withChannelId:@"safari"];
     [TalkingData setGlobalKV:@"deviceName" value:CheckString([DeviceRelevant getDeviceModelName])];
+    
+    //启动
+    [TalkingData sessionStarted:@"79997EA2B662472F88ED0EB267A0AFD7" withChannelId:@"safari"];
     
     [TalkingData trackEvent:@"BOB启动"];
 }
