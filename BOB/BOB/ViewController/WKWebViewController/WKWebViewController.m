@@ -62,10 +62,11 @@
     self.webview.navigationDelegate = self;
     self.webview.UIDelegate = self;
     self.webview.allowsBackForwardNavigationGestures = YES;
+    
     self.webview.scrollView.contentInset = UIEdgeInsetsMake(NavMaxY, 0, TabBarH, 0);
     
     if (@available(iOS 11.0, *)) {
-        self.webview.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        self.webview.scrollView.contentInsetAdjustmentBehavior = 2;
     } else {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
@@ -100,7 +101,6 @@
                                                    forMainFrameOnly:NO];
     [userContentCon addUserScript:userScript];
     
-    
     return userContentCon;
 }
 
@@ -109,6 +109,12 @@
     if (!CheckString(self.urlStr).length) return;
     
     NSURL *url = [NSURL URLWithString:self.urlStr];
+    
+    if (!url)
+    {
+        url = [NSURL URLWithString:[self.urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    }
+    
     if (!url) return;
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -199,6 +205,7 @@
                                                   handler:^(UIAlertAction * _Nonnull action) {
                                                       [self clean];
                                                   }];
+    clean.enabled = NO;
     
     UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"取消"
                                                      style:UIAlertActionStyleCancel

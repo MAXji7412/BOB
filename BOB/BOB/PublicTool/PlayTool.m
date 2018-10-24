@@ -23,7 +23,14 @@ NSString *MusicImage = @"musicImage";//专辑封面(UIImage)
 
 + (NSArray *)getMusicData
 {
-    NSMutableArray<NSDictionary *> *musicDataArrM = [NSMutableArray array];;
+    static NSMutableArray<NSDictionary *> *musicDataArrM;
+    
+    if (musicDataArrM)
+    {
+        return musicDataArrM;
+    }else{
+        musicDataArrM = [NSMutableArray array];
+    }
     
     NSString *sourceDataPath = [[NSBundle mainBundle] bundlePath];
     NSArray<NSString *> *allDataPathArr = [[NSFileManager defaultManager] subpathsAtPath:sourceDataPath];
@@ -286,7 +293,7 @@ static NSTimer *mediaItemArtworkUpdateTimer;
 
 + (void)delegateNaxt
 {
-    NSString *selStr = @"curentMusicIndex";
+    NSString *selStr = @"currentMusicIndex";
     SEL currentPlayIndex = NSSelectorFromString(selStr);
     if (![playDelegate respondsToSelector:currentPlayIndex]) {
         return;
@@ -309,7 +316,7 @@ static NSTimer *mediaItemArtworkUpdateTimer;
     NSInteger (* func)(id,SEL) = (void *)currentPlayIndexImp;
     NSInteger currentMusicIndex = func(playDelegate,currentpPlayIndex);
     
-    currentMusicIndex++;
+    currentMusicIndex--;
     [playDelegate setValue:[NSNumber numberWithInteger:currentMusicIndex] forKey:selStr];
 }
 

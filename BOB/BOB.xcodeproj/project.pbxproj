@@ -61,12 +61,33 @@
 		CE1798E121785CEC0004FACB /* NSDictionary+JsonConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1798E021785CEC0004FACB /* NSDictionary+JsonConversion.m */; };
 		CE1798E521785D950004FACB /* NSArray+JsonConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1798E421785D950004FACB /* NSArray+JsonConversion.m */; };
 		CE1798E821785DBF0004FACB /* NSString+ObjectConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1798E721785DBF0004FACB /* NSString+ObjectConversion.m */; };
+		CE1798FA217981320004FACB /* dongdong2@3x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CE1798EE217981320004FACB /* dongdong2@3x.tiff */; };
+		CE1798FB217981320004FACB /* dongdong1@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CE1798EF217981320004FACB /* dongdong1@2x.tiff */; };
+		CE1798FC217981320004FACB /* Finder.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1798F0217981320004FACB /* Finder.png */; };
+		CE1798FE217981320004FACB /* dongdong3@3x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CE1798F2217981320004FACB /* dongdong3@3x.tiff */; };
+		CE1798FF217981320004FACB /* 小马.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE1798F3217981320004FACB /* 小马.jpeg */; };
+		CE179900217981320004FACB /* dongdong2@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CE1798F4217981320004FACB /* dongdong2@2x.tiff */; };
+		CE179901217981320004FACB /* dongdong1@3x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CE1798F5217981320004FACB /* dongdong1@3x.tiff */; };
+		CE179902217981320004FACB /* 06.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1798F6217981320004FACB /* 06.png */; };
+		CE179903217981320004FACB /* adidasi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE1798F7217981320004FACB /* adidasi.jpg */; };
+		CE179904217981320004FACB /* dongdong3@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CE1798F8217981320004FACB /* dongdong3@2x.tiff */; };
+		CE179905217981320004FACB /* 小丑妹.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1798F9217981320004FACB /* 小丑妹.png */; };
+		CE1799082179818A0004FACB /* JoeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1799072179818A0004FACB /* JoeyViewController.m */; };
+		CE1799DA2179BC2A0004FACB /* joey2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1799D62179BC2A0004FACB /* joey2.png */; };
+		CE1799DB2179BC2A0004FACB /* joey1.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1799D72179BC2A0004FACB /* joey1.png */; };
+		CE1799DC2179BC2A0004FACB /* joey.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1799D82179BC2A0004FACB /* joey.png */; };
+		CE1799DD2179BC2A0004FACB /* joey3.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1799D92179BC2A0004FACB /* joey3.png */; };
 		CE17E0822157989200EF19D0 /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE17E0812157989200EF19D0 /* WKWebViewController.m */; };
 		CE17E0842157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE17E0832157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 */; };
 		CE242B4A216EF973009C4440 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE242B49216EF973009C4440 /* libc++.1.tbd */; };
 		CE242B4C216EF97F009C4440 /* libc++abi.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE242B4B216EF97F009C4440 /* libc++abi.tbd */; };
 		CE295B89216F3C3B00353F85 /* BOBNSlog.m in Sources */ = {isa = PBXBuildFile; fileRef = CE295B88216F3C3B00353F85 /* BOBNSlog.m */; };
 		CE2BAD1F213E67380051FD2D /* TIEminem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE2BAD1E213E67380051FD2D /* TIEminem.mp3 */; };
+		CE437660217DC229000AE8CC /* joey2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE43765F217DC228000AE8CC /* joey2.jpeg */; };
+		CE437665217DCA0D000AE8CC /* DirectTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CE437664217DCA0D000AE8CC /* DirectTool.m */; };
+		CE437668217DD6B3000AE8CC /* 3dtouch_beauty.png in Resources */ = {isa = PBXBuildFile; fileRef = CE437666217DD6B3000AE8CC /* 3dtouch_beauty.png */; };
+		CE43766B217DD769000AE8CC /* 3dtouch_shatan.png in Resources */ = {isa = PBXBuildFile; fileRef = CE43766A217DD769000AE8CC /* 3dtouch_shatan.png */; };
+		CE4376AF217F121B000AE8CC /* TouchMoveImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4376AE217F121B000AE8CC /* TouchMoveImageView.m */; };
 		CE745DB3216CB3EB00766D9B /* nav_book@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE745DB1216CB3EB00766D9B /* nav_book@3x.png */; };
 		CE745DB4216CB3EB00766D9B /* nav_book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE745DB2216CB3EB00766D9B /* nav_book@2x.png */; };
 		CE745DB8216D8F8800766D9B /* PopView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745DB7216D8F8800766D9B /* PopView.m */; };
@@ -86,26 +107,6 @@
 		CEC6664B2154D0A600838C88 /* tab_tuzi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6662F2154D0A600838C88 /* tab_tuzi@2x.png */; };
 		CEC6664F2154D63500838C88 /* nav_forward@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6664D2154D63500838C88 /* nav_forward@3x.png */; };
 		CEC666502154D63500838C88 /* nav_forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6664E2154D63500838C88 /* nav_forward@2x.png */; };
-		CEC666662154E82E00838C88 /* dongdong2@3x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CEC666522154E82E00838C88 /* dongdong2@3x.tiff */; };
-		CEC666672154E82E00838C88 /* Finder.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC666532154E82E00838C88 /* Finder.png */; };
-		CEC666682154E82E00838C88 /* dongdong3@3x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CEC666542154E82E00838C88 /* dongdong3@3x.tiff */; };
-		CEC666692154E82E00838C88 /* cry.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC666552154E82E00838C88 /* cry.png */; };
-		CEC6666A2154E82E00838C88 /* 灯泡.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC666562154E82E00838C88 /* 灯泡.png */; };
-		CEC6666B2154E82E00838C88 /* 小马.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CEC666572154E82E00838C88 /* 小马.jpeg */; };
-		CEC6666D2154E82E00838C88 /* dongdong1@3x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CEC666592154E82E00838C88 /* dongdong1@3x.tiff */; };
-		CEC6666E2154E82E00838C88 /* 自杀突击队.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEC6665A2154E82E00838C88 /* 自杀突击队.jpg */; };
-		CEC6666F2154E82E00838C88 /* 06.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6665B2154E82E00838C88 /* 06.png */; };
-		CEC666702154E82E00838C88 /* adidasi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEC6665C2154E82E00838C88 /* adidasi.jpg */; };
-		CEC666712154E82E00838C88 /* 拓海.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6665D2154E82E00838C88 /* 拓海.png */; };
-		CEC666722154E82E00838C88 /* 润发.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CEC6665E2154E82E00838C88 /* 润发.jpeg */; };
-		CEC666732154E82E00838C88 /* 小丑妹.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6665F2154E82E00838C88 /* 小丑妹.png */; };
-		CEC666742154E82E00838C88 /* 酷.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC666602154E82E00838C88 /* 酷.png */; };
-		CEC666772154E82E00838C88 /* 跑酷.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC666632154E82E00838C88 /* 跑酷.png */; };
-		CEC666782154E82E00838C88 /* 笑脸.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC666642154E82E00838C88 /* 笑脸.png */; };
-		CEC666792154E82E00838C88 /* Smile.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC666652154E82E00838C88 /* Smile.png */; };
-		CEC6667D2154EB0A00838C88 /* dongdong2@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CEC6667A2154EB0A00838C88 /* dongdong2@2x.tiff */; };
-		CEC6667E2154EB0A00838C88 /* dongdong3@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CEC6667B2154EB0A00838C88 /* dongdong3@2x.tiff */; };
-		CEC6667F2154EB0A00838C88 /* dongdong1@2x.tiff in Resources */ = {isa = PBXBuildFile; fileRef = CEC6667C2154EB0A00838C88 /* dongdong1@2x.tiff */; };
 		CEF92169215E37D600F0BA1E /* BOBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF92168215E37D600F0BA1E /* BOBTool.m */; };
 /* End PBXBuildFile section */
 
@@ -183,8 +184,8 @@
 		2EBA63301FA9A25B00B82A23 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		CE17988921770F4F0004FACB /* music@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music@3x.png"; sourceTree = "<group>"; };
 		CE17988A21770F500004FACB /* music@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music@2x.png"; sourceTree = "<group>"; };
-		CE17988D217713510004FACB /* peace@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "peace@3x.png"; path = "icon/peace@3x.png"; sourceTree = "<group>"; };
-		CE17988E217713510004FACB /* peace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "peace@2x.png"; path = "icon/peace@2x.png"; sourceTree = "<group>"; };
+		CE17988D217713510004FACB /* peace@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "peace@3x.png"; sourceTree = "<group>"; };
+		CE17988E217713510004FACB /* peace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "peace@2x.png"; sourceTree = "<group>"; };
 		CE179897217823100004FACB /* WebviewMessageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebviewMessageHandler.h; sourceTree = "<group>"; };
 		CE179898217823100004FACB /* WebviewMessageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebviewMessageHandler.m; sourceTree = "<group>"; };
 		CE1798DC217836300004FACB /* ComponentDeviceInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComponentDeviceInfo.h; sourceTree = "<group>"; };
@@ -196,6 +197,23 @@
 		CE1798E621785DBF0004FACB /* NSString+ObjectConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+ObjectConversion.h"; sourceTree = "<group>"; };
 		CE1798E721785DBF0004FACB /* NSString+ObjectConversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+ObjectConversion.m"; sourceTree = "<group>"; };
 		CE1798E9217861C70004FACB /* Json_Object_Conversions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Json_Object_Conversions.h; sourceTree = "<group>"; };
+		CE1798EE217981320004FACB /* dongdong2@3x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong2@3x.tiff"; sourceTree = "<group>"; };
+		CE1798EF217981320004FACB /* dongdong1@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong1@2x.tiff"; sourceTree = "<group>"; };
+		CE1798F0217981320004FACB /* Finder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Finder.png; sourceTree = "<group>"; };
+		CE1798F2217981320004FACB /* dongdong3@3x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong3@3x.tiff"; sourceTree = "<group>"; };
+		CE1798F3217981320004FACB /* 小马.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "小马.jpeg"; sourceTree = "<group>"; };
+		CE1798F4217981320004FACB /* dongdong2@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong2@2x.tiff"; sourceTree = "<group>"; };
+		CE1798F5217981320004FACB /* dongdong1@3x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong1@3x.tiff"; sourceTree = "<group>"; };
+		CE1798F6217981320004FACB /* 06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 06.png; sourceTree = "<group>"; };
+		CE1798F7217981320004FACB /* adidasi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = adidasi.jpg; sourceTree = "<group>"; };
+		CE1798F8217981320004FACB /* dongdong3@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong3@2x.tiff"; sourceTree = "<group>"; };
+		CE1798F9217981320004FACB /* 小丑妹.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小丑妹.png"; sourceTree = "<group>"; };
+		CE1799062179818A0004FACB /* JoeyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JoeyViewController.h; sourceTree = "<group>"; };
+		CE1799072179818A0004FACB /* JoeyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JoeyViewController.m; sourceTree = "<group>"; };
+		CE1799D62179BC2A0004FACB /* joey2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joey2.png; sourceTree = "<group>"; };
+		CE1799D72179BC2A0004FACB /* joey1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joey1.png; sourceTree = "<group>"; };
+		CE1799D82179BC2A0004FACB /* joey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joey.png; sourceTree = "<group>"; };
+		CE1799D92179BC2A0004FACB /* joey3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joey3.png; sourceTree = "<group>"; };
 		CE17E0802157989200EF19D0 /* WKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
 		CE17E0812157989200EF19D0 /* WKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
 		CE17E0832157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "纵贯线 - 亡命之徒(Live) - live.mp3"; sourceTree = "<group>"; };
@@ -204,6 +222,13 @@
 		CE295B87216F3C3B00353F85 /* BOBNSlog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BOBNSlog.h; sourceTree = "<group>"; };
 		CE295B88216F3C3B00353F85 /* BOBNSlog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BOBNSlog.m; sourceTree = "<group>"; };
 		CE2BAD1E213E67380051FD2D /* TIEminem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TIEminem.mp3; sourceTree = "<group>"; };
+		CE43765F217DC228000AE8CC /* joey2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = joey2.jpeg; sourceTree = "<group>"; };
+		CE437663217DCA0D000AE8CC /* DirectTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DirectTool.h; sourceTree = "<group>"; };
+		CE437664217DCA0D000AE8CC /* DirectTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DirectTool.m; sourceTree = "<group>"; };
+		CE437666217DD6B3000AE8CC /* 3dtouch_beauty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3dtouch_beauty.png; sourceTree = "<group>"; };
+		CE43766A217DD769000AE8CC /* 3dtouch_shatan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3dtouch_shatan.png; sourceTree = "<group>"; };
+		CE4376AD217F121B000AE8CC /* TouchMoveImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchMoveImageView.h; sourceTree = "<group>"; };
+		CE4376AE217F121B000AE8CC /* TouchMoveImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchMoveImageView.m; sourceTree = "<group>"; };
 		CE745DB1216CB3EB00766D9B /* nav_book@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_book@3x.png"; sourceTree = "<group>"; };
 		CE745DB2216CB3EB00766D9B /* nav_book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_book@2x.png"; sourceTree = "<group>"; };
 		CE745DB6216D8F8800766D9B /* PopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopView.h; sourceTree = "<group>"; };
@@ -232,26 +257,6 @@
 		CEC6662F2154D0A600838C88 /* tab_tuzi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_tuzi@2x.png"; sourceTree = "<group>"; };
 		CEC6664D2154D63500838C88 /* nav_forward@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_forward@3x.png"; sourceTree = "<group>"; };
 		CEC6664E2154D63500838C88 /* nav_forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_forward@2x.png"; sourceTree = "<group>"; };
-		CEC666522154E82E00838C88 /* dongdong2@3x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong2@3x.tiff"; sourceTree = "<group>"; };
-		CEC666532154E82E00838C88 /* Finder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Finder.png; sourceTree = "<group>"; };
-		CEC666542154E82E00838C88 /* dongdong3@3x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong3@3x.tiff"; sourceTree = "<group>"; };
-		CEC666552154E82E00838C88 /* cry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cry.png; sourceTree = "<group>"; };
-		CEC666562154E82E00838C88 /* 灯泡.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "灯泡.png"; sourceTree = "<group>"; };
-		CEC666572154E82E00838C88 /* 小马.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "小马.jpeg"; sourceTree = "<group>"; };
-		CEC666592154E82E00838C88 /* dongdong1@3x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong1@3x.tiff"; sourceTree = "<group>"; };
-		CEC6665A2154E82E00838C88 /* 自杀突击队.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "自杀突击队.jpg"; sourceTree = "<group>"; };
-		CEC6665B2154E82E00838C88 /* 06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 06.png; sourceTree = "<group>"; };
-		CEC6665C2154E82E00838C88 /* adidasi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = adidasi.jpg; sourceTree = "<group>"; };
-		CEC6665D2154E82E00838C88 /* 拓海.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "拓海.png"; sourceTree = "<group>"; };
-		CEC6665E2154E82E00838C88 /* 润发.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "润发.jpeg"; sourceTree = "<group>"; };
-		CEC6665F2154E82E00838C88 /* 小丑妹.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小丑妹.png"; sourceTree = "<group>"; };
-		CEC666602154E82E00838C88 /* 酷.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "酷.png"; sourceTree = "<group>"; };
-		CEC666632154E82E00838C88 /* 跑酷.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "跑酷.png"; sourceTree = "<group>"; };
-		CEC666642154E82E00838C88 /* 笑脸.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "笑脸.png"; sourceTree = "<group>"; };
-		CEC666652154E82E00838C88 /* Smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smile.png; sourceTree = "<group>"; };
-		CEC6667A2154EB0A00838C88 /* dongdong2@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong2@2x.tiff"; sourceTree = "<group>"; };
-		CEC6667B2154EB0A00838C88 /* dongdong3@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong3@2x.tiff"; sourceTree = "<group>"; };
-		CEC6667C2154EB0A00838C88 /* dongdong1@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong1@2x.tiff"; sourceTree = "<group>"; };
 		CEF92167215E37D600F0BA1E /* BOBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BOBTool.h; sourceTree = "<group>"; };
 		CEF92168215E37D600F0BA1E /* BOBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BOBTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -436,6 +441,8 @@
 				CEBDEF1D21391CBF00EE6182 /* GlobalDefine.h */,
 				CEF92167215E37D600F0BA1E /* BOBTool.h */,
 				CEF92168215E37D600F0BA1E /* BOBTool.m */,
+				CE437663217DCA0D000AE8CC /* DirectTool.h */,
+				CE437664217DCA0D000AE8CC /* DirectTool.m */,
 				CEB9357C21464A8E00C36C59 /* PlayTool.h */,
 				CEB9357D21464A8F00C36C59 /* PlayTool.m */,
 				CE295B87216F3C3B00353F85 /* BOBNSlog.h */,
@@ -505,6 +512,31 @@
 			path = ObjCategory;
 			sourceTree = "<group>";
 		};
+		CE1798ED217981320004FACB /* image */ = {
+			isa = PBXGroup;
+			children = (
+				CE43765F217DC228000AE8CC /* joey2.jpeg */,
+				CE17988E217713510004FACB /* peace@2x.png */,
+				CE17988D217713510004FACB /* peace@3x.png */,
+				CE1799D82179BC2A0004FACB /* joey.png */,
+				CE1799D72179BC2A0004FACB /* joey1.png */,
+				CE1799D62179BC2A0004FACB /* joey2.png */,
+				CE1799D92179BC2A0004FACB /* joey3.png */,
+				CE1798EE217981320004FACB /* dongdong2@3x.tiff */,
+				CE1798EF217981320004FACB /* dongdong1@2x.tiff */,
+				CE1798F0217981320004FACB /* Finder.png */,
+				CE1798F2217981320004FACB /* dongdong3@3x.tiff */,
+				CE1798F3217981320004FACB /* 小马.jpeg */,
+				CE1798F4217981320004FACB /* dongdong2@2x.tiff */,
+				CE1798F5217981320004FACB /* dongdong1@3x.tiff */,
+				CE1798F6217981320004FACB /* 06.png */,
+				CE1798F7217981320004FACB /* adidasi.jpg */,
+				CE1798F8217981320004FACB /* dongdong3@2x.tiff */,
+				CE1798F9217981320004FACB /* 小丑妹.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		CE17E07F2157980200EF19D0 /* WKWebViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,6 +552,8 @@
 			children = (
 				CE745DB6216D8F8800766D9B /* PopView.h */,
 				CE745DB7216D8F8800766D9B /* PopView.m */,
+				CE4376AD217F121B000AE8CC /* TouchMoveImageView.h */,
+				CE4376AE217F121B000AE8CC /* TouchMoveImageView.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -531,6 +565,8 @@
 				CEC6660A2154C99300838C88 /* MusicPlayViewController.m */,
 				CEC6660D2154C9DD00838C88 /* ShaTanViewController.h */,
 				CEC6660E2154C9DD00838C88 /* ShaTanViewController.m */,
+				CE1799062179818A0004FACB /* JoeyViewController.h */,
+				CE1799072179818A0004FACB /* JoeyViewController.m */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -538,9 +574,7 @@
 		CEC666102154D0A600838C88 /* pic */ = {
 			isa = PBXGroup;
 			children = (
-				CE17988E217713510004FACB /* peace@2x.png */,
-				CE17988D217713510004FACB /* peace@3x.png */,
-				CEC666512154E82E00838C88 /* image */,
+				CE1798ED217981320004FACB /* image */,
 				CEC666242154D0A600838C88 /* icon */,
 			);
 			path = pic;
@@ -549,6 +583,8 @@
 		CEC666242154D0A600838C88 /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				CE437666217DD6B3000AE8CC /* 3dtouch_beauty.png */,
+				CE43766A217DD769000AE8CC /* 3dtouch_shatan.png */,
 				CE17988A21770F500004FACB /* music@2x.png */,
 				CE17988921770F4F0004FACB /* music@3x.png */,
 				CEC666252154D0A600838C88 /* nav_icon */,
@@ -581,33 +617,6 @@
 				CEC6662F2154D0A600838C88 /* tab_tuzi@2x.png */,
 			);
 			path = tab_icon;
-			sourceTree = "<group>";
-		};
-		CEC666512154E82E00838C88 /* image */ = {
-			isa = PBXGroup;
-			children = (
-				CEC6667C2154EB0A00838C88 /* dongdong1@2x.tiff */,
-				CEC6667A2154EB0A00838C88 /* dongdong2@2x.tiff */,
-				CEC6667B2154EB0A00838C88 /* dongdong3@2x.tiff */,
-				CEC666522154E82E00838C88 /* dongdong2@3x.tiff */,
-				CEC666532154E82E00838C88 /* Finder.png */,
-				CEC666542154E82E00838C88 /* dongdong3@3x.tiff */,
-				CEC666552154E82E00838C88 /* cry.png */,
-				CEC666562154E82E00838C88 /* 灯泡.png */,
-				CEC666572154E82E00838C88 /* 小马.jpeg */,
-				CEC666592154E82E00838C88 /* dongdong1@3x.tiff */,
-				CEC6665A2154E82E00838C88 /* 自杀突击队.jpg */,
-				CEC6665B2154E82E00838C88 /* 06.png */,
-				CEC6665C2154E82E00838C88 /* adidasi.jpg */,
-				CEC6665D2154E82E00838C88 /* 拓海.png */,
-				CEC6665E2154E82E00838C88 /* 润发.jpeg */,
-				CEC6665F2154E82E00838C88 /* 小丑妹.png */,
-				CEC666602154E82E00838C88 /* 酷.png */,
-				CEC666632154E82E00838C88 /* 跑酷.png */,
-				CEC666642154E82E00838C88 /* 笑脸.png */,
-				CEC666652154E82E00838C88 /* Smile.png */,
-			);
-			path = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -677,60 +686,58 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEC6664A2154D0A600838C88 /* tab_tuzi@3x.png in Resources */,
+				CE1798FA217981320004FACB /* dongdong2@3x.tiff in Resources */,
+				CE179903217981320004FACB /* adidasi.jpg in Resources */,
 				2EBA63111FA8840600B82A23 /* 陈冠希-Salute.mp3 in Resources */,
-				CEC6667F2154EB0A00838C88 /* dongdong1@2x.tiff in Resources */,
-				CEC6666D2154E82E00838C88 /* dongdong1@3x.tiff in Resources */,
-				CEC6667E2154EB0A00838C88 /* dongdong3@2x.tiff in Resources */,
 				2EBA630D1FA8840600B82A23 /* 陈鸿宇 - 理想三旬.mp3 in Resources */,
 				2EBA63081FA8840600B82A23 /* Tupac - Ambitionz Az a Ridah.mp3 in Resources */,
-				CEC666682154E82E00838C88 /* dongdong3@3x.tiff in Resources */,
+				CE1798FC217981320004FACB /* Finder.png in Resources */,
 				2E6450FB1FA9CA9800FCCF70 /* Launch Screen.storyboard in Resources */,
+				CE1799DA2179BC2A0004FACB /* joey2.png in Resources */,
 				CE745DB3216CB3EB00766D9B /* nav_book@3x.png in Resources */,
-				CEC666692154E82E00838C88 /* cry.png in Resources */,
+				CE437660217DC229000AE8CC /* joey2.jpeg in Resources */,
 				2EBA62831FA84D3D00B82A23 /* Assets.xcassets in Resources */,
-				CEC6667D2154EB0A00838C88 /* dongdong2@2x.tiff in Resources */,
 				CEC6664F2154D63500838C88 /* nav_forward@3x.png in Resources */,
 				CE17988F217713510004FACB /* peace@3x.png in Resources */,
 				CEC666502154D63500838C88 /* nav_forward@2x.png in Resources */,
 				2EBA630A1FA8840600B82A23 /* 陈冠希,MC Hotdog - King Boomba's Crew.mp3 in Resources */,
 				CEC666482154D0A600838C88 /* tab_xizi@2x.png in Resources */,
-				CEC6666E2154E82E00838C88 /* 自杀突击队.jpg in Resources */,
 				CE17988C21770F500004FACB /* music@2x.png in Resources */,
 				2EBA63101FA8840600B82A23 /* Bruno Mars,Royce Da,Eminem - Lighters.mp3 in Resources */,
+				CE179900217981320004FACB /* dongdong2@2x.tiff in Resources */,
 				CE17988B21770F500004FACB /* music@3x.png in Resources */,
-				CEC6666A2154E82E00838C88 /* 灯泡.png in Resources */,
-				CEC6666B2154E82E00838C88 /* 小马.jpeg in Resources */,
-				CEC666742154E82E00838C88 /* 酷.png in Resources */,
-				CEC666712154E82E00838C88 /* 拓海.png in Resources */,
-				CEC666782154E82E00838C88 /* 笑脸.png in Resources */,
-				CEC666732154E82E00838C88 /* 小丑妹.png in Resources */,
-				CEC666722154E82E00838C88 /* 润发.jpeg in Resources */,
-				CEC666792154E82E00838C88 /* Smile.png in Resources */,
 				2EBA63091FA8840600B82A23 /* Cammay Ng - Cry Away.mp3 in Resources */,
+				CE179902217981320004FACB /* 06.png in Resources */,
 				CE17E0842157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 in Resources */,
+				CE43766B217DD769000AE8CC /* 3dtouch_shatan.png in Resources */,
+				CE1798FF217981320004FACB /* 小马.jpeg in Resources */,
 				CEC666472154D0A600838C88 /* tab_xizi@3x.png in Resources */,
 				CE745DB4216CB3EB00766D9B /* nav_book@2x.png in Resources */,
 				2EBA630E1FA8840600B82A23 /* Oh Susanna - Sleepy Little Sailor.mp3 in Resources */,
+				CE179905217981320004FACB /* 小丑妹.png in Resources */,
 				2EBA63121FA8840600B82A23 /* 低调组合 - 终点起点.mp3 in Resources */,
 				CEC6664B2154D0A600838C88 /* tab_tuzi@2x.png in Resources */,
-				CEC6666F2154E82E00838C88 /* 06.png in Resources */,
+				CE179904217981320004FACB /* dongdong3@2x.tiff in Resources */,
 				CEC666432154D0A600838C88 /* nav_back@2x.png in Resources */,
 				2E63E7AE1FA31FDD00C37FDE /* Alan Walker-Spectre.mp3 in Resources */,
-				CEC666772154E82E00838C88 /* 跑酷.png in Resources */,
-				CEC666662154E82E00838C88 /* dongdong2@3x.tiff in Resources */,
 				2EBA630C1FA8840600B82A23 /* Ryan.B,AY楊佬叁 - 再也没有.mp3 in Resources */,
 				2E63E7AF1FA31FDD00C37FDE /* Rihanna-Diamonds.mp3 in Resources */,
 				2EBA630F1FA8840600B82A23 /* 陈梓童-控制.mp3 in Resources */,
+				CE1799DB2179BC2A0004FACB /* joey1.png in Resources */,
 				CE179890217713510004FACB /* peace@2x.png in Resources */,
-				CEC666672154E82E00838C88 /* Finder.png in Resources */,
 				2EBA630B1FA8840600B82A23 /* 大鹏-塑料袋.mp3 in Resources */,
+				CE437668217DD6B3000AE8CC /* 3dtouch_beauty.png in Resources */,
 				CEC666442154D0A600838C88 /* nav_back@3x.png in Resources */,
+				CE1799DC2179BC2A0004FACB /* joey.png in Resources */,
 				2E63E7781FA3186000C37FDE /* SVProgressHUD.bundle in Resources */,
+				CE1798FB217981320004FACB /* dongdong1@2x.tiff in Resources */,
 				CEC666452154D0A600838C88 /* tab_shatan@2x.png in Resources */,
+				CE179901217981320004FACB /* dongdong1@3x.tiff in Resources */,
 				CE2BAD1F213E67380051FD2D /* TIEminem.mp3 in Resources */,
+				CE1799DD2179BC2A0004FACB /* joey3.png in Resources */,
 				2E63E7B01FA31FDD00C37FDE /* 江语晨 - 最后一页.mp3 in Resources */,
+				CE1798FE217981320004FACB /* dongdong3@3x.tiff in Resources */,
 				CEC666462154D0A600838C88 /* tab_shatan@3x.png in Resources */,
-				CEC666702154E82E00838C88 /* adidasi.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,8 +770,10 @@
 				2E6451581FAAB4B100FCCF70 /* UIImageView+HighlightedWebCache.m in Sources */,
 				CEF92169215E37D600F0BA1E /* BOBTool.m in Sources */,
 				CE1798E521785D950004FACB /* NSArray+JsonConversion.m in Sources */,
+				CE437665217DCA0D000AE8CC /* DirectTool.m in Sources */,
 				2E6451571FAAB4B100FCCF70 /* UIImage+MultiFormat.m in Sources */,
 				CE295B89216F3C3B00353F85 /* BOBNSlog.m in Sources */,
+				CE1799082179818A0004FACB /* JoeyViewController.m in Sources */,
 				CEB9357E21464A8F00C36C59 /* PlayTool.m in Sources */,
 				2E63E7761FA3186000C37FDE /* SVIndefiniteAnimatedView.m in Sources */,
 				2E64514E1FAAB4B100FCCF70 /* SDImageCache.m in Sources */,
@@ -773,6 +782,7 @@
 				2E6451561FAAB4B100FCCF70 /* UIImage+GIF.m in Sources */,
 				CEC665AB2153913300838C88 /* TabBarController.m in Sources */,
 				CE1798E121785CEC0004FACB /* NSDictionary+JsonConversion.m in Sources */,
+				CE4376AF217F121B000AE8CC /* TouchMoveImageView.m in Sources */,
 				CE1798DE217836300004FACB /* ComponentDeviceInfo.m in Sources */,
 				2E6451511FAAB4B100FCCF70 /* SDWebImageDownloader.m in Sources */,
 				CE1798E821785DBF0004FACB /* NSString+ObjectConversion.m in Sources */,

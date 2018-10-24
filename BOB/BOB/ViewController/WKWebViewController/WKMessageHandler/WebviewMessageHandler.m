@@ -47,7 +47,7 @@
             }
                 case 1:
             {
-                funcStr = [CheckString(message) stringByAppendingString:@":"];//添加固定参数webview;
+                funcStr = [CheckString(message) stringByAppendingString:@":"];//添加固定参数(webview);
                 break;
             }
                 case 2:
@@ -73,19 +73,21 @@
         }
     }
     
-    
     Class component = NSClassFromString(classStr);
     SEL sel = NSSelectorFromString(funcStr);
     
     if (![component respondsToSelector:sel])
     {
+        BOBLog(@"未找到类方法：%@，%@",NSStringFromClass(component),NSStringFromSelector(sel));
         return;
     }
     
     IMP imp = [component methodForSelector:sel];
     
+    //判断有无入参、回调，然后调起方法
     if (paramDic && callbackStr)
     {
+        
         void (* func)(Class, SEL, NSDictionary *, NSString *, WKWebView *) = (void *)imp;
         func(component, sel, paramDic, callbackStr, message.webView);
     }
@@ -99,6 +101,12 @@
         void (* func)(Class, SEL, NSString *, WKWebView *) = (void *)imp;
         func(component, sel, callbackStr, message.webView);
     }
+    else
+    {
+        void (* func)(Class, SEL, WKWebView *) = (void *)imp;
+        func(component, sel, message.webView);
+    }
+    
 }
 
 //检查H5入参

@@ -66,6 +66,30 @@ extern NSString *MusicImage;//专辑封面(UIImage)
 + (void)suspend;
 
 
+/**
+ 切换播放和暂停状态
+ */
++ (void)delagatePlayPause;
+
+/**
+ 播放
+ */
++ (void)delegatePlay;
+
+/**
+ 暂停
+ */
++ (void)delegateSuspend;
+
+/**
+ 下一曲
+ */
++ (void)delegateNaxt;
+
+/**
+ 上一曲
+ */
++ (void)delagatePrevious;
 
 /**
  远程通知的响应
@@ -73,7 +97,6 @@ extern NSString *MusicImage;//专辑封面(UIImage)
  @param event 事件
  */
 + (void)remoteControlReceivedWithEvent:(UIEvent *)event;
-
 
 /**
  设置控制中心播放状态

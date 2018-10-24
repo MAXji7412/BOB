@@ -18,13 +18,13 @@
 #define ScreenSize [UIScreen mainScreen].bounds.size
 
 //navBar底端
-#define NavMaxY ({UITabBarController *tabCon = (UITabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;\
+#define NavMaxY ({UITabBarController *tabCon = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;\
 UINavigationController *navCon = tabCon.viewControllers.firstObject;\
 (navCon.navigationBar.bounds.size.height + [UIApplication sharedApplication].statusBarFrame.size.height);})\
 
 //tabBar顶端
 #define TabBarH ({CGFloat tabH = 0;\
-UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;\
+UIViewController *rootVC = [UIApplication sharedApplication].delegate.window.rootViewController;\
 if ([rootVC isKindOfClass:UITabBarController.class]) {\
 UITabBarController *tabBarVC = (UITabBarController *)rootVC;\
 tabH = tabBarVC.tabBar.bounds.size.height;}\

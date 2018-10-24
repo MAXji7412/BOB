@@ -20,4 +20,19 @@
 }
 
 
+#pragma mark event
+- (void)onTabRepeatClick
+{
+    for (UIViewController *VC in self.viewControllers)
+    {
+        SEL onTabRepeatClickSel = NSSelectorFromString(@"onTabRepeatClick");
+        if ([VC respondsToSelector:onTabRepeatClickSel])
+        {
+            IMP imp = [VC methodForSelector:onTabRepeatClickSel];
+            void (* func)(id, SEL) = (void *)imp;
+            func(VC, onTabRepeatClickSel);
+        }
+    }
+}
+
 @end

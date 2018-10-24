@@ -18,7 +18,7 @@
     
     NSString *json = [deviceInfo conversionToJson];
     
-    NSString *jsCode = [NSString stringWithFormat:@"bobAlert(%@)",json];
+    NSString *jsCode = [NSString stringWithFormat:@"bobAlert('%@')",json];
     
     [webview evaluateJavaScript:jsCode completionHandler:^(id _Nullable obj, NSError * _Nullable error) {
         

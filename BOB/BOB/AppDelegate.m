@@ -10,6 +10,7 @@
 
 #import "Start.h"
 #import "PlayTool.h"
+#import "DirectTool.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +23,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [Start start];
+    
     
     return YES;
 }
@@ -58,6 +60,11 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+//3D touch 入口
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler  API_AVAILABLE(ios(9.0))
+{
+    completionHandler([DirectTool shortHandle:shortcutItem]);
+}
 
 /**
  远程通知

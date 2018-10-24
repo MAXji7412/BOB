@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#define StartSuccessNotificationName @"StartSuccessNotificationName"
+
 @interface Start : NSObject
 
 + (void)start;
+
++ (BOOL)started;
 
 @end
