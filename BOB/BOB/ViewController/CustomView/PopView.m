@@ -88,9 +88,8 @@
      
     //拿到当前视图准备好的画板
     CGContextRef  context = UIGraphicsGetCurrentContext();
-    //利用path进行绘制三角形
-    CGContextBeginPath(context);//路径开始标志
     
+    //利用path进行绘制三角形
     CGFloat location = self.bounds.size.width;
     CGFloat dependX = location -  RowHight;
     CGFloat dependY = NavMaxY;
@@ -98,17 +97,17 @@
     //勾股定理, 全等三角形斜边长X,pow(X, 2) - pow(X/2, 2) = pow(高, 2)，X = sqrt(pow(高, 2) * 4 / 3)
     CGFloat hypotenuseLength = sqrt(pow(GAP, 2) * 4 / 3);
     
+    CGContextBeginPath(context);//路径开始标志
     CGContextMoveToPoint(context, dependX, dependY);//设置起点（三角形顶）
     CGContextAddLineToPoint(context, dependX - hypotenuseLength/2, GAP+dependY);//经过点（三角形左下角）
     CGContextAddLineToPoint(context, dependX + hypotenuseLength/2, GAP+dependY);//经过点（三角形右下角）
-    
-    CGContextClosePath(context);//路径结束标志，不写默认封闭
+    CGContextClosePath(context);//路径结束标志
     
     [[UIColor whiteColor] setFill];//设置填充色
     [[UIColor whiteColor] setStroke]; //设置边框颜色
     
     CGContextDrawPath(context,kCGPathFillStroke);//绘制路径path
- }
+}
 
 #pragma TableView Delegate
 
@@ -120,11 +119,13 @@
     return RowHight;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     NSString *cellID = [NSString stringWithFormat:@"cell_%ld",(long)indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     
-    if (!cell) {
+    if (!cell)
+    {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
         
         [cell setSeparatorInset:UIEdgeInsetsMake(0, 10, 0, 10)];
@@ -139,7 +140,6 @@
     return cell;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self removeFromSuperview];
@@ -149,6 +149,5 @@
         self.seletedblock(indexPath.row);
     }
 }
-
 
 @end

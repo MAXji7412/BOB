@@ -42,22 +42,10 @@
     
     self.tabBar.barStyle = UIBarStyleBlack;
     
-    //将viewcontroller设置到tabbar
-    if (!Start.started)
-    {
-        NSNotificationCenter *noc = [NSNotificationCenter defaultCenter];
-        
-        [noc addObserverForName:StartSuccessNotificationName
-                         object:nil
-                          queue:[NSOperationQueue mainQueue]
-                     usingBlock:^(NSNotification * _Nonnull note) {
-                         
-                         self.viewControllers = [self seekViewControllers];
-                     }];
-    }else
-    {
+    //将viewcontroller设置到tabbar，需要keywindow，检查启动是否完成
+//    [Start start:^{
         self.viewControllers = [self seekViewControllers];
-    }
+//    }];
 }
 
 - (NSArray *)seekViewControllers
@@ -74,7 +62,7 @@
     
     //3
     NavigationController *tabNC2 = [[NavigationController alloc] initWithRootViewController:[ShaTanViewController new]];
-     tabNC2.tabBarItem.title = @"沙滩";
+    tabNC2.tabBarItem.title = @"沙滩";
     tabNC2.tabBarItem.image = [[UIImage imageNamed:@"tab_shatan"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     NSArray *viewControllers = @[tabNC0, tabNC1, tabNC2];

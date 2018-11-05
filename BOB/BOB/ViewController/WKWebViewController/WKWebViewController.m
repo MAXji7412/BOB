@@ -39,9 +39,10 @@
 //注册通知
 - (void)registerNotification
 {
-    [[NSNotificationCenter defaultCenter]addObserver:self
-                                            selector:@selector(handleStatusBarOrientationWillChange:)
-                                                name:UIApplicationWillChangeStatusBarOrientationNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleStatusBarOrientationWillChange:)
+                                                 name:UIApplicationWillChangeStatusBarOrientationNotification
+                                               object:nil];
     
     
 }
@@ -57,13 +58,16 @@
     wkWebviewConfig.userContentController = [self getWKUserContentController];
     wkWebviewConfig.preferences.javaScriptCanOpenWindowsAutomatically = YES;
     
-    self.webview = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:wkWebviewConfig];
+    CGFloat orignY = NavMaxY;
+    CGFloat width = CGRectGetWidth(self.view.bounds);
+    CGFloat hight = CGRectGetHeight(self.view.bounds) - NavMaxY - TabBarH;
+    
+    self.webview = [[WKWebView alloc] initWithFrame:CGRectMake(0, orignY, width, hight)
+                                      configuration:wkWebviewConfig];
     
     self.webview.navigationDelegate = self;
     self.webview.UIDelegate = self;
     self.webview.allowsBackForwardNavigationGestures = YES;
-    
-    self.webview.scrollView.contentInset = UIEdgeInsetsMake(NavMaxY, 0, TabBarH, 0);
     
     if (@available(iOS 11.0, *)) {
         self.webview.scrollView.contentInsetAdjustmentBehavior = 2;
@@ -76,7 +80,6 @@
     [self.view addSubview:self.webview];
 }
 
-
 - (WKUserContentController *)getWKUserContentController
 {
     WKUserContentController *userContentCon = [WKUserContentController new];
@@ -84,9 +87,9 @@
     /*
      注册一个js调oc的id（name）:
      js通过
-     window.webkit.messageHandlers.name.postMessage({cc:"ss"});
-     这个APIt调到oc
-     point:这里的name是js调用native时的标识
+     window.webkit.messageHandlers.<#name#>.postMessage({cc:"ss"});
+     这个API调到oc
+     point:这里的name是js调用native时的标识(这里是：JsMessageName)
      
      */
     [userContentCon addScriptMessageHandler:[WebviewMessageHandler new] name:JsMessageName];
@@ -528,7 +531,7 @@
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"我知道了" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ojbk" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         completionHandler();
     }];
     
@@ -629,19 +632,21 @@
 }
 
 // 当main frame开始加载数据失败时，会回调
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error
+{
+    
 }
 
 // 当内容开始返回时调用
-- (void)webView:(WKWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation{
+- (void)webView:(WKWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation
+{
+    
 }
 
 //当main frame导航完成时，会回调
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
     // 页面加载完成之后调用
-    if (!self.title.length) {
-        self.title = webView.title;
-    }
+    self.title = webView.title;
 }
 
 // 当main frame最后下载数据失败时，会回调
@@ -668,35 +673,31 @@
         return;
     }
     
-    CGFloat navMaxY = 0;
-    CGFloat tabMinY = 0;
+    CGFloat navMaxY = 0, tabBarH = 0;
     
     if (((currentInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || currentInterfaceOrientation == UIInterfaceOrientationLandscapeRight) && (interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)))
     {
         //横>竖
         navMaxY = 64;
-        tabMinY = 49;
+        tabBarH = 49;
+        
     }
     else if
     (((currentInterfaceOrientation == UIInterfaceOrientationPortrait || currentInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) && (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight)))
     {
         //竖>横
         navMaxY = 32;
-        tabMinY = 32;
+        tabBarH = 32;
     }
-    
-    
-    if (!navMaxY) {
+    else
+    {
         return;
     }
-    CGRect rect = self.webview.frame;
-    CGFloat width = rect.size.width;
-    rect.size.width = rect.size.height;
-    rect.size.height = width;
     
-    self.webview.frame = rect;
-    
-    self.webview.scrollView.contentInset = UIEdgeInsetsMake(navMaxY, 0, tabMinY, 0);
+    self.webview.frame = CGRectMake(0,
+                                    navMaxY,
+                                    CGRectGetHeight(self.view.bounds),
+                                    self.view.bounds.size.width - navMaxY - tabBarH);
 }
 
 #pragma mark event

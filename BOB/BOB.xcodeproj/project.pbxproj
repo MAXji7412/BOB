@@ -87,12 +87,12 @@
 		CE437665217DCA0D000AE8CC /* DirectTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CE437664217DCA0D000AE8CC /* DirectTool.m */; };
 		CE437668217DD6B3000AE8CC /* 3dtouch_beauty.png in Resources */ = {isa = PBXBuildFile; fileRef = CE437666217DD6B3000AE8CC /* 3dtouch_beauty.png */; };
 		CE43766B217DD769000AE8CC /* 3dtouch_shatan.png in Resources */ = {isa = PBXBuildFile; fileRef = CE43766A217DD769000AE8CC /* 3dtouch_shatan.png */; };
-		CE4376AF217F121B000AE8CC /* TouchMoveImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4376AE217F121B000AE8CC /* TouchMoveImageView.m */; };
 		CE745DB3216CB3EB00766D9B /* nav_book@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE745DB1216CB3EB00766D9B /* nav_book@3x.png */; };
 		CE745DB4216CB3EB00766D9B /* nav_book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE745DB2216CB3EB00766D9B /* nav_book@2x.png */; };
 		CE745DB8216D8F8800766D9B /* PopView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745DB7216D8F8800766D9B /* PopView.m */; };
 		CEB9357E21464A8F00C36C59 /* PlayTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB9357D21464A8F00C36C59 /* PlayTool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Wundeclared-selector"; }; };
 		CEBDEF2021391D8700EE6182 /* Start.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBDEF1F21391D8700EE6182 /* Start.m */; };
+		CEBEEC9D218164E000F31A79 /* PanMoveWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBEEC9C218164E000F31A79 /* PanMoveWindow.m */; };
 		CEC665AB2153913300838C88 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC665AA2153913300838C88 /* TabBarController.m */; };
 		CEC6660821548C0900838C88 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC6660721548C0900838C88 /* NavigationController.m */; };
 		CEC6660C2154C99300838C88 /* MusicPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC6660A2154C99300838C88 /* MusicPlayViewController.m */; };
@@ -227,8 +227,6 @@
 		CE437664217DCA0D000AE8CC /* DirectTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DirectTool.m; sourceTree = "<group>"; };
 		CE437666217DD6B3000AE8CC /* 3dtouch_beauty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3dtouch_beauty.png; sourceTree = "<group>"; };
 		CE43766A217DD769000AE8CC /* 3dtouch_shatan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3dtouch_shatan.png; sourceTree = "<group>"; };
-		CE4376AD217F121B000AE8CC /* TouchMoveImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchMoveImageView.h; sourceTree = "<group>"; };
-		CE4376AE217F121B000AE8CC /* TouchMoveImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouchMoveImageView.m; sourceTree = "<group>"; };
 		CE745DB1216CB3EB00766D9B /* nav_book@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_book@3x.png"; sourceTree = "<group>"; };
 		CE745DB2216CB3EB00766D9B /* nav_book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_book@2x.png"; sourceTree = "<group>"; };
 		CE745DB6216D8F8800766D9B /* PopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopView.h; sourceTree = "<group>"; };
@@ -239,6 +237,8 @@
 		CEBDEF1D21391CBF00EE6182 /* GlobalDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalDefine.h; sourceTree = "<group>"; };
 		CEBDEF1E21391D8700EE6182 /* Start.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Start.h; sourceTree = "<group>"; };
 		CEBDEF1F21391D8700EE6182 /* Start.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Start.m; sourceTree = "<group>"; };
+		CEBEEC9B218164E000F31A79 /* PanMoveWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PanMoveWindow.h; sourceTree = "<group>"; };
+		CEBEEC9C218164E000F31A79 /* PanMoveWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PanMoveWindow.m; sourceTree = "<group>"; };
 		CEC665A92153913300838C88 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		CEC665AA2153913300838C88 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		CEC6660621548C0900838C88 /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
@@ -552,8 +552,8 @@
 			children = (
 				CE745DB6216D8F8800766D9B /* PopView.h */,
 				CE745DB7216D8F8800766D9B /* PopView.m */,
-				CE4376AD217F121B000AE8CC /* TouchMoveImageView.h */,
-				CE4376AE217F121B000AE8CC /* TouchMoveImageView.m */,
+				CEBEEC9B218164E000F31A79 /* PanMoveWindow.h */,
+				CEBEEC9C218164E000F31A79 /* PanMoveWindow.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -772,6 +772,7 @@
 				CE1798E521785D950004FACB /* NSArray+JsonConversion.m in Sources */,
 				CE437665217DCA0D000AE8CC /* DirectTool.m in Sources */,
 				2E6451571FAAB4B100FCCF70 /* UIImage+MultiFormat.m in Sources */,
+				CEBEEC9D218164E000F31A79 /* PanMoveWindow.m in Sources */,
 				CE295B89216F3C3B00353F85 /* BOBNSlog.m in Sources */,
 				CE1799082179818A0004FACB /* JoeyViewController.m in Sources */,
 				CEB9357E21464A8F00C36C59 /* PlayTool.m in Sources */,
@@ -782,7 +783,6 @@
 				2E6451561FAAB4B100FCCF70 /* UIImage+GIF.m in Sources */,
 				CEC665AB2153913300838C88 /* TabBarController.m in Sources */,
 				CE1798E121785CEC0004FACB /* NSDictionary+JsonConversion.m in Sources */,
-				CE4376AF217F121B000AE8CC /* TouchMoveImageView.m in Sources */,
 				CE1798DE217836300004FACB /* ComponentDeviceInfo.m in Sources */,
 				2E6451511FAAB4B100FCCF70 /* SDWebImageDownloader.m in Sources */,
 				CE1798E821785DBF0004FACB /* NSString+ObjectConversion.m in Sources */,
@@ -917,6 +917,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BOB/SDK/TD",
+					"$(PROJECT_DIR)/BOB/ViewController/CustomView",
 				);
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingan.koudaiBankPushDebug5;
@@ -943,6 +944,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BOB/SDK/TD",
+					"$(PROJECT_DIR)/BOB/ViewController/CustomView",
 				);
 				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pingan.koudaiBankPushDebug5;

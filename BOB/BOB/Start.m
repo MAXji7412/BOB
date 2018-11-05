@@ -14,19 +14,16 @@
 #import "AppDelegate.h"
 #import "DirectTool.h"
 
+typedef enum : NSUInteger {
+    StartStateHaveNot,
+    StartStateTurningOn,
+    StartStateDone,
+} StartState;
+
 @implementation Start
-
-static BOOL _started;
-
-+ (BOOL)started
-{
-    return _started;
-}
 
 + (void)start
 {
-    if (_started) return;
-    
     //系统设置
     [self sysConfig];
     
@@ -41,10 +38,6 @@ static BOOL _started;
     
     //3D touch配置
     [self config3Dtouch];
-    
-    //启动完毕发送通知
-    _started = YES;
-    [[NSNotificationCenter defaultCenter] postNotificationName:StartSuccessNotificationName object:nil];
 }
 
 + (void)config3Dtouch
@@ -58,7 +51,7 @@ static BOOL _started;
         UIApplicationShortcutItem *shoreWeb = [[UIApplicationShortcutItem alloc] initWithType:@"shatan" localizedTitle:@"🏖" localizedSubtitle:nil icon:[UIApplicationShortcutIcon iconWithTemplateImageName:@"3dtouch_shatan"] userInfo:@{ShortSeletViewControllerKey:@"2"}];
         [arrShortcutItem addObject:shoreWeb];
         
-        [UIApplication sharedApplication].shortcutItems = arrShortcutItem;
+        [[UIApplication sharedApplication] setShortcutItems:arrShortcutItem];
     }
 }
 

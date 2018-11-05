@@ -1,8 +1,8 @@
 //
-//  TouchMoveImageView.h
+//  PanMoveWindow.h
 //  BOB
 //
-//  Created by 汲群英 on 2018/10/23.
+//  Created by 汲群英 on 2018/10/25.
 //  Copyright © 2018 qunyingji. All rights reserved.
 //
 
@@ -10,8 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TouchMoveImageView : UIImageView
+@interface PanMoveWindow : UIWindow
 
+/**
+ 是否判断视图越界
+ */
 @property (assign) BOOL crossJudgment;
 
 @end
