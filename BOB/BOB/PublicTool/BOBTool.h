@@ -19,4 +19,14 @@
  */
 + (UIColor *)colorWithHexString:(NSString *)colorString;
 
+
+/**
+ 比较v2是否比v1大
+
+ @param v1 版本号1
+ @param v2 版本号2
+ @return 如果版本号2大于版本号1就返回YES，否则返回NO
+ */
++ (BOOL)compareVersion:(NSString *)v1 to:(NSString *)v2;
+
 @end

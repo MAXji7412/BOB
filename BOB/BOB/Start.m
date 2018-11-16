@@ -20,24 +20,61 @@ typedef enum : NSUInteger {
     StartStateDone,
 } StartState;
 
+static NSMutableArray *startCompletes;
+static StartState startState;
+
 @implementation Start
 
-+ (void)start
++ (void)start:(StartComplete)complete
 {
-    //系统设置
-    [self sysConfig];
+    @synchronized (self)
+    {
+        if (!startCompletes) startCompletes = [NSMutableArray array];
+        
+        [startCompletes addObject:complete];
+        
+        if (startState == StartStateHaveNot)
+        {
+            startState = StartStateTurningOn;
+            
+            //系统设置
+            [self sysConfig];
+            
+            //展示KeyWindow
+            [self makeMainWindow];
+            
+            //启动数据采集
+            [self talkingdataStart];
+            
+            //SVPconfig
+            [self svpConfig];
+            
+            //3D touch配置
+            [self config3Dtouch];
+            
+            startState = StartStateDone;
+            
+            [self startCallback];
+        }
+        else if (startState == StartStateTurningOn)
+        {
+            
+        }
+        else if (startState == StartStateDone)
+        {
+            [self startCallback];
+        }
+    }
+}
+
++ (void)startCallback
+{
+    for (StartComplete complete in startCompletes)
+    {
+        complete();
+    }
     
-    //展示KeyWindow
-    [self makeMainWindow];
-    
-    //启动数据采集
-    [self talkingdataStart];
-    
-    //SVPconfig
-    [self svpConfig];
-    
-    //3D touch配置
-    [self config3Dtouch];
+    [startCompletes removeAllObjects];
 }
 
 + (void)config3Dtouch

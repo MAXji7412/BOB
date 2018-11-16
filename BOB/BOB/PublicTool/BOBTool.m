@@ -12,7 +12,7 @@
 
 + (UIColor *)colorWithHexString:(NSString *)colorString
 {
-    if (![colorString isKindOfClass:NSString.class] || ![colorString hasPrefix:@"#"]) {
+    if (![CheckString(colorString) hasPrefix:@"#"]) {
         return nil;
     }
     
@@ -45,5 +45,12 @@
     return color;
 }
 
++ (BOOL)compareVersion:(NSString *)v1 andNewStr: (NSString *)v2
+{
+    if (![v1 isKindOfClass:NSString.class] || ![v2 isKindOfClass:NSString.class]) {
+        return NO;
+    }
+    return ([v1 compare:v2 options:NSNumericSearch] == NSOrderedAscending);
+}
 
 @end

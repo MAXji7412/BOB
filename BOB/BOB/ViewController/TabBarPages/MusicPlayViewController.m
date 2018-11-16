@@ -227,17 +227,18 @@
         return;
     }
     
-    // 动画的暂停时间
-    CFTimeInterval pausedTime = dynamicEffectImage.layer.timeOffset;
     // 动画初始化
     dynamicEffectImage.layer.speed = 1;
-    dynamicEffectImage.layer.timeOffset = 0;
-    //    dynamicEffectImage.layer.beginTime = 0;
-    // 程序到这里，动画就能继续进行了，但不是连贯的，而是动画在背后默默“偷跑”的位置，如果超过一个动画周期，则是初始位置
+    
     // 当前时间（恢复时的时间）
     CFTimeInterval continueTime = [dynamicEffectImage.layer convertTime:CACurrentMediaTime() fromLayer:nil];
+    
+    // 动画的暂停时间
+    CFTimeInterval pausedTime = dynamicEffectImage.layer.timeOffset;
+    
     // 暂停到恢复之间的空档
     CFTimeInterval timePause = continueTime - pausedTime;
+    
     // 动画从timePause的位置从动画头开始
     dynamicEffectImage.layer.beginTime = timePause;
 }
@@ -251,8 +252,6 @@
     // 动画的位置（动画进行到当前时间所在的位置，如timeOffset=1表示动画进行1秒时的位置）
     dynamicEffectImage.layer.timeOffset = pauseTime;
 }
-
-
 
 //图片点击事件
 - (void)musicIconClick:(UITapGestureRecognizer *)tap
@@ -273,7 +272,6 @@
     }
     
     //    tap.view
-    
 }
 
 //播放

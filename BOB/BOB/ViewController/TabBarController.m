@@ -29,9 +29,12 @@
     static TabBarController *tabInstance;
     static BOOL falg = YES;
     
-    if (falg) {
-        falg = NO;
-        tabInstance = [self new];
+    @synchronized (self)
+    {
+        if (falg) {
+            falg = NO;
+            tabInstance = [self new];
+        }
     }
     
     return tabInstance;
@@ -43,9 +46,9 @@
     self.tabBar.barStyle = UIBarStyleBlack;
     
     //将viewcontroller设置到tabbar，需要keywindow，检查启动是否完成
-//    [Start start:^{
+    [Start start:^{
         self.viewControllers = [self seekViewControllers];
-//    }];
+    }];
 }
 
 - (NSArray *)seekViewControllers

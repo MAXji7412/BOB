@@ -39,7 +39,7 @@
     
     NSInteger tabIndex = viewControllerIndexStr.integerValue;
     
-    if (tabIndex > 0)
+    if (tabIndex > 0 && tabIndex < [TabBarController share].viewControllers.count - 1)
     {
         [TabBarController share].selectedIndex = tabIndex;
         return YES;

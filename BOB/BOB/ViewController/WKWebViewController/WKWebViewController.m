@@ -24,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = ArcColor;
+    
     [self creatWebview];
     [self registerNotification];
     [self loadRequest];
@@ -58,13 +60,9 @@
     wkWebviewConfig.userContentController = [self getWKUserContentController];
     wkWebviewConfig.preferences.javaScriptCanOpenWindowsAutomatically = YES;
     
-    CGFloat orignY = NavMaxY;
-    CGFloat width = CGRectGetWidth(self.view.bounds);
-    CGFloat hight = CGRectGetHeight(self.view.bounds) - NavMaxY - TabBarH;
-    
-    self.webview = [[WKWebView alloc] initWithFrame:CGRectMake(0, orignY, width, hight)
+    self.webview = [[WKWebView alloc] initWithFrame:self.view.bounds
                                       configuration:wkWebviewConfig];
-    
+    self.webview.scrollView.contentInset = UIEdgeInsetsMake(NavMaxY, 0, TabBarH, 0);
     self.webview.navigationDelegate = self;
     self.webview.UIDelegate = self;
     self.webview.allowsBackForwardNavigationGestures = YES;
@@ -164,6 +162,13 @@
                                                        [self.webview reload];
                                                    }];
     
+    UIAlertAction *stop = [UIAlertAction actionWithTitle:@"停止"
+                                                   style:UIAlertActionStyleDefault
+                                                 handler:^(UIAlertAction * _Nonnull action) {
+                                                     [self.webview stopLoading];
+                                                     [SVProgressHUD dismiss];
+                                                 }];
+    
     UIAlertAction* input = [UIAlertAction actionWithTitle:@"输入"
                                                               style:UIAlertActionStyleDefault
                                                             handler:^(UIAlertAction * _Nonnull action) {
@@ -208,13 +213,13 @@
                                                   handler:^(UIAlertAction * _Nonnull action) {
                                                       [self clean];
                                                   }];
-    clean.enabled = NO;
     
     UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"取消"
                                                      style:UIAlertActionStyleCancel
                                                    handler:nil];
     
     [alert addAction:reload];
+    [alert addAction:stop];
     [alert addAction:input];
     [alert addAction:save];
     [alert addAction:delete];
@@ -395,7 +400,6 @@
         [[NSFileManager defaultManager] removeItemAtPath:fullPath error:&error];
         if (error) BOBLog(@"%@",error);
     }
-    
 }
 
 //网页快照
@@ -644,9 +648,16 @@
 }
 
 //当main frame导航完成时，会回调
-- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
+- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation
+{
     // 页面加载完成之后调用
-    self.title = webView.title;
+    if (webView.title.length > 7)
+    {
+        self.title = [webView.title substringToIndex:7];
+    }else
+    {
+        self.title = webView.title;;
+    }
 }
 
 // 当main frame最后下载数据失败时，会回调
@@ -694,10 +705,16 @@
         return;
     }
     
-    self.webview.frame = CGRectMake(0,
-                                    navMaxY,
-                                    CGRectGetHeight(self.view.bounds),
-                                    self.view.bounds.size.width - navMaxY - tabBarH);
+    CGRect rect = self.webview.frame;
+    CGFloat hight = rect.size.height;
+    rect.size.height = rect.size.width;
+    rect.size.width = hight;
+    self.webview.frame = rect;
+    
+    if (self.tabBarController)
+    {
+        [self.webview.scrollView setContentInset:UIEdgeInsetsMake(navMaxY, 0, tabBarH, 0)];
+    }
 }
 
 #pragma mark event

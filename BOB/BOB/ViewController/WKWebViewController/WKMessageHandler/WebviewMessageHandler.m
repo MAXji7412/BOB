@@ -87,7 +87,6 @@
     //判断有无入参、回调，然后调起方法
     if (paramDic && callbackStr)
     {
-        
         void (* func)(Class, SEL, NSDictionary *, NSString *, WKWebView *) = (void *)imp;
         func(component, sel, paramDic, callbackStr, message.webView);
     }

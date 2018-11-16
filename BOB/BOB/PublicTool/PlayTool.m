@@ -25,10 +25,10 @@ NSString *MusicImage = @"musicImage";//专辑封面(UIImage)
 {
     static NSMutableArray<NSDictionary *> *musicDataArrM;
     
-    if (musicDataArrM)
+    if (musicDataArrM.count)
     {
         return musicDataArrM;
-    }else{
+    }else if (!musicDataArrM){
         musicDataArrM = [NSMutableArray array];
     }
     

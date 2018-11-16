@@ -13,10 +13,12 @@ typedef void(^StartComplete)(void);
 @interface Start : NSObject
 
 
+
 /**
  启动
 
+ @param complete 启动完成之后的回调，如已完成则直接回调
  */
-+ (void)start;
++ (void)start:(StartComplete)complete;
 
 @end

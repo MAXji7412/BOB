@@ -22,8 +22,9 @@
 #pragma mark root function
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [Start start];
-    
+    [Start start:^{
+        BOBLog(@"启动完成");
+    }];
     
     return YES;
 }
@@ -63,7 +64,9 @@
 //3D touch 入口
 - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler  API_AVAILABLE(ios(9.0))
 {
-    completionHandler([DirectTool shortHandle:shortcutItem]);
+    [Start start:^{
+        completionHandler([DirectTool shortHandle:shortcutItem]);
+    }];
 }
 
 /**

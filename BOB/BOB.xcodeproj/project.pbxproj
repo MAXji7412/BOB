@@ -52,6 +52,13 @@
 		2EBA632D1FA9A24100B82A23 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA632C1FA9A24100B82A23 /* SystemConfiguration.framework */; };
 		2EBA632F1FA9A25100B82A23 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA632E1FA9A25100B82A23 /* libz.tbd */; };
 		2EBA63311FA9A25B00B82A23 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBA63301FA9A25B00B82A23 /* libc++.tbd */; };
+		CE15CF6B2192C0D60082B5F3 /* UIViewController+AdditionalFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15CF6A2192C0D60082B5F3 /* UIViewController+AdditionalFunc.m */; };
+		CE15CF6E2192C37F0082B5F3 /* UIButton+ClickBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15CF6D2192C37F0082B5F3 /* UIButton+ClickBlock.m */; };
+		CE15CF712192C4650082B5F3 /* PanMoveView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15CF702192C4650082B5F3 /* PanMoveView.m */; };
+		CE15CF742192C72A0082B5F3 /* MotalVC_Close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE15CF722192C72A0082B5F3 /* MotalVC_Close@3x.png */; };
+		CE15CF752192C72A0082B5F3 /* MotalVC_Close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE15CF732192C72A0082B5F3 /* MotalVC_Close@2x.png */; };
+		CE15CFCE219419220082B5F3 /* BezierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE15CFCD219419220082B5F3 /* BezierViewController.m */; };
+		CE15CFD0219419860082B5F3 /* light.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE15CFCF219419860082B5F3 /* light.jpg */; };
 		CE17988B21770F500004FACB /* music@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE17988921770F4F0004FACB /* music@3x.png */; };
 		CE17988C21770F500004FACB /* music@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE17988A21770F500004FACB /* music@2x.png */; };
 		CE17988F217713510004FACB /* peace@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE17988D217713510004FACB /* peace@3x.png */; };
@@ -182,6 +189,18 @@
 		2EBA632C1FA9A24100B82A23 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2EBA632E1FA9A25100B82A23 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		2EBA63301FA9A25B00B82A23 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		CE15CF692192C0D60082B5F3 /* UIViewController+AdditionalFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AdditionalFunc.h"; sourceTree = "<group>"; };
+		CE15CF6A2192C0D60082B5F3 /* UIViewController+AdditionalFunc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AdditionalFunc.m"; sourceTree = "<group>"; };
+		CE15CF6C2192C37F0082B5F3 /* UIButton+ClickBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ClickBlock.h"; sourceTree = "<group>"; };
+		CE15CF6D2192C37F0082B5F3 /* UIButton+ClickBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ClickBlock.m"; sourceTree = "<group>"; };
+		CE15CF6F2192C4650082B5F3 /* PanMoveView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PanMoveView.h; sourceTree = "<group>"; };
+		CE15CF702192C4650082B5F3 /* PanMoveView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PanMoveView.m; sourceTree = "<group>"; };
+		CE15CF722192C72A0082B5F3 /* MotalVC_Close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MotalVC_Close@3x.png"; sourceTree = "<group>"; };
+		CE15CF732192C72A0082B5F3 /* MotalVC_Close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MotalVC_Close@2x.png"; sourceTree = "<group>"; };
+		CE15CF772192D85D0082B5F3 /* Object_Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Object_Category.h; sourceTree = "<group>"; };
+		CE15CFCC219419220082B5F3 /* BezierViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BezierViewController.h; sourceTree = "<group>"; };
+		CE15CFCD219419220082B5F3 /* BezierViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BezierViewController.m; sourceTree = "<group>"; };
+		CE15CFCF219419860082B5F3 /* light.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = light.jpg; sourceTree = "<group>"; };
 		CE17988921770F4F0004FACB /* music@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music@3x.png"; sourceTree = "<group>"; };
 		CE17988A21770F500004FACB /* music@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music@2x.png"; sourceTree = "<group>"; };
 		CE17988D217713510004FACB /* peace@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "peace@3x.png"; sourceTree = "<group>"; };
@@ -196,7 +215,6 @@
 		CE1798E421785D950004FACB /* NSArray+JsonConversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JsonConversion.m"; sourceTree = "<group>"; };
 		CE1798E621785DBF0004FACB /* NSString+ObjectConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+ObjectConversion.h"; sourceTree = "<group>"; };
 		CE1798E721785DBF0004FACB /* NSString+ObjectConversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+ObjectConversion.m"; sourceTree = "<group>"; };
-		CE1798E9217861C70004FACB /* Json_Object_Conversions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Json_Object_Conversions.h; sourceTree = "<group>"; };
 		CE1798EE217981320004FACB /* dongdong2@3x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong2@3x.tiff"; sourceTree = "<group>"; };
 		CE1798EF217981320004FACB /* dongdong1@2x.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "dongdong1@2x.tiff"; sourceTree = "<group>"; };
 		CE1798F0217981320004FACB /* Finder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Finder.png; sourceTree = "<group>"; };
@@ -469,9 +487,10 @@
 		2EBA63431FA9B59300B82A23 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CE15CFCB219418F80082B5F3 /* SecondViewController */,
 				CE745DB5216D8F6600766D9B /* CustomView */,
 				CE17E07F2157980200EF19D0 /* WKWebViewController */,
-				CEC666092154C99300838C88 /* Page */,
+				CEC666092154C99300838C88 /* TabBarPages */,
 				CEC665A92153913300838C88 /* TabBarController.h */,
 				CEC665AA2153913300838C88 /* TabBarController.m */,
 				CEC6660621548C0900838C88 /* NavigationController.h */,
@@ -489,6 +508,15 @@
 			path = WKMessageHandler;
 			sourceTree = "<group>";
 		};
+		CE15CFCB219418F80082B5F3 /* SecondViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE15CFCC219419220082B5F3 /* BezierViewController.h */,
+				CE15CFCD219419220082B5F3 /* BezierViewController.m */,
+			);
+			path = SecondViewController;
+			sourceTree = "<group>";
+		};
 		CE17989A21782CA90004FACB /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,13 +529,17 @@
 		CE1798E221785D440004FACB /* ObjCategory */ = {
 			isa = PBXGroup;
 			children = (
+				CE15CF772192D85D0082B5F3 /* Object_Category.h */,
 				CE1798DF21785CEC0004FACB /* NSDictionary+JsonConversion.h */,
 				CE1798E021785CEC0004FACB /* NSDictionary+JsonConversion.m */,
 				CE1798E321785D950004FACB /* NSArray+JsonConversion.h */,
 				CE1798E421785D950004FACB /* NSArray+JsonConversion.m */,
 				CE1798E621785DBF0004FACB /* NSString+ObjectConversion.h */,
 				CE1798E721785DBF0004FACB /* NSString+ObjectConversion.m */,
-				CE1798E9217861C70004FACB /* Json_Object_Conversions.h */,
+				CE15CF692192C0D60082B5F3 /* UIViewController+AdditionalFunc.h */,
+				CE15CF6A2192C0D60082B5F3 /* UIViewController+AdditionalFunc.m */,
+				CE15CF6C2192C37F0082B5F3 /* UIButton+ClickBlock.h */,
+				CE15CF6D2192C37F0082B5F3 /* UIButton+ClickBlock.m */,
 			);
 			path = ObjCategory;
 			sourceTree = "<group>";
@@ -520,6 +552,7 @@
 				CE17988D217713510004FACB /* peace@3x.png */,
 				CE1799D82179BC2A0004FACB /* joey.png */,
 				CE1799D72179BC2A0004FACB /* joey1.png */,
+				CE15CFCF219419860082B5F3 /* light.jpg */,
 				CE1799D62179BC2A0004FACB /* joey2.png */,
 				CE1799D92179BC2A0004FACB /* joey3.png */,
 				CE1798EE217981320004FACB /* dongdong2@3x.tiff */,
@@ -554,11 +587,13 @@
 				CE745DB7216D8F8800766D9B /* PopView.m */,
 				CEBEEC9B218164E000F31A79 /* PanMoveWindow.h */,
 				CEBEEC9C218164E000F31A79 /* PanMoveWindow.m */,
+				CE15CF6F2192C4650082B5F3 /* PanMoveView.h */,
+				CE15CF702192C4650082B5F3 /* PanMoveView.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
 		};
-		CEC666092154C99300838C88 /* Page */ = {
+		CEC666092154C99300838C88 /* TabBarPages */ = {
 			isa = PBXGroup;
 			children = (
 				CEC6660B2154C99300838C88 /* MusicPlayViewController.h */,
@@ -568,7 +603,7 @@
 				CE1799062179818A0004FACB /* JoeyViewController.h */,
 				CE1799072179818A0004FACB /* JoeyViewController.m */,
 			);
-			path = Page;
+			path = TabBarPages;
 			sourceTree = "<group>";
 		};
 		CEC666102154D0A600838C88 /* pic */ = {
@@ -583,6 +618,8 @@
 		CEC666242154D0A600838C88 /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				CE15CF732192C72A0082B5F3 /* MotalVC_Close@2x.png */,
+				CE15CF722192C72A0082B5F3 /* MotalVC_Close@3x.png */,
 				CE437666217DD6B3000AE8CC /* 3dtouch_beauty.png */,
 				CE43766A217DD769000AE8CC /* 3dtouch_shatan.png */,
 				CE17988A21770F500004FACB /* music@2x.png */,
@@ -685,6 +722,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE15CFD0219419860082B5F3 /* light.jpg in Resources */,
 				CEC6664A2154D0A600838C88 /* tab_tuzi@3x.png in Resources */,
 				CE1798FA217981320004FACB /* dongdong2@3x.tiff in Resources */,
 				CE179903217981320004FACB /* adidasi.jpg in Resources */,
@@ -700,6 +738,7 @@
 				CEC6664F2154D63500838C88 /* nav_forward@3x.png in Resources */,
 				CE17988F217713510004FACB /* peace@3x.png in Resources */,
 				CEC666502154D63500838C88 /* nav_forward@2x.png in Resources */,
+				CE15CF742192C72A0082B5F3 /* MotalVC_Close@3x.png in Resources */,
 				2EBA630A1FA8840600B82A23 /* 陈冠希,MC Hotdog - King Boomba's Crew.mp3 in Resources */,
 				CEC666482154D0A600838C88 /* tab_xizi@2x.png in Resources */,
 				CE17988C21770F500004FACB /* music@2x.png in Resources */,
@@ -709,6 +748,7 @@
 				2EBA63091FA8840600B82A23 /* Cammay Ng - Cry Away.mp3 in Resources */,
 				CE179902217981320004FACB /* 06.png in Resources */,
 				CE17E0842157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 in Resources */,
+				CE15CF752192C72A0082B5F3 /* MotalVC_Close@2x.png in Resources */,
 				CE43766B217DD769000AE8CC /* 3dtouch_shatan.png in Resources */,
 				CE1798FF217981320004FACB /* 小马.jpeg in Resources */,
 				CEC666472154D0A600838C88 /* tab_xizi@3x.png in Resources */,
@@ -754,13 +794,16 @@
 				CE17E0822157989200EF19D0 /* WKWebViewController.m in Sources */,
 				CEC6660F2154C9DD00838C88 /* ShaTanViewController.m in Sources */,
 				2E6451531FAAB4B100FCCF70 /* SDWebImageManager.m in Sources */,
+				CE15CF6E2192C37F0082B5F3 /* UIButton+ClickBlock.m in Sources */,
 				2E64514D1FAAB4B100FCCF70 /* NSData+ImageContentType.m in Sources */,
 				2E64514F1FAAB4B100FCCF70 /* SDWebImageCompat.m in Sources */,
 				CEC6660C2154C99300838C88 /* MusicPlayViewController.m in Sources */,
 				2E63E77A1FA3186000C37FDE /* SVRadialGradientLayer.m in Sources */,
+				CE15CF712192C4650082B5F3 /* PanMoveView.m in Sources */,
 				2E64515A1FAAB4B100FCCF70 /* UIView+WebCacheOperation.m in Sources */,
 				2EBA63241FA99E2800B82A23 /* DeviceRelevant.m in Sources */,
 				2E6451551FAAB4B100FCCF70 /* UIButton+WebCache.m in Sources */,
+				CE15CFCE219419220082B5F3 /* BezierViewController.m in Sources */,
 				CEC6660821548C0900838C88 /* NavigationController.m in Sources */,
 				CE179899217823100004FACB /* WebviewMessageHandler.m in Sources */,
 				2E6451541FAAB4B100FCCF70 /* SDWebImagePrefetcher.m in Sources */,
@@ -775,6 +818,7 @@
 				CEBEEC9D218164E000F31A79 /* PanMoveWindow.m in Sources */,
 				CE295B89216F3C3B00353F85 /* BOBNSlog.m in Sources */,
 				CE1799082179818A0004FACB /* JoeyViewController.m in Sources */,
+				CE15CF6B2192C0D60082B5F3 /* UIViewController+AdditionalFunc.m in Sources */,
 				CEB9357E21464A8F00C36C59 /* PlayTool.m in Sources */,
 				2E63E7761FA3186000C37FDE /* SVIndefiniteAnimatedView.m in Sources */,
 				2E64514E1FAAB4B100FCCF70 /* SDImageCache.m in Sources */,
