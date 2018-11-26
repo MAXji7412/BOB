@@ -11,6 +11,33 @@
 #import <AVFoundation/AVFoundation.h>
 
 
+@protocol PlayDelegate <NSObject>
+
+/**
+ 播放
+ */
+- (void)palyResume;
+
+/**
+ 暂停
+ */
+- (void)playSuspend;
+
+/**
+ 下一曲
+ */
+- (void)next;
+
+/**
+ 上一曲
+ */
+- (void)previous;
+
+@end
+
+
+
+
 extern NSString *MusicNeme;//歌名
 extern NSString *MusicUrl;//路径(NSURL)
 extern NSString *MusicAlbumName;//专辑名称
@@ -43,7 +70,7 @@ extern NSString *MusicImage;//专辑封面(UIImage)
  @param delegate AVAudioPlayer的代理
  @return 错误信息，nil代表成功
  */
-+ (NSError *)playByMusicInfo:(NSDictionary *)musicInfo delegate:(id)delegate;
++ (NSError *)playByMusicInfo:(NSDictionary *)musicInfo delegate:(id<PlayDelegate>)delegate;
 
 
 
@@ -104,8 +131,5 @@ extern NSString *MusicImage;//专辑封面(UIImage)
  @param musicInfo 音乐信息
  */
 + (void)setMediaItemArtworkPlayingInfo:(NSDictionary *)musicInfo;
-
-
-
 
 @end

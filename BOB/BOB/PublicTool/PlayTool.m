@@ -41,7 +41,7 @@ NSString *MusicImage = @"musicImage";//专辑封面(UIImage)
         
         NSString *fullPath = [sourceDataPath stringByAppendingPathComponent:dataPath];
         NSURL *mp3Url = [NSURL fileURLWithPath:fullPath];
-        if (![mp3Url.pathExtension.lowercaseString isEqualToString:@"mp3"]) {
+        if (![@[@"mp3",@"m4a"] containsObject:mp3Url.pathExtension.lowercaseString]) {
             continue;
         }
         
@@ -109,23 +109,18 @@ NSString *MusicImage = @"musicImage";//专辑封面(UIImage)
                     }
                 }
             }
-            
             dispatch_semaphore_signal(semap);
-            
         }];
         
         dispatch_semaphore_wait(semap, DISPATCH_TIME_FOREVER);
         
-        
         [musicDataArrM addObject:mp3InfoDicM];
-        
-        
     }
     musicDataArrM = [musicDataArrM sortedArrayUsingComparator:^NSComparisonResult(NSDictionary * _Nonnull obj1, NSDictionary *  _Nonnull obj2) {
         
         return arc4random() %2 ? NSOrderedAscending : NSOrderedDescending ;
     }].mutableCopy;
-
+    
     return musicDataArrM;
 }
 
@@ -135,7 +130,6 @@ NSString *MusicImage = @"musicImage";//专辑封面(UIImage)
     [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
         BOBLog(@"???系统要杀我???");
     }];
-    
 }
 
 #pragma mark MusicPlay
@@ -270,54 +264,39 @@ static NSTimer *mediaItemArtworkUpdateTimer;
 
 + (void)delegatePlay
 {
-    SEL play = NSSelectorFromString(@"palyResume");
-    if (![playDelegate respondsToSelector:play]) {
-        return;
-    }
-    IMP playImp = [playDelegate methodForSelector:play];
-    void (* func)(id,SEL) = (void *)playImp;
+//    SEL play = NSSelectorFromString(@"palyResume");
+//    if (![playDelegate respondsToSelector:play]) {
+//        return;
+//    }
+//    IMP playImp = [playDelegate methodForSelector:play];
+//    void (* func)(id,SEL) = (void *)playImp;
+//
+//    func(playDelegate,play);
     
-    func(playDelegate,play);
+    if ([playDelegate respondsToSelector:@selector(palyResume)]) {
+        [playDelegate palyResume];
+    }
 }
 
 + (void)delegateSuspend
 {
-    SEL suspend = NSSelectorFromString(@"playSuspend");
-    if (![playDelegate respondsToSelector:suspend]) {
-        return;
+    if ([playDelegate respondsToSelector:@selector(playSuspend)]) {
+        [playDelegate playSuspend];
     }
-    IMP suspendImp = [playDelegate methodForSelector:suspend];
-    void(* func)(id,SEL) = (void *)suspendImp;
-    func(playDelegate,suspend);
 }
 
 + (void)delegateNaxt
 {
-    NSString *selStr = @"currentMusicIndex";
-    SEL currentPlayIndex = NSSelectorFromString(selStr);
-    if (![playDelegate respondsToSelector:currentPlayIndex]) {
-        return;
+    if ([playDelegate respondsToSelector:@selector(next)]) {
+        [playDelegate next];
     }
-    IMP currentPlayIndexImp = [playDelegate methodForSelector:currentPlayIndex];
-    NSInteger (* func)(id,SEL) = (void *)currentPlayIndexImp;
-    NSInteger currentMusicIndex = func(playDelegate,currentPlayIndex);
-    currentMusicIndex++;
-    [playDelegate setValue:[NSNumber numberWithInteger:currentMusicIndex] forKey:selStr];
 }
 
 + (void)delagatePrevious
 {
-    NSString *selStr = @"currentMusicIndex";
-    SEL currentpPlayIndex = NSSelectorFromString(selStr);
-    if (![playDelegate respondsToSelector:currentpPlayIndex]) {
-        return;
+    if ([playDelegate respondsToSelector:@selector(previous)]) {
+        [playDelegate previous];
     }
-    IMP currentPlayIndexImp = [playDelegate methodForSelector:currentpPlayIndex];
-    NSInteger (* func)(id,SEL) = (void *)currentPlayIndexImp;
-    NSInteger currentMusicIndex = func(playDelegate,currentpPlayIndex);
-    
-    currentMusicIndex--;
-    [playDelegate setValue:[NSNumber numberWithInteger:currentMusicIndex] forKey:selStr];
 }
 
 + (AVAudioPlayer *)getPlayer

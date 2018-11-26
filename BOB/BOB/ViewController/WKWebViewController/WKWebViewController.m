@@ -62,7 +62,9 @@
     
     self.webview = [[WKWebView alloc] initWithFrame:self.view.bounds
                                       configuration:wkWebviewConfig];
-    self.webview.scrollView.contentInset = UIEdgeInsetsMake(NavMaxY, 0, TabBarH, 0);
+    if (self.tabBarController) {
+        self.webview.scrollView.contentInset = UIEdgeInsetsMake(NavMaxY, 0, TabBarH, 0);
+    }
     self.webview.navigationDelegate = self;
     self.webview.UIDelegate = self;
     self.webview.allowsBackForwardNavigationGestures = YES;
@@ -697,8 +699,13 @@
     (((currentInterfaceOrientation == UIInterfaceOrientationPortrait || currentInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) && (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight)))
     {
         //竖>横
-        navMaxY = 32;
-        tabBarH = 32;
+        if ([UIScreen mainScreen].scale == 3) {
+            navMaxY = 44;
+            tabBarH = 49;
+        }else if ([UIScreen mainScreen].scale == 2){
+            navMaxY = 32;
+            tabBarH = 32;
+        }
     }
     else
     {

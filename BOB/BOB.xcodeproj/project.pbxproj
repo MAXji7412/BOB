@@ -114,6 +114,7 @@
 		CEC6664B2154D0A600838C88 /* tab_tuzi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6662F2154D0A600838C88 /* tab_tuzi@2x.png */; };
 		CEC6664F2154D63500838C88 /* nav_forward@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6664D2154D63500838C88 /* nav_forward@3x.png */; };
 		CEC666502154D63500838C88 /* nav_forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6664E2154D63500838C88 /* nav_forward@2x.png */; };
+		CECACD5421A29B6300D8ABA2 /* pact 追梦人.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CECACD5321A29B6300D8ABA2 /* pact 追梦人.mp3 */; };
 		CEF92169215E37D600F0BA1E /* BOBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF92168215E37D600F0BA1E /* BOBTool.m */; };
 /* End PBXBuildFile section */
 
@@ -275,6 +276,7 @@
 		CEC6662F2154D0A600838C88 /* tab_tuzi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_tuzi@2x.png"; sourceTree = "<group>"; };
 		CEC6664D2154D63500838C88 /* nav_forward@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_forward@3x.png"; sourceTree = "<group>"; };
 		CEC6664E2154D63500838C88 /* nav_forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_forward@2x.png"; sourceTree = "<group>"; };
+		CECACD5321A29B6300D8ABA2 /* pact 追梦人.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "pact 追梦人.mp3"; sourceTree = "<group>"; };
 		CEF92167215E37D600F0BA1E /* BOBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BOBTool.h; sourceTree = "<group>"; };
 		CEF92168215E37D600F0BA1E /* BOBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BOBTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -371,6 +373,7 @@
 		2E63E7AA1FA31FDD00C37FDE /* sound */ = {
 			isa = PBXGroup;
 			children = (
+				CECACD5321A29B6300D8ABA2 /* pact 追梦人.mp3 */,
 				CE17E0832157E5E300EF19D0 /* 纵贯线 - 亡命之徒(Live) - live.mp3 */,
 				CE2BAD1E213E67380051FD2D /* TIEminem.mp3 */,
 				2EBA63051FA8840600B82A23 /* 陈冠希-Salute.mp3 */,
@@ -734,6 +737,7 @@
 				CE1799DA2179BC2A0004FACB /* joey2.png in Resources */,
 				CE745DB3216CB3EB00766D9B /* nav_book@3x.png in Resources */,
 				CE437660217DC229000AE8CC /* joey2.jpeg in Resources */,
+				CECACD5421A29B6300D8ABA2 /* pact 追梦人.mp3 in Resources */,
 				2EBA62831FA84D3D00B82A23 /* Assets.xcassets in Resources */,
 				CEC6664F2154D63500838C88 /* nav_forward@3x.png in Resources */,
 				CE17988F217713510004FACB /* peace@3x.png in Resources */,

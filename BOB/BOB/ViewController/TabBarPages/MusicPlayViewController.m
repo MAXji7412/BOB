@@ -17,7 +17,7 @@
 #define ImageSize 200
 #define ExcessTag 50
 
-@interface MusicPlayViewController ()<AVAudioPlayerDelegate,UIScrollViewDelegate>
+@interface MusicPlayViewController ()<AVAudioPlayerDelegate,UIScrollViewDelegate,PlayDelegate>
 {
     NSTimer *_timer;
     UIScrollView *scrollV;
@@ -292,6 +292,16 @@
     [self audiencePause];
     
 }
+
+- (void)next {
+    self.currentMusicIndex++;
+}
+
+
+- (void)previous {
+    self.currentMusicIndex--;
+}
+
 
 #pragma mark 定时器
 //定时器，用来使图片旋转
