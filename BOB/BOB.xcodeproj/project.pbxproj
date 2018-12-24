@@ -115,6 +115,8 @@
 		CEC6664F2154D63500838C88 /* nav_forward@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6664D2154D63500838C88 /* nav_forward@3x.png */; };
 		CEC666502154D63500838C88 /* nav_forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC6664E2154D63500838C88 /* nav_forward@2x.png */; };
 		CECACD5421A29B6300D8ABA2 /* pact 追梦人.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CECACD5321A29B6300D8ABA2 /* pact 追梦人.mp3 */; };
+		CEF4B79121CA182A003D8EF2 /* BezierView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF4B78F21CA182A003D8EF2 /* BezierView.m */; };
+		CEF4B79321CA1C61003D8EF2 /* 22706.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF4B79221CA1C60003D8EF2 /* 22706.png */; };
 		CEF92169215E37D600F0BA1E /* BOBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF92168215E37D600F0BA1E /* BOBTool.m */; };
 /* End PBXBuildFile section */
 
@@ -277,6 +279,9 @@
 		CEC6664D2154D63500838C88 /* nav_forward@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_forward@3x.png"; sourceTree = "<group>"; };
 		CEC6664E2154D63500838C88 /* nav_forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_forward@2x.png"; sourceTree = "<group>"; };
 		CECACD5321A29B6300D8ABA2 /* pact 追梦人.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "pact 追梦人.mp3"; sourceTree = "<group>"; };
+		CEF4B78F21CA182A003D8EF2 /* BezierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BezierView.m; sourceTree = "<group>"; };
+		CEF4B79021CA182A003D8EF2 /* BezierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BezierView.h; sourceTree = "<group>"; };
+		CEF4B79221CA1C60003D8EF2 /* 22706.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 22706.png; sourceTree = "<group>"; };
 		CEF92167215E37D600F0BA1E /* BOBTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BOBTool.h; sourceTree = "<group>"; };
 		CEF92168215E37D600F0BA1E /* BOBTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BOBTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -516,6 +521,7 @@
 			children = (
 				CE15CFCC219419220082B5F3 /* BezierViewController.h */,
 				CE15CFCD219419220082B5F3 /* BezierViewController.m */,
+				CEF4B78E21CA182A003D8EF2 /* View */,
 			);
 			path = SecondViewController;
 			sourceTree = "<group>";
@@ -550,6 +556,7 @@
 		CE1798ED217981320004FACB /* image */ = {
 			isa = PBXGroup;
 			children = (
+				CEF4B79221CA1C60003D8EF2 /* 22706.png */,
 				CE43765F217DC228000AE8CC /* joey2.jpeg */,
 				CE17988E217713510004FACB /* peace@2x.png */,
 				CE17988D217713510004FACB /* peace@3x.png */,
@@ -657,6 +664,15 @@
 				CEC6662F2154D0A600838C88 /* tab_tuzi@2x.png */,
 			);
 			path = tab_icon;
+			sourceTree = "<group>";
+		};
+		CEF4B78E21CA182A003D8EF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEF4B79021CA182A003D8EF2 /* BezierView.h */,
+				CEF4B78F21CA182A003D8EF2 /* BezierView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -774,6 +790,7 @@
 				CEC666442154D0A600838C88 /* nav_back@3x.png in Resources */,
 				CE1799DC2179BC2A0004FACB /* joey.png in Resources */,
 				2E63E7781FA3186000C37FDE /* SVProgressHUD.bundle in Resources */,
+				CEF4B79321CA1C61003D8EF2 /* 22706.png in Resources */,
 				CE1798FB217981320004FACB /* dongdong1@2x.tiff in Resources */,
 				CEC666452154D0A600838C88 /* tab_shatan@2x.png in Resources */,
 				CE179901217981320004FACB /* dongdong1@3x.tiff in Resources */,
@@ -831,6 +848,7 @@
 				2E6451561FAAB4B100FCCF70 /* UIImage+GIF.m in Sources */,
 				CEC665AB2153913300838C88 /* TabBarController.m in Sources */,
 				CE1798E121785CEC0004FACB /* NSDictionary+JsonConversion.m in Sources */,
+				CEF4B79121CA182A003D8EF2 /* BezierView.m in Sources */,
 				CE1798DE217836300004FACB /* ComponentDeviceInfo.m in Sources */,
 				2E6451511FAAB4B100FCCF70 /* SDWebImageDownloader.m in Sources */,
 				CE1798E821785DBF0004FACB /* NSString+ObjectConversion.m in Sources */,

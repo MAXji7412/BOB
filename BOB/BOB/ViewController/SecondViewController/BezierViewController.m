@@ -8,8 +8,14 @@
 
 #import "BezierViewController.h"
 
-@interface BezierViewController ()
+#import "BezierView.h"
 
+@interface BezierViewController ()
+{
+    BezierView *bezierView;
+    float rate;
+    UITextField *textField;
+}
 @end
 
 @implementation BezierViewController
@@ -17,34 +23,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = ArcColor;
-    
-    CGFloat gap = 100;
-    CGFloat width = ScreenSize.width - gap*2;
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(gap, NavMaxY + gap, width, width)];
-    imageView.image = [UIImage imageNamed:@"light.jpg"];
-    [self lineLayerToView:imageView];
-    
-    [self.view addSubview:imageView];
+    self.view.backgroundColor = [UIColor blackColor];
+    self.title = @"demo";
+    [self creatBezierView];
+    [self creatCustomTextView];
 }
 
-
-//线
-- (void)lineLayerToView:(UIView *)view
+- (void)creatBezierView
 {
-    UIBezierPath *bezierPath = [UIBezierPath bezierPath];
+    bezierView = [[BezierView alloc] initWithFrame:CGRectMake(0, NavMaxY, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - NavMaxY)];
     
-    CGPoint basisPoint = CGPointMake(0, CGRectGetMaxY(view.bounds));
-    [bezierPath moveToPoint:basisPoint];
+    [self.view addSubview:bezierView];
     
-    [bezierPath addQuadCurveToPoint:CGPointMake(CGRectGetMidX(view.bounds), CGRectGetMidY(view.bounds)) controlPoint:CGPointMake(0, 0)];
-    [bezierPath addQuadCurveToPoint:CGPointMake(CGRectGetMaxX(view.bounds), CGRectGetMaxY(view.bounds)) controlPoint:CGPointMake(CGRectGetMaxY(view.bounds), 0)];
+    [bezierView showText:@"hello"
+                        :[UIFont fontWithName:[UIFont familyNames].firstObject size:100]
+                        :1
+                        :nil];
+}
+
+- (void)creatCustomTextView
+{
+    int x, y, w, h;
+    w = self.view.bounds.size.width * 3/4;
+    x = (self.view.bounds.size.width - w)/2;
+    h = 30;
+    y = NavMaxY;
     
-    [bezierPath closePath];
+    textField = [[UITextField alloc] initWithFrame:CGRectMake(x, y, w, h)];
     
-    CAShapeLayer *circleLayer = [CAShapeLayer layer];
-    circleLayer.path = bezierPath.CGPath;
-    view.layer.mask = circleLayer;
+    textField.placeholder = @"input";
+    textField.backgroundColor = [UIColor lightGrayColor];
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:textField];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+    [bezierView showText:textField.text ?:textField.placeholder :[UIFont fontWithName:[UIFont familyNames].firstObject size:100] :3 :nil];
 }
 
 @end

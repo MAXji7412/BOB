@@ -36,5 +36,9 @@ tabH = tabBarVC.tabBar.bounds.size.height;\
 }}\
 tabH;})\
 
+//安全区
+#define SafeAreaHeight ({ int tmp = 0;if (@available(iOS 11.0, *)) {tmp = [UIApplication sharedApplication].keyWindow.safeAreaInsets.bottom;}tmp;})
+
+
 
 #endif /* GlobalDefine_h */

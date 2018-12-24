@@ -204,7 +204,6 @@
         }
     }
     
-    
     CGFloat Y = ScreenSize.height - imageSize.height - CGRectGetHeight([TabBarController share].tabBar.bounds);
     dynamicEffectImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, Y, imageSize.width, imageSize.height)];
     
@@ -246,9 +245,12 @@
 //暂停
 - (void)audiencePause
 {
+    // 当前时间（恢复时的时间）
     CFTimeInterval pauseTime = [dynamicEffectImage.layer convertTime:CACurrentMediaTime() fromLayer:nil];
+    
     // 停止动画
     dynamicEffectImage.layer.speed = 0;
+    
     // 动画的位置（动画进行到当前时间所在的位置，如timeOffset=1表示动画进行1秒时的位置）
     dynamicEffectImage.layer.timeOffset = pauseTime;
 }
