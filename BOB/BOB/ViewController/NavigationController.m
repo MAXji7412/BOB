@@ -8,7 +8,7 @@
 
 #import "NavigationController.h"
 
-@interface NavigationController ()
+@interface NavigationController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -17,8 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}
+                                    forState:UIControlStateSelected];
+    self.interactivePopGestureRecognizer.delegate = self;
 }
 
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    return YES;
+}
 
 #pragma mark event
 - (void)onTabRepeatClick

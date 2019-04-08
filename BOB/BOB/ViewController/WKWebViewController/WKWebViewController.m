@@ -41,12 +41,11 @@
 //注册通知
 - (void)registerNotification
 {
+    //屏幕方向将要改变
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(handleStatusBarOrientationWillChange:)
                                                  name:UIApplicationWillChangeStatusBarOrientationNotification
                                                object:nil];
-    
-    
 }
 
 //创建Webview
@@ -640,7 +639,7 @@
 // 当main frame开始加载数据失败时，会回调
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error
 {
-    
+    [SVProgressHUD showImage:nil status:error.userInfo[NSLocalizedDescriptionKey]];
 }
 
 // 当内容开始返回时调用

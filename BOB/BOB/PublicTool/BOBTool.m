@@ -45,7 +45,7 @@
     return color;
 }
 
-+ (BOOL)compareVersion:(NSString *)v1 andNewStr: (NSString *)v2
++ (BOOL)compareVersion:(NSString *)v1 to: (NSString *)v2
 {
     if (![v1 isKindOfClass:NSString.class] || ![v2 isKindOfClass:NSString.class]) {
         return NO;

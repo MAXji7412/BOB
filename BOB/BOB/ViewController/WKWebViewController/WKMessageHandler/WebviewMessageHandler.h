@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#import <WebKit/WebKit.h>
+
 #define JsMessageName @"bob"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WebviewMessageHandler : NSObject
+@interface WebviewMessageHandler : NSObject<WKScriptMessageHandler>
 
 
 @end

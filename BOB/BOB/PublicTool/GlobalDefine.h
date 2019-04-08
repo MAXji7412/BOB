@@ -17,6 +17,8 @@
 
 #define ScreenSize [UIScreen mainScreen].bounds.size
 
+#define StateBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
+
 //navBar底端
 #define NavMaxY ({UITabBarController *tabCon = (UITabBarController *)[UIApplication sharedApplication].delegate.window.rootViewController;\
 UINavigationController *navCon = tabCon.viewControllers.firstObject;\

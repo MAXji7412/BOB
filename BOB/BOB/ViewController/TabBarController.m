@@ -68,15 +68,7 @@
     tabNC2.tabBarItem.title = @"沙滩";
     tabNC2.tabBarItem.image = [[UIImage imageNamed:@"tab_shatan"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    NSArray *viewControllers = @[tabNC0, tabNC1, tabNC2];
-    
-    for (NavigationController *tabVC in viewControllers)
-    {
-        [tabVC.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}
-                                        forState:UIControlStateSelected];
-    }
-    
-    return viewControllers;
+    return @[tabNC0, tabNC1, tabNC2];
 }
 
 #pragma mark event

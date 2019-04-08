@@ -11,12 +11,15 @@
 #import "PanMoveWindow.h"
 #import "BezierViewController.h"
 #import "WKWebViewController.h"
+#import <AVKit/AVKit.h>
+#import "FingerEvaluateManager.h"
 
 @interface JoeyViewController ()
 
 @property (nonatomic, strong) PanMoveWindow *panWin;
 @property (nonatomic, strong) UIVisualEffectView *joeyView;
 @property (nonatomic, strong) UIImageView *joeyImageView;
+@property (nonatomic, strong) AVPlayer *player;
 
 @end
 
@@ -27,6 +30,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = ArcColor;
+    
+    [self playGTR];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.player pause];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.player play];
+}
+
+- (void)dealloc
+{
+    [self.player pause];
+    self.player = nil;
 }
 
 #pragma mark event
@@ -35,24 +58,37 @@
     [self dismissJoeyImage:^{
         [self displayJoeyImage:nil];
     }];
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    BezierViewController *bezierVC = [BezierViewController new];
-    bezierVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    bezierVC.dismissBtnVisible = YES;
-    
-    //    [self presentViewController:bezierVC animated:YES completion:nil];
-    [self.navigationController pushViewController:bezierVC animated:YES];
-    
-    
-    //    WKWebViewController *webVC = [WKWebViewController new];
-    //    webVC.dismissBtnVisible = YES;
-    //    [self presentViewController:webVC animated:YES completion:nil];
+    [FingerEvaluateManager evaluateWithComplete:^(BOOL success, EvaluateError err)
+     {
+         if (err == EvaluateError_UserCancel)
+         {
+             return;
+         }
+         
+         BezierViewController *bezierVC = [BezierViewController new];
+         bezierVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+         bezierVC.dismissBtnVisible = YES;
+//         bezierVC.hidesBottomBarWhenPushed = YES;
+         
+//             [self presentViewController:bezierVC animated:YES completion:nil];
+         [self.navigationController pushViewController:bezierVC animated:YES];
+         
+     }];
 }
 
-#pragma mark Joey View
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(nullable UIEvent *)event
+{
+    [self dismissJoeyImage:^{
+        [self displayJoeyImage:nil];
+    }];
+}
+
+#pragma mark joey show
 
 - (void)displayJoeyImage:(void(^)(void))complete
 {
@@ -111,7 +147,34 @@
     }];
 }
 
-#pragma gets
+#pragma mark GTR show
+
+- (void)playGTR
+{
+    NSURL *videoUrl = [[NSBundle mainBundle] URLForResource:@"GTR" withExtension:@"mp4"];
+    self.player = [AVPlayer playerWithURL:videoUrl];
+    
+    //player图层
+    AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
+    
+    playerLayer.frame = CGRectMake(0, NavMaxY, CGRectGetWidth(self.view.bounds), 240);
+    
+    playerLayer.masksToBounds = YES;
+    playerLayer.cornerRadius = 20.0f;
+    
+    //设置模式
+    playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    
+    [self.view.layer addSublayer:playerLayer];
+    [self.player play];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:AVPlayerItemDidPlayToEndTimeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note)
+     {
+         [playerLayer removeFromSuperlayer];
+     }];
+}
+
+#pragma Lazy load
 - (PanMoveWindow *)panWin
 {
     if (_panWin)

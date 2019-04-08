@@ -10,11 +10,11 @@
 
 #import "BezierView.h"
 
-@interface BezierViewController ()
+@interface BezierViewController ()<UITextFieldDelegate>
 {
     BezierView *bezierView;
     float rate;
-    UITextField *textField;
+    BOOL originNavBarHidden;
 }
 @end
 
@@ -24,15 +24,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor blackColor];
-    self.title = @"demo";
-    [self creatBezierView];
-    [self creatCustomTextView];
+    self.title = @"Bezier";
+    [self creatBezierViewWithOriginY:[self creatTextField]];
 }
 
-- (void)creatBezierView
+- (void)viewWillAppear:(BOOL)animated
 {
-    bezierView = [[BezierView alloc] initWithFrame:CGRectMake(0, NavMaxY, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - NavMaxY)];
-    
+    [super viewWillAppear:animated];
+    originNavBarHidden = self.navigationController.isNavigationBarHidden;
+    if (!originNavBarHidden)
+    {
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:originNavBarHidden animated:YES];
+}
+
+- (void)creatBezierViewWithOriginY:(int)originY
+{
+    bezierView = [[BezierView alloc] initWithFrame:CGRectMake(0, originY, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - originY)];
+    bezierView.backgroundColor = [UIColor orangeColor];
     [self.view addSubview:bezierView];
     
     [bezierView showText:@"hello"
@@ -41,26 +56,43 @@
                         :nil];
 }
 
-- (void)creatCustomTextView
+- (int)creatTextField
 {
     int x, y, w, h;
     w = self.view.bounds.size.width * 3/4;
     x = (self.view.bounds.size.width - w)/2;
     h = 30;
-    y = NavMaxY;
+    y = NavMaxY + 5;
     
-    textField = [[UITextField alloc] initWithFrame:CGRectMake(x, y, w, h)];
-    
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(x, y, w, h)];
+    textField.delegate = self;
     textField.placeholder = @"input";
     textField.backgroundColor = [UIColor lightGrayColor];
     textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.returnKeyType = UIReturnKeyDone;
     [self.view addSubview:textField];
+    
+    return CGRectGetMaxY(textField.frame) + 5;
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [self.view endEditing:YES];
-    [bezierView showText:textField.text ?:textField.placeholder :[UIFont fontWithName:[UIFont familyNames].firstObject size:100] :3 :nil];
+    [textField resignFirstResponder];
+    return YES;
 }
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    NSArray *fontNameArr = [UIFont familyNames];
+    NSString *fontName = [fontNameArr objectAtIndex:arc4random() % fontNameArr.count];
+    
+    NSString *text = textField.text ?:textField.placeholder;
+    
+    [bezierView showText:text
+                        :[UIFont fontWithName:fontName size:100]
+                        :text.length * 0.5
+                        :nil];
+}
+
 
 @end
