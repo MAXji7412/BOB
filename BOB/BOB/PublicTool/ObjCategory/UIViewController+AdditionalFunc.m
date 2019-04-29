@@ -11,11 +11,23 @@
 #import "UIButton+ClickBlock.h"
 #import "PanMoveView.h"
 #import <objc/runtime.h>
+#import "MethodSwizzle.h"
 
 #define DismissBtnVisibleKey "DismissBtnVisibleKey"
 #define BtnTag 0x1234
 
 @implementation UIViewController (AdditionalFunc)
+
++ (void)load
+{
+    [MethodSwizzle swizzleInstanceMethodWithAClass:self.class instanceSelector:@selector(viewWillAppear:) BClass:self.class instanceSelector:@selector(swizzle_viewWillAppear:)];
+}
+
+- (void)swizzle_viewWillAppear:(BOOL)animated
+{
+    [self swizzle_viewWillAppear:animated];
+    [self creatModalDismissButton];
+}
 
 - (void)setDismissBtnVisible:(BOOL)dismissBtnVisible
 {
@@ -34,11 +46,6 @@
 {
     NSNumber *dismissBtnVisibleNumberValue = objc_getAssociatedObject(self, DismissBtnVisibleKey);
     return dismissBtnVisibleNumberValue.boolValue;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [self creatModalDismissButton];
 }
 
 - (void)creatModalDismissButton

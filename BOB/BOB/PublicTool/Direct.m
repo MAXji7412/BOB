@@ -1,12 +1,12 @@
 //
-//  DirectTool.m
+//  Direct.m
 //  BOB
 //
 //  Created by 汲群英 on 2018/10/22.
 //  Copyright © 2018 qunyingji. All rights reserved.
 //
 
-#import "DirectTool.h"
+#import "Direct.h"
 
 #import "TabBarController.h"
 

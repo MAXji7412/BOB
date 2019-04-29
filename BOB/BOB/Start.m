@@ -12,7 +12,7 @@
 #import "DeviceRelevant.h"
 #import "TabBarController.h"
 #import "AppDelegate.h"
-#import "DirectTool.h"
+#import "Direct.h"
 
 typedef enum : NSUInteger {
     StartStateHaveNot,

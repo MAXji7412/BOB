@@ -6,7 +6,7 @@
 //  Copyright © 2018 qunyingji. All rights reserved.
 //
 
-#import "ComponentDeviceInfo.h"
+#import "CompDeviceInfo.h"
 
 #import "DeviceRelevant.h"
 

@@ -10,7 +10,7 @@
 
 #import "Start.h"
 #import "PlayTool.h"
-#import "DirectTool.h"
+#import "Direct.h"
 
 @interface AppDelegate ()
 
